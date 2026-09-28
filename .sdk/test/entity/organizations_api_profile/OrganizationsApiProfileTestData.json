@@ -1,0 +1,36 @@
+{
+  "existing": {
+    "organizations_api_profile": {
+      "ORGANIZATIONS_API_PROFILE00": {
+        "code": 20,
+        "message": "s15",
+        "organization_id": "ORGANIZATION01"
+      },
+      "ORGANIZATIONS_API_PROFILE01": {
+        "code": 40,
+        "message": "s29",
+        "organization_id": "ORGANIZATION01"
+      },
+      "ORGANIZATIONS_API_PROFILE02": {
+        "code": 60,
+        "message": "s3d",
+        "organization_id": "ORGANIZATION01"
+      }
+    }
+  },
+  "new": {
+    "organizations_api_profile": {
+      "organizations_api_profile_ref01": {
+        "code": 80,
+        "message": "s51"
+      }
+    }
+  },
+  "requests": {
+    "GET /organizations/{organization_id}/profile": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

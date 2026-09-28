@@ -1,0 +1,21 @@
+{
+  "existing": {
+    "user": {
+      "USER00": {},
+      "USER01": {},
+      "USER02": {}
+    }
+  },
+  "new": {
+    "user": {
+      "user_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /user/tenants": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "iam_collection_token": {
+      "IAM_COLLECTION_TOKEN00": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_COLLECTION_TOKEN01": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_COLLECTION_TOKEN02": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "iam_collection_token": {
+      "iam_collection_token_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/tokens": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /user/tokens": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

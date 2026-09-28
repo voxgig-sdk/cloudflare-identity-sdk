@@ -1,0 +1,480 @@
+# Entity: resource
+
+main: kit: entity: resource: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    meta: {
+      h: "Meta"
+      n: "meta"
+      r: true
+      sh: "Resource Metadata."
+      t: "`$OBJECT`"
+    }
+    resource_account_id: {
+      h: "Resource Account Id"
+      n: "resource_account_id"
+      r: true
+      sh: "Account identifier."
+      t: "`$STRING`"
+    }
+    resource_id: {
+      h: "Resource Id"
+      n: "resource_id"
+      r: true
+      sh: "Share Resource identifier."
+      t: "`$STRING`"
+    }
+    resource_type: {
+      h: "Resource Type"
+      n: "resource_type"
+      r: true
+      sh: "Resource Type."
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      op: {
+        load: {
+          req: true
+          type: "`$ANY`"
+        }
+      }
+      r: false
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 0
+      }
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "resource"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/shares/{share_id}/resources"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "3fd85f74b32742f1bff64a85009dda07"
+                k: "param"
+                n: "share_id"
+                or: "share_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/shares/{share_id}/resources"
+          q: {
+            exist: [
+              "account_id"
+              "share_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "shares"
+            }
+            {
+              var: "share_id"
+            }
+            {
+              lit: "resources"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/shares/{share_id}/resources"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "3fd85f74b32742f1bff64a85009dda07"
+                k: "param"
+                n: "share_id"
+                or: "share_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 2
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 20
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "resource_type"
+                or: "resource_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/shares/{share_id}/resources"
+          q: {
+            exist: [
+              "account_id"
+              "page"
+              "per_page"
+              "resource_type"
+              "share_id"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "shares"
+            }
+            {
+              var: "share_id"
+            }
+            {
+              lit: "resources"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "id"
+                or: "share_resource_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "3fd85f74b32742f1bff64a85009dda07"
+                k: "param"
+                n: "share_id"
+                or: "share_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+              "share_id"
+            ]
+          }
+          r: {
+            param: {
+              share_resource_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "shares"
+            }
+            {
+              var: "share_id"
+            }
+            {
+              lit: "resources"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "id"
+                or: "share_resource_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "3fd85f74b32742f1bff64a85009dda07"
+                k: "param"
+                n: "share_id"
+                or: "share_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+              "share_id"
+            ]
+          }
+          r: {
+            param: {
+              share_resource_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "shares"
+            }
+            {
+              var: "share_id"
+            }
+            {
+              lit: "resources"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "id"
+                or: "share_resource_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "3fd85f74b32742f1bff64a85009dda07"
+                k: "param"
+                n: "share_id"
+                or: "share_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+              "share_id"
+            ]
+          }
+          r: {
+            param: {
+              share_resource_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "shares"
+            }
+            {
+              var: "share_id"
+            }
+            {
+              lit: "resources"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.account")]
+  ]
+
+}

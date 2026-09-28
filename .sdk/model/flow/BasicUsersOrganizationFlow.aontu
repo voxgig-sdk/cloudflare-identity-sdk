@@ -1,0 +1,9 @@
+# BasicUsersOrganizationFlow
+
+main: kit: flow: BasicUsersOrganizationFlow:
+{
+  entity: "users_organization",
+  kind: "basic",
+  name: "BasicUsersOrganizationFlow",
+  "key$": "BasicUsersOrganizationFlow"
+}

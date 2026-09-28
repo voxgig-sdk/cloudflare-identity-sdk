@@ -1,0 +1,22 @@
+# BasicIamPermissionsGroupResponseCollectionFlow
+
+main: kit: flow: BasicIamPermissionsGroupResponseCollectionFlow:
+{
+  entity: "iam_permissions_group_response_collection",
+  kind: "basic",
+  name: "BasicIamPermissionsGroupResponseCollectionFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "iam_permissions_group_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamPermissionsGroupResponseCollectionFlow"
+}

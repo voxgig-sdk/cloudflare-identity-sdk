@@ -1,0 +1,48 @@
+# Entity: iam_schemas_collection_invite
+
+main: kit: entity: iam_schemas_collection_invite: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "iam_schemas_collection_invite"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /user/invites"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/user/invites"
+          s: [
+            {
+              lit: "user"
+            }
+            {
+              lit: "invites"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

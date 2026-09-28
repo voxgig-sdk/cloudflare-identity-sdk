@@ -1,0 +1,26 @@
+# BasicIamCollectionMemberResponseWithPolicyFlow
+
+main: kit: flow: BasicIamCollectionMemberResponseWithPolicyFlow:
+{
+  entity: "iam_collection_member_response_with_policy",
+  kind: "basic",
+  name: "BasicIamCollectionMemberResponseWithPolicyFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "iam_collection_member_response_with_policy_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamCollectionMemberResponseWithPolicyFlow"
+}

@@ -1,0 +1,143 @@
+# Entity: iam_permissions_group_response_collection
+
+main: kit: entity: iam_permissions_group_response_collection: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "iam_permissions_group_response_collection"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/tokens/permission_groups"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "Account%20Settings%20Write"
+                k: "query"
+                n: "name"
+                or: "name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "com.cloudflare.api.account.zone"
+                k: "query"
+                n: "scope"
+                or: "scope"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/tokens/permission_groups"
+          q: {
+            exist: [
+              "account_id"
+              "name"
+              "scope"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "tokens"
+            }
+            {
+              lit: "permission_groups"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /user/tokens/permission_groups"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "Account%20Settings%20Write"
+                k: "query"
+                n: "name"
+                or: "name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "com.cloudflare.api.account.zone"
+                k: "query"
+                n: "scope"
+                or: "scope"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/user/tokens/permission_groups"
+          q: {
+            exist: [
+              "name"
+              "scope"
+            ]
+          }
+          s: [
+            {
+              lit: "user"
+            }
+            {
+              lit: "tokens"
+            }
+            {
+              lit: "permission_groups"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.account")]
+  ]
+
+}

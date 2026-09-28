@@ -1,0 +1,27 @@
+# BasicAaaAuditLogsV2OrgHistoryResponseCollectionFlow
+
+main: kit: flow: BasicAaaAuditLogsV2OrgHistoryResponseCollectionFlow:
+{
+  entity: "aaa_audit_logs_v2_org_history_response_collection",
+  kind: "basic",
+  name: "BasicAaaAuditLogsV2OrgHistoryResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        audit_id: "audit01",
+        organization_id: "organization01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "aaa_audit_logs_v2_org_history_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAaaAuditLogsV2OrgHistoryResponseCollectionFlow"
+}

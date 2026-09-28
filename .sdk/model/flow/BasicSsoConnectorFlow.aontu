@@ -1,0 +1,9 @@
+# BasicSsoConnectorFlow
+
+main: kit: flow: BasicSsoConnectorFlow:
+{
+  entity: "sso_connector",
+  kind: "basic",
+  name: "BasicSsoConnectorFlow",
+  "key$": "BasicSsoConnectorFlow"
+}

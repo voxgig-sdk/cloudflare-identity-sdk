@@ -1,0 +1,115 @@
+{
+  "existing": {
+    "organization": {
+      "ORGANIZATION00": {
+        "create_time": "s78",
+        "errors": [],
+        "id": "ORGANIZATION00",
+        "messages": [],
+        "meta": {},
+        "name": "s7d",
+        "parent": {},
+        "profile": {},
+        "result": {},
+        "result_info": {},
+        "status": "s82",
+        "success": false,
+        "member_code": "MEMBER_CODE01"
+      },
+      "ORGANIZATION01": {
+        "create_time": "sf0",
+        "errors": [],
+        "id": "ORGANIZATION01",
+        "messages": [],
+        "meta": {},
+        "name": "sf5",
+        "parent": {},
+        "profile": {},
+        "result": {},
+        "result_info": {},
+        "status": "sfa",
+        "success": false,
+        "member_code": "MEMBER_CODE01"
+      },
+      "ORGANIZATION02": {
+        "create_time": "s168",
+        "errors": [],
+        "id": "ORGANIZATION02",
+        "messages": [],
+        "meta": {},
+        "name": "s16d",
+        "parent": {},
+        "profile": {},
+        "result": {},
+        "result_info": {},
+        "status": "s172",
+        "success": false,
+        "member_code": "MEMBER_CODE01"
+      }
+    }
+  },
+  "new": {
+    "organization": {
+      "organization_ref01": {
+        "create_time": "s1e0",
+        "errors": [],
+        "messages": [],
+        "meta": {},
+        "name": "s1e5",
+        "parent": {},
+        "profile": {},
+        "result": {},
+        "result_info": {},
+        "status": "s1ea",
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "POST /organizations/{organization_id}/members:batchCreate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /organizations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /organizations/{organization_id}/accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /organizations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /organizations/{organization_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /organizations/{organization_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /organizations/{organization_id}/invites/{member_code}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /organizations/{organization_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /organizations/{organization_id}/profile": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

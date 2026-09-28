@@ -1,0 +1,22 @@
+# BasicIamCollectionOauthScopeFlow
+
+main: kit: flow: BasicIamCollectionOauthScopeFlow:
+{
+  entity: "iam_collection_oauth_scope",
+  kind: "basic",
+  name: "BasicIamCollectionOauthScopeFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "iam_collection_oauth_scope_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamCollectionOauthScopeFlow"
+}

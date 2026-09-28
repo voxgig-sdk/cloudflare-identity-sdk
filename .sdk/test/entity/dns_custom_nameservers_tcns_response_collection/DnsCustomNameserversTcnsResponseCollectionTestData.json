@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "dns_custom_nameservers_tcns_response_collection": {
+      "DNS_CUSTOM_NAMESERVERS_TCNS_RESPONSE_COLLECTION00": {
+        "result": [],
+        "tenant_tag": "TENANT_TAG01"
+      },
+      "DNS_CUSTOM_NAMESERVERS_TCNS_RESPONSE_COLLECTION01": {
+        "result": [],
+        "tenant_tag": "TENANT_TAG01"
+      },
+      "DNS_CUSTOM_NAMESERVERS_TCNS_RESPONSE_COLLECTION02": {
+        "result": [],
+        "tenant_tag": "TENANT_TAG01"
+      }
+    }
+  },
+  "new": {
+    "dns_custom_nameservers_tcns_response_collection": {
+      "dns_custom_nameservers_tcns_response_collection_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /tenants/{tenant_tag}/custom_ns": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

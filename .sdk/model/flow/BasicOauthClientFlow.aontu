@@ -1,0 +1,9 @@
+# BasicOauthClientFlow
+
+main: kit: flow: BasicOauthClientFlow:
+{
+  entity: "oauth_client",
+  kind: "basic",
+  name: "BasicOauthClientFlow",
+  "key$": "BasicOauthClientFlow"
+}

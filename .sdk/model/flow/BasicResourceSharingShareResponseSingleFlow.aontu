@@ -1,0 +1,82 @@
+# BasicResourceSharingShareResponseSingleFlow
+
+main: kit: flow: BasicResourceSharingShareResponseSingleFlow:
+{
+  entity: "resource_sharing_share_response_single",
+  kind: "basic",
+  name: "BasicResourceSharingShareResponseSingleFlow",
+  step: [
+    {
+      i: {
+        ref: "resource_sharing_share_response_single_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "resource_sharing_share_response_single_ref01",
+        srcdatavar: "resource_sharing_share_response_single_ref01_data",
+        suffix: "_up0",
+        textfield: "name"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-resource_sharing_share_response_single_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "resource_sharing_share_response_single_ref01",
+        srcdatavar: "resource_sharing_share_response_single_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "resource_sharing_share_response_single01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-resource_sharing_share_response_single_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "resource_sharing_share_response_single_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "resource_sharing_share_response_single01"
+      }
+
+      o: "remove"
+    }
+  ],
+  "key$": "BasicResourceSharingShareResponseSingleFlow"
+}

@@ -1,0 +1,565 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 61
+  metrics: count: path: 75
+  metrics: count: method: 131
+
+  entity: aaa_audit_logs_v2_org_history_response_collection: {
+    path: "/organizations/{organization_id}/logs/audit/{id}/history": {
+      rename: param: "id": *"audit_id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: aaa_audit_logs_v2_org_response_collection: {
+    path: "/organizations/{organization_id}/logs/audit": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: account: {
+    path: "/accounts/{account_id}/organizations": {
+      action: "organization": {}
+      rename: param: "account_id": *"id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: account_resource_group: {
+    path: "/accounts/{account_id}/iam/resource_groups": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/iam/resource_groups/{resource_group_id}": {
+      rename: param: "resource_group_id": *"id"
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: account_user_group: {
+    path: "/accounts/{account_id}/iam/user_groups": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/iam/user_groups/{user_group_id}": {
+      rename: param: "user_group_id": *"id"
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: account_user_group_member: {
+    path: "/accounts/{account_id}/iam/user_groups/{user_group_id}/members": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}": {
+      rename: param: "member_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: begin_verification: {
+    path: "/accounts/{account_id}/sso_connectors/{sso_connector_id}/begin_verification": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: bill_subs_api_client_secret_response_single: {
+    path: "/accounts/{account_id}/client-secret": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: billable_usage_api_v2_usage: {
+    path: "/organizations/{organization_id}/billable/usage": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: dns_custom_nameservers_empty_response_3: {
+    path: "/tenants/{tenant_tag}/custom_ns/{custom_ns_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: dns_custom_nameservers_tcns_response_collection: {
+    path: "/tenants/{tenant_tag}/custom_ns": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: dns_custom_nameservers_tcns_response_single: {
+    path: "/tenants/{tenant_tag}/custom_ns": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: iam_api_response_single_id: {
+    path: "/accounts/{account_id}/oauth_clients/{oauth_client_id}/rotate_secret": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: iam_collection_member_response_with_policy: {
+    path: "/accounts/{account_id}/members": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: iam_collection_oauth_client: {
+    path: "/accounts/{account_id}/oauth_clients": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: iam_collection_oauth_scope: {
+    path: "/oauth/scopes": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: iam_collection_organization: {
+    path: "/user/organizations": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: iam_collection_permission_group: {
+    path: "/accounts/{account_id}/iam/permission_groups": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: iam_collection_role: {
+    path: "/accounts/{account_id}/roles": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: iam_collection_token: {
+    path: "/accounts/{account_id}/tokens": {
+      op: list: method: *GET
+    }
+    path: "/user/tokens": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: iam_oauth_client_rotate_secret: {
+    path: "/accounts/{account_id}/oauth_clients/{oauth_client_id}/rotate_secret": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: iam_permissions_group_response_collection: {
+    path: "/accounts/{account_id}/tokens/permission_groups": {
+      op: list: method: *GET
+    }
+    path: "/user/tokens/permission_groups": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: iam_response_single_value: {
+    path: "/accounts/{account_id}/tokens/{token_id}/value": {
+      op: update: method: *PUT
+    }
+    path: "/user/tokens/{token_id}/value": {
+      op: update: method: *PUT
+    }
+  }
+
+  entity: iam_schemas_collection_invite: {
+    path: "/user/invites": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: iam_single_invite: {
+    path: "/user/invites/{invite_id}": {
+      rename: param: "invite_id": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: iam_single_member_response_with_policy: {
+    path: "/accounts/{account_id}/members": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/members/{member_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: iam_single_membership_response_with_policy: {
+    path: "/memberships": {
+      op: load: method: *GET
+    }
+    path: "/memberships/{membership_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/user/memberships/{membership_id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: iam_single_oauth_client: {
+    path: "/accounts/{account_id}/oauth_clients/{oauth_client_id}": {
+      rename: param: "oauth_client_id": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: iam_single_oauth_client_create: {
+    path: "/accounts/{account_id}/oauth_clients": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: iam_single_organization: {
+    path: "/user/organizations/{organization_id}": {
+      rename: param: "organization_id": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: iam_single_permission_group: {
+    path: "/accounts/{account_id}/iam/permission_groups/{permission_group_id}": {
+      rename: param: "permission_group_id": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: iam_single_role: {
+    path: "/accounts/{account_id}/roles/{role_id}": {
+      rename: param: "role_id": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: iam_single_token: {
+    path: "/accounts/{account_id}/tokens/{token_id}": {
+      rename: param: "token_id": *"id"
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/user/tokens/{token_id}": {
+      rename: param: "token_id": *"id"
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: iam_single_token_create: {
+    path: "/accounts/{account_id}/tokens": {
+      op: create: method: *POST
+    }
+    path: "/user/tokens": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: iam_sso_connector: {
+    path: "/accounts/{account_id}/sso_connectors": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/sso_connectors/{sso_connector_id}": {
+      rename: param: "sso_connector_id": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: iam_sso_connector_collection: {
+    path: "/accounts/{account_id}/sso_connectors": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: iam_token_verify_response_single_segment: {
+    path: "/accounts/{account_id}/tokens/verify": {
+      op: load: method: *GET
+    }
+    path: "/user/tokens/verify": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: member: {
+    path: "/accounts/{account_id}/members/{member_id}": {
+      rename: param: "member_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: oauth_client: {
+    path: "/accounts/{account_id}/oauth_clients/{oauth_client_id}": {
+      rename: param: "oauth_client_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: organization: {
+    path: "/organizations": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/organizations/{organization_id}": {
+      rename: param: "organization_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/organizations/{organization_id}/accounts": {
+      action: "account": {}
+      rename: param: "organization_id": *"id"
+      op: list: method: *GET
+    }
+    path: "/organizations/{organization_id}/invites/{member_code}": {
+      rename: param: "organization_id": *"id"
+      op: update: method: *PUT
+    }
+    path: "/organizations/{organization_id}/members:batchCreate": {
+      action: "membersbatch_create": {}
+      rename: param: "organization_id": *"id"
+      op: create: method: *POST
+    }
+    path: "/organizations/{organization_id}/profile": {
+      action: "profile": {}
+      rename: param: "organization_id": *"id"
+      op: update: method: *PUT
+    }
+  }
+
+  entity: organization_member: {
+    path: "/organizations/{organization_id}/members": {
+      rename: param: "organization_id": *"id"
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/organizations/{organization_id}/members/{member_id}": {
+      rename: param: "member_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: organizations_api_profile: {
+    path: "/organizations/{organization_id}/profile": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: resource: {
+    path: "/accounts/{account_id}/shares/{share_id}/resources": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}": {
+      rename: param: "share_resource_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: resource_group: {
+    path: "/accounts/{account_id}/iam/resource_groups/{resource_group_id}": {
+      rename: param: "resource_group_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: resource_sharing: {
+    path: "/accounts/{account_id}/shares/{share_id}/excluded-recipients": {
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/shares/{share_id}/recipients": {
+      op: update: method: *PUT
+    }
+  }
+
+  entity: resource_sharing_share_excluded_recipient_response_collection: {
+    path: "/accounts/{account_id}/shares/{share_id}/excluded-recipients": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: resource_sharing_share_excluded_recipient_response_single: {
+    path: "/accounts/{account_id}/shares/{share_id}/excluded-recipients": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/shares/{share_id}/excluded-recipients/{excluded_recipient_id}": {
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: resource_sharing_share_recipient_response_collection: {
+    path: "/accounts/{account_id}/shares/{share_id}/recipients": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: resource_sharing_share_recipient_response_single: {
+    path: "/accounts/{account_id}/shares/{share_id}/recipients": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}": {
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: resource_sharing_share_response_collection: {
+    path: "/accounts/{account_id}/shares": {
+      op: list: method: *GET
+    }
+    path: "/organizations/{organization_id}/shares": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: resource_sharing_share_response_single: {
+    path: "/accounts/{account_id}/shares": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/shares/{share_id}": {
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: scim_discovery: {
+    path: "/accounts/{account_id}/scim/v2/ResourceTypes": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/scim/v2/ResourceTypes/{resource_type_id}": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/scim/v2/Schemas": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/scim/v2/Schemas/{schema_id}": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/scim/v2/ServiceProviderConfig": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: scim_group: {
+    path: "/accounts/{account_id}/scim/v2/Groups": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/scim/v2/Groups/{group_id}": {
+      rename: param: "group_id": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: scim_user: {
+    path: "/accounts/{account_id}/scim/v2/Users": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/scim/v2/Users/{user_id}": {
+      rename: param: "user_id": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: sso_connector: {
+    path: "/accounts/{account_id}/sso_connectors/{sso_connector_id}": {
+      rename: param: "sso_connector_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: tenant: {
+    path: "/tenants/{tenant_id}": {
+      rename: param: "tenant_id": *"id"
+      op: load: method: *GET
+    }
+    path: "/tenants/{tenant_id}/account_types": {
+      action: "account_type": {}
+      rename: param: "tenant_id": *"id"
+      op: list: method: *GET
+    }
+    path: "/tenants/{tenant_id}/accounts": {
+      action: "account": {}
+      rename: param: "tenant_id": *"id"
+      op: list: method: *GET
+    }
+    path: "/tenants/{tenant_id}/entitlements": {
+      action: "entitlement": {}
+      rename: param: "tenant_id": *"id"
+      op: list: method: *GET
+    }
+    path: "/tenants/{tenant_id}/memberships": {
+      action: "membership": {}
+      rename: param: "tenant_id": *"id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: token: {
+    path: "/accounts/{account_id}/tokens/{token_id}": {
+      rename: param: "token_id": *"id"
+      op: remove: method: *DELETE
+    }
+    path: "/user/tokens/{token_id}": {
+      rename: param: "token_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: user: {
+    path: "/user/tenants": {
+      action: "tenant": {}
+      op: list: method: *GET
+    }
+  }
+
+  entity: user_group: {
+    path: "/accounts/{account_id}/iam/user_groups/{user_group_id}": {
+      rename: param: "user_group_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: users_account_membership: {
+    path: "/memberships/{membership_id}": {
+      rename: param: "membership_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: users_organization: {
+    path: "/user/organizations/{organization_id}": {
+      rename: param: "organization_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+}

@@ -1,0 +1,136 @@
+# Entity: resource_sharing
+
+main: kit: entity: resource_sharing: {
+
+  alias: field: {}
+
+  name: "resource_sharing"
+  op: {
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/shares/{share_id}/excluded-recipients"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "3fd85f74b32742f1bff64a85009dda07"
+                k: "param"
+                n: "share_id"
+                or: "share_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/shares/{share_id}/excluded-recipients"
+          q: {
+            exist: [
+              "account_id"
+              "share_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "shares"
+            }
+            {
+              var: "share_id"
+            }
+            {
+              lit: "excluded-recipients"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/shares/{share_id}/recipients"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "3fd85f74b32742f1bff64a85009dda07"
+                k: "param"
+                n: "share_id"
+                or: "share_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/shares/{share_id}/recipients"
+          q: {
+            exist: [
+              "account_id"
+              "share_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "shares"
+            }
+            {
+              var: "share_id"
+            }
+            {
+              lit: "recipients"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.account")]
+  ]
+
+}

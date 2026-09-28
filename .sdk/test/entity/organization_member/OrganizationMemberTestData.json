@@ -1,0 +1,70 @@
+{
+  "existing": {
+    "organization_member": {
+      "ORGANIZATION_MEMBER00": {
+        "errors": [],
+        "id": "ORGANIZATION_MEMBER00",
+        "member": {},
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": true,
+        "organization_id": "ORGANIZATION01"
+      },
+      "ORGANIZATION_MEMBER01": {
+        "errors": [],
+        "id": "ORGANIZATION_MEMBER01",
+        "member": {},
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": true,
+        "organization_id": "ORGANIZATION01"
+      },
+      "ORGANIZATION_MEMBER02": {
+        "errors": [],
+        "id": "ORGANIZATION_MEMBER02",
+        "member": {},
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": true,
+        "organization_id": "ORGANIZATION01"
+      }
+    }
+  },
+  "new": {
+    "organization_member": {
+      "organization_member_ref01": {
+        "errors": [],
+        "member": {},
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "POST /organizations/{organization_id}/members": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /organizations/{organization_id}/members": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /organizations/{organization_id}/members/{member_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /organizations/{organization_id}/members/{member_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

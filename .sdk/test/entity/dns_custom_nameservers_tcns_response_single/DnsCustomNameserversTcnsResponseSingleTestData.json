@@ -1,0 +1,39 @@
+{
+  "existing": {
+    "dns_custom_nameservers_tcns_response_single": {
+      "DNS_CUSTOM_NAMESERVERS_TCNS_RESPONSE_SINGLE00": {
+        "ns_name": "s14",
+        "ns_set": 21,
+        "tenant_tag": "TENANT_TAG01",
+        "id": "DNS_CUSTOM_NAMESERVERS_TCNS_RESPONSE_SINGLE00"
+      },
+      "DNS_CUSTOM_NAMESERVERS_TCNS_RESPONSE_SINGLE01": {
+        "ns_name": "s28",
+        "ns_set": 41,
+        "tenant_tag": "TENANT_TAG01",
+        "id": "DNS_CUSTOM_NAMESERVERS_TCNS_RESPONSE_SINGLE01"
+      },
+      "DNS_CUSTOM_NAMESERVERS_TCNS_RESPONSE_SINGLE02": {
+        "ns_name": "s3c",
+        "ns_set": 61,
+        "tenant_tag": "TENANT_TAG01",
+        "id": "DNS_CUSTOM_NAMESERVERS_TCNS_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "dns_custom_nameservers_tcns_response_single": {
+      "dns_custom_nameservers_tcns_response_single_ref01": {
+        "ns_name": "s50",
+        "ns_set": 81
+      }
+    }
+  },
+  "requests": {
+    "POST /tenants/{tenant_tag}/custom_ns": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

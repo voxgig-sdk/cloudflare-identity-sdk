@@ -1,0 +1,26 @@
+# BasicIamCollectionRoleFlow
+
+main: kit: flow: BasicIamCollectionRoleFlow:
+{
+  entity: "iam_collection_role",
+  kind: "basic",
+  name: "BasicIamCollectionRoleFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "iam_collection_role_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamCollectionRoleFlow"
+}

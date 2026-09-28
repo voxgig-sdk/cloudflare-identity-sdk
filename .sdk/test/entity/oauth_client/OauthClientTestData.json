@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "oauth_client": {
+      "OAUTH_CLIENT00": {
+        "id": "OAUTH_CLIENT00",
+        "account_id": "ACCOUNT01"
+      },
+      "OAUTH_CLIENT01": {
+        "id": "OAUTH_CLIENT01",
+        "account_id": "ACCOUNT01"
+      },
+      "OAUTH_CLIENT02": {
+        "id": "OAUTH_CLIENT02",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "oauth_client": {
+      "oauth_client_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/oauth_clients/{oauth_client_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "iam_collection_permission_group": {
+      "IAM_COLLECTION_PERMISSION_GROUP00": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_COLLECTION_PERMISSION_GROUP01": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_COLLECTION_PERMISSION_GROUP02": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "iam_collection_permission_group": {
+      "iam_collection_permission_group_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/iam/permission_groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

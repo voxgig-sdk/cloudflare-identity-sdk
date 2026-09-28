@@ -1,0 +1,22 @@
+# BasicDnsCustomNameserversTcnsResponseSingleFlow
+
+main: kit: flow: BasicDnsCustomNameserversTcnsResponseSingleFlow:
+{
+  entity: "dns_custom_nameservers_tcns_response_single",
+  kind: "basic",
+  name: "BasicDnsCustomNameserversTcnsResponseSingleFlow",
+  step: [
+    {
+      i: {
+        ref: "dns_custom_nameservers_tcns_response_single_ref01"
+      }
+
+      m: {
+        tenant_tag: "tenant_tag01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicDnsCustomNameserversTcnsResponseSingleFlow"
+}

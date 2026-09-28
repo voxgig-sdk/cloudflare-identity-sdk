@@ -1,0 +1,1345 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ScimUser | Cloudflare Identity &amp; Administration</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Identity &amp; Administration<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-identity-sdk">voxgig-sdk/cloudflare-identity-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Identity &amp; Administration</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/aaa_audit_logs_v2_org_history_response_collection.html">AaaAuditLogsV2OrgHistoryResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_org_response_collection.html">AaaAuditLogsV2OrgResponseCollection</a>
+<a href="../api/account.html">Account</a>
+<a href="../api/account_resource_group.html">AccountResourceGroup</a>
+<a href="../api/account_user_group.html">AccountUserGroup</a>
+<a href="../api/account_user_group_member.html">AccountUserGroupMember</a>
+<a href="../api/begin_verification.html">BeginVerification</a>
+<a href="../api/bill_subs_api_client_secret_response_single.html">BillSubsApiClientSecretResponseSingle</a>
+<a href="../api/billable_usage_api_v2_usage.html">BillableUsageApiV2Usage</a>
+<a href="../api/dns_custom_nameservers_empty_response_3.html">DnsCustomNameserversEmptyResponse3</a>
+<a href="../api/dns_custom_nameservers_tcns_response_collection.html">DnsCustomNameserversTcnsResponseCollection</a>
+<a href="../api/dns_custom_nameservers_tcns_response_single.html">DnsCustomNameserversTcnsResponseSingle</a>
+<a href="../api/iam_api_response_single_id.html">IamApiResponseSingleId</a>
+<a href="../api/iam_collection_member_response_with_policy.html">IamCollectionMemberResponseWithPolicy</a>
+<a href="../api/iam_collection_oauth_client.html">IamCollectionOauthClient</a>
+<a href="../api/iam_collection_oauth_scope.html">IamCollectionOauthScope</a>
+<a href="../api/iam_collection_organization.html">IamCollectionOrganization</a>
+<a href="../api/iam_collection_permission_group.html">IamCollectionPermissionGroup</a>
+<a href="../api/iam_collection_role.html">IamCollectionRole</a>
+<a href="../api/iam_collection_token.html">IamCollectionToken</a>
+<a href="../api/iam_oauth_client_rotate_secret.html">IamOauthClientRotateSecret</a>
+<a href="../api/iam_permissions_group_response_collection.html">IamPermissionsGroupResponseCollection</a>
+<a href="../api/iam_response_single_value.html">IamResponseSingleValue</a>
+<a href="../api/iam_schemas_collection_invite.html">IamSchemasCollectionInvite</a>
+<a href="../api/iam_single_invite.html">IamSingleInvite</a>
+<a href="../api/iam_single_member_response_with_policy.html">IamSingleMemberResponseWithPolicy</a>
+<a href="../api/iam_single_membership_response_with_policy.html">IamSingleMembershipResponseWithPolicy</a>
+<a href="../api/iam_single_oauth_client.html">IamSingleOauthClient</a>
+<a href="../api/iam_single_oauth_client_create.html">IamSingleOauthClientCreate</a>
+<a href="../api/iam_single_organization.html">IamSingleOrganization</a>
+<a href="../api/iam_single_permission_group.html">IamSinglePermissionGroup</a>
+<a href="../api/iam_single_role.html">IamSingleRole</a>
+<a href="../api/iam_single_token.html">IamSingleToken</a>
+<a href="../api/iam_single_token_create.html">IamSingleTokenCreate</a>
+<a href="../api/iam_sso_connector.html">IamSsoConnector</a>
+<a href="../api/iam_sso_connector_collection.html">IamSsoConnectorCollection</a>
+<a href="../api/iam_token_verify_response_single_segment.html">IamTokenVerifyResponseSingleSegment</a>
+<a href="../api/member.html">Member</a>
+<a href="../api/oauth_client.html">OauthClient</a>
+<a href="../api/organization.html">Organization</a>
+<a href="../api/organization_member.html">OrganizationMember</a>
+<a href="../api/organizations_api_profile.html">OrganizationsApiProfile</a>
+<a href="../api/resource.html">Resource</a>
+<a href="../api/resource_group.html">ResourceGroup</a>
+<a href="../api/resource_sharing.html">ResourceSharing</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_collection.html">ResourceSharingShareExcludedRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_single.html">ResourceSharingShareExcludedRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_recipient_response_collection.html">ResourceSharingShareRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_recipient_response_single.html">ResourceSharingShareRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_response_collection.html">ResourceSharingShareResponseCollection</a>
+<a href="../api/resource_sharing_share_response_single.html">ResourceSharingShareResponseSingle</a>
+<a href="../api/scim_discovery.html">ScimDiscovery</a>
+<a href="../api/scim_group.html">ScimGroup</a>
+<a aria-current="page" href="../api/scim_user.html">ScimUser</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idscimv2users">POST /accounts/{account_id}/scim/v2/Users</a>
+<a class="nav-section" href="#get-accountsaccount_idscimv2users">GET /accounts/{account_id}/scim/v2/Users</a>
+<a class="nav-section" href="#get-accountsaccount_idscimv2usersuser_id">GET /accounts/{account_id}/scim/v2/Users/{user_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idscimv2usersuser_id">PATCH /accounts/{account_id}/scim/v2/Users/{user_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idscimv2usersuser_id">DELETE /accounts/{account_id}/scim/v2/Users/{user_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idscimv2usersuser_id">PUT /accounts/{account_id}/scim/v2/Users/{user_id}</a></div>
+<a href="../api/sso_connector.html">SsoConnector</a>
+<a href="../api/tenant.html">Tenant</a>
+<a href="../api/token.html">Token</a>
+<a href="../api/user.html">User</a>
+<a href="../api/user_group.html">UserGroup</a>
+<a href="../api/users_account_membership.html">UsersAccountMembership</a>
+<a href="../api/users_organization.html">UsersOrganization</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="scimuser">ScimUser</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idscimv2users"><code>/accounts/{account_id}/scim/v2/Users</code></a></td>
+<td><code>create</code></td>
+<td>Create SCIM User response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idscimv2users"><code>/accounts/{account_id}/scim/v2/Users</code></a></td>
+<td><code>load</code></td>
+<td>List SCIM Users response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idscimv2usersuser_id"><code>/accounts/{account_id}/scim/v2/Users/{user_id}</code></a></td>
+<td><code>load</code></td>
+<td>Get SCIM User response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idscimv2usersuser_id"><code>/accounts/{account_id}/scim/v2/Users/{user_id}</code></a></td>
+<td><code>patch</code></td>
+<td>Patch SCIM User response</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idscimv2usersuser_id"><code>/accounts/{account_id}/scim/v2/Users/{user_id}</code></a></td>
+<td><code>remove</code></td>
+<td>SCIM User deprovisioned</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idscimv2usersuser_id"><code>/accounts/{account_id}/scim/v2/Users/{user_id}</code></a></td>
+<td><code>update</code></td>
+<td>Replace SCIM User response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">scim_user, err := client.ScimUser(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(scim_user)
+created, err := client.ScimUser(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.ScimUser(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.ScimUser(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local scim_user, err = client:ScimUser():load({ account_id = &quot;example&quot; })
+local created, err = client:ScimUser():create({ account_id = &quot;example&quot; })
+local updated, err = client:ScimUser():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot; })
+local removed, err = client:ScimUser():remove({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$scim_user = $client-&gt;ScimUser()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;ScimUser()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;ScimUser()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;]);
+$client-&gt;ScimUser()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">scim_user = client.ScimUser().load({&quot;account_id&quot;: &quot;example&quot;})
+created = client.ScimUser().create({ &quot;account_id&quot;: &quot;example&quot; })
+updated = client.ScimUser().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;})
+client.ScimUser().remove({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">scim_user = client.ScimUser.load({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+created = client.ScimUser.create({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+updated = client.ScimUser.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot; })
+client.ScimUser.remove({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const scim_user = await client.ScimUser().load({ account_id: &quot;example&quot; })
+const created = await client.ScimUser().create({ account_id: &quot;example&quot; })
+const updated = await client.ScimUser().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot; })
+await client.ScimUser().remove({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idscimv2users" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/scim/v2/Users</h3>
+<p>Operation ID: <code>scim-users-create</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>A Boolean value indicating the user's administrative status. Must be <code>true</code> for user creation.</td>
+</tr>
+<tr>
+<td><code>displayName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The name of the user, suitable for display to end-users. If not explicitly set, falls back to the formatted name or userName.</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Email addresses for the user. The primary email must match <code>userName</code>.</td>
+</tr>
+<tr>
+<td><code>emails[].primary</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>A Boolean value indicating the preferred email address.</td>
+</tr>
+<tr>
+<td><code>emails[].type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A label indicating the attribute's function, for example, &quot;work&quot; or &quot;home&quot;.</td>
+</tr>
+<tr>
+<td><code>emails[].value</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>The email address value.</td>
+</tr>
+<tr>
+<td><code>externalId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An identifier for the user as defined by the provisioning client (IdP). This value is stored and returned but not interpreted by Cloudflare.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The components of the user's real name.</td>
+</tr>
+<tr>
+<td><code>name.familyName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The family name (last name) of the user.</td>
+</tr>
+<tr>
+<td><code>name.formatted</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The full name, including all middle names, titles, and suffixes as appropriate, formatted for display.</td>
+</tr>
+<tr>
+<td><code>name.givenName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The given name (first name) of the user.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td>Must contain <code>urn:ietf:params:scim:schemas:core:2.0:User</code>.</td>
+</tr>
+<tr>
+<td><code>userName</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>Unique identifier for the user, equal to the user's email address.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="201-create-scim-user-response" class="status" data-status="2xx">201: Create SCIM User response</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>A Boolean value indicating the user's administrative status. Set to <code>false</code> to deprovision the user, removing their membership from the account.</td>
+</tr>
+<tr>
+<td><code>displayName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The display name shown for the user. Falls back to formatted name or userName if not set.</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Always contains a single primary work email matching <code>userName</code>.</td>
+</tr>
+<tr>
+<td><code>emails[].primary</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>A Boolean value indicating the preferred email address.</td>
+</tr>
+<tr>
+<td><code>emails[].type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A label indicating the attribute's function, for example, &quot;work&quot; or &quot;home&quot;.</td>
+</tr>
+<tr>
+<td><code>emails[].value</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>The email address value.</td>
+</tr>
+<tr>
+<td><code>externalId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An identifier for the user as defined by the provisioning client (IdP). This value is stored and returned but not interpreted by Cloudflare.</td>
+</tr>
+<tr>
+<td><code>groups</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>A list of group identifiers to which the user belongs. Includes both system group tags (prefixed <code>cloudflare-v1-</code>) and custom user group tags.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the user, assigned by Cloudflare (user tag).</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Resource metadata for a SCIM User.</td>
+</tr>
+<tr>
+<td><code>meta.resourceType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The name of the resource type.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The components of the user's real name.</td>
+</tr>
+<tr>
+<td><code>name.familyName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The family name (last name) of the user.</td>
+</tr>
+<tr>
+<td><code>name.formatted</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The full name, including all middle names, titles, and suffixes as appropriate, formatted for display.</td>
+</tr>
+<tr>
+<td><code>name.givenName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The given name (first name) of the user.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td>Must contain <code>urn:ietf:params:scim:schemas:core:2.0:User</code>.</td>
+</tr>
+<tr>
+<td><code>userName</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>Unique identifier for the user, equal to the user's email address.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-create-scim-user-response-failure">4XX: Create SCIM User response failure</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A human-readable message describing the error.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scimType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A SCIM detail error keyword (RFC 7644 Section 3.12). Only present for specific error conditions (for example <code>uniqueness</code> for duplicate member).</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The HTTP status code as a string.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idscimv2users" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/scim/v2/Users</h3>
+<p>Operation ID: <code>scim-users-list</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>startIndex</code> | <code>query</code> | <code>integer</code> | No |  |
+| <code>count</code> | <code>query</code> | <code>integer</code> | No |  |
+| <code>filter</code> | <code>query</code> | <code>string</code> | No |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-list-scim-users-response" class="status" data-status="2xx">200: List SCIM Users response</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Resources</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Resources[].active</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>A Boolean value indicating the user's administrative status. Set to <code>false</code> to deprovision the user, removing their membership from the account.</td>
+</tr>
+<tr>
+<td><code>Resources[].displayName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The display name shown for the user. Falls back to formatted name or userName if not set.</td>
+</tr>
+<tr>
+<td><code>Resources[].emails</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Always contains a single primary work email matching <code>userName</code>.</td>
+</tr>
+<tr>
+<td><code>Resources[].emails[].primary</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>A Boolean value indicating the preferred email address.</td>
+</tr>
+<tr>
+<td><code>Resources[].emails[].type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A label indicating the attribute's function, for example, &quot;work&quot; or &quot;home&quot;.</td>
+</tr>
+<tr>
+<td><code>Resources[].emails[].value</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>The email address value.</td>
+</tr>
+<tr>
+<td><code>Resources[].externalId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An identifier for the user as defined by the provisioning client (IdP). This value is stored and returned but not interpreted by Cloudflare.</td>
+</tr>
+<tr>
+<td><code>Resources[].groups</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>A list of group identifiers to which the user belongs. Includes both system group tags (prefixed <code>cloudflare-v1-</code>) and custom user group tags.</td>
+</tr>
+<tr>
+<td><code>Resources[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the user, assigned by Cloudflare (user tag).</td>
+</tr>
+<tr>
+<td><code>Resources[].meta</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Resource metadata for a SCIM User.</td>
+</tr>
+<tr>
+<td><code>Resources[].meta.resourceType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The name of the resource type.</td>
+</tr>
+<tr>
+<td><code>Resources[].name</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The components of the user's real name.</td>
+</tr>
+<tr>
+<td><code>Resources[].name.familyName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The family name (last name) of the user.</td>
+</tr>
+<tr>
+<td><code>Resources[].name.formatted</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The full name, including all middle names, titles, and suffixes as appropriate, formatted for display.</td>
+</tr>
+<tr>
+<td><code>Resources[].name.givenName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The given name (first name) of the user.</td>
+</tr>
+<tr>
+<td><code>Resources[].schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td>Must contain <code>urn:ietf:params:scim:schemas:core:2.0:User</code>.</td>
+</tr>
+<tr>
+<td><code>Resources[].userName</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>Unique identifier for the user, equal to the user's email address.</td>
+</tr>
+<tr>
+<td><code>itemsPerPage</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>The number of resources returned in this page.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>startIndex</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>The 1-based index of the first result in this set.</td>
+</tr>
+<tr>
+<td><code>totalResults</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The total number of results matching the query.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-list-scim-users-response-failure">4XX: List SCIM Users response failure</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A human-readable message describing the error.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scimType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A SCIM detail error keyword (RFC 7644 Section 3.12). Only present for specific error conditions (for example <code>uniqueness</code> for duplicate member).</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The HTTP status code as a string.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idscimv2usersuser_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/scim/v2/Users/{user_id}</h3>
+<p>Operation ID: <code>scim-users-get</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>user_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-get-scim-user-response" class="status" data-status="2xx">200: Get SCIM User response</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>A Boolean value indicating the user's administrative status. Set to <code>false</code> to deprovision the user, removing their membership from the account.</td>
+</tr>
+<tr>
+<td><code>displayName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The display name shown for the user. Falls back to formatted name or userName if not set.</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Always contains a single primary work email matching <code>userName</code>.</td>
+</tr>
+<tr>
+<td><code>emails[].primary</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>A Boolean value indicating the preferred email address.</td>
+</tr>
+<tr>
+<td><code>emails[].type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A label indicating the attribute's function, for example, &quot;work&quot; or &quot;home&quot;.</td>
+</tr>
+<tr>
+<td><code>emails[].value</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>The email address value.</td>
+</tr>
+<tr>
+<td><code>externalId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An identifier for the user as defined by the provisioning client (IdP). This value is stored and returned but not interpreted by Cloudflare.</td>
+</tr>
+<tr>
+<td><code>groups</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>A list of group identifiers to which the user belongs. Includes both system group tags (prefixed <code>cloudflare-v1-</code>) and custom user group tags.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the user, assigned by Cloudflare (user tag).</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Resource metadata for a SCIM User.</td>
+</tr>
+<tr>
+<td><code>meta.resourceType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The name of the resource type.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The components of the user's real name.</td>
+</tr>
+<tr>
+<td><code>name.familyName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The family name (last name) of the user.</td>
+</tr>
+<tr>
+<td><code>name.formatted</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The full name, including all middle names, titles, and suffixes as appropriate, formatted for display.</td>
+</tr>
+<tr>
+<td><code>name.givenName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The given name (first name) of the user.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td>Must contain <code>urn:ietf:params:scim:schemas:core:2.0:User</code>.</td>
+</tr>
+<tr>
+<td><code>userName</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>Unique identifier for the user, equal to the user's email address.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-get-scim-user-response-failure">4XX: Get SCIM User response failure</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A human-readable message describing the error.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scimType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A SCIM detail error keyword (RFC 7644 Section 3.12). Only present for specific error conditions (for example <code>uniqueness</code> for duplicate member).</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The HTTP status code as a string.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="patch">patch</h2>
+<h3 id="patch-accountsaccount_idscimv2usersuser_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/scim/v2/Users/{user_id}</h3>
+<p>Operation ID: <code>scim-users-patch</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>user_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Operations</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>List of PATCH operations to apply.</td>
+</tr>
+<tr>
+<td><code>Operations[].op</code></td>
+<td><code>enum: add, remove, replace</code></td>
+<td>Yes</td>
+<td>The operation to perform. Only <code>replace</code> is currently supported; <code>add</code> and <code>remove</code> are accepted without error but have no effect. Matched case-insensitively.</td>
+</tr>
+<tr>
+<td><code>Operations[].path</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Attribute path targeted by this operation. When absent, <code>value</code> must be a singular complex attribute.</td>
+</tr>
+<tr>
+<td><code>Operations[].value</code></td>
+<td><code>any</code></td>
+<td>No</td>
+<td>The value(s) for the operation. For <code>replace</code> without a path, this should be an object of attribute name/value pairs. For member path operations, this should be an array of member value objects.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td>Must contain <code>urn:ietf:params:scim:api:messages:2.0:PatchOp</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-patch-scim-user-response" class="status" data-status="2xx">200: Patch SCIM User response</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>A Boolean value indicating the user's administrative status. Set to <code>false</code> to deprovision the user, removing their membership from the account.</td>
+</tr>
+<tr>
+<td><code>displayName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The display name shown for the user. Falls back to formatted name or userName if not set.</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Always contains a single primary work email matching <code>userName</code>.</td>
+</tr>
+<tr>
+<td><code>emails[].primary</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>A Boolean value indicating the preferred email address.</td>
+</tr>
+<tr>
+<td><code>emails[].type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A label indicating the attribute's function, for example, &quot;work&quot; or &quot;home&quot;.</td>
+</tr>
+<tr>
+<td><code>emails[].value</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>The email address value.</td>
+</tr>
+<tr>
+<td><code>externalId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An identifier for the user as defined by the provisioning client (IdP). This value is stored and returned but not interpreted by Cloudflare.</td>
+</tr>
+<tr>
+<td><code>groups</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>A list of group identifiers to which the user belongs. Includes both system group tags (prefixed <code>cloudflare-v1-</code>) and custom user group tags.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the user, assigned by Cloudflare (user tag).</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Resource metadata for a SCIM User.</td>
+</tr>
+<tr>
+<td><code>meta.resourceType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The name of the resource type.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The components of the user's real name.</td>
+</tr>
+<tr>
+<td><code>name.familyName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The family name (last name) of the user.</td>
+</tr>
+<tr>
+<td><code>name.formatted</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The full name, including all middle names, titles, and suffixes as appropriate, formatted for display.</td>
+</tr>
+<tr>
+<td><code>name.givenName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The given name (first name) of the user.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td>Must contain <code>urn:ietf:params:scim:schemas:core:2.0:User</code>.</td>
+</tr>
+<tr>
+<td><code>userName</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>Unique identifier for the user, equal to the user's email address.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-patch-scim-user-response-failure">4XX: Patch SCIM User response failure</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A human-readable message describing the error.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scimType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A SCIM detail error keyword (RFC 7644 Section 3.12). Only present for specific error conditions (for example <code>uniqueness</code> for duplicate member).</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The HTTP status code as a string.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_idscimv2usersuser_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/scim/v2/Users/{user_id}</h3>
+<p>Operation ID: <code>scim-users-delete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>user_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="204-scim-user-deprovisioned" class="status" data-status="2xx">204: SCIM User deprovisioned</h5>
+<h5 id="4xx-delete-scim-user-response-failure">4XX: Delete SCIM User response failure</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A human-readable message describing the error.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scimType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A SCIM detail error keyword (RFC 7644 Section 3.12). Only present for specific error conditions (for example <code>uniqueness</code> for duplicate member).</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The HTTP status code as a string.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idscimv2usersuser_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/scim/v2/Users/{user_id}</h3>
+<p>Operation ID: <code>scim-users-put</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>user_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>A Boolean value indicating the user's administrative status. Optional; if omitted, the current value is preserved. Set to <code>false</code> to deprovision the user, removing their membership from the account.</td>
+</tr>
+<tr>
+<td><code>displayName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The name of the user, suitable for display to end-users. If not explicitly set, falls back to the formatted name or userName.</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Email addresses for the user. If a primary email is provided, it must match <code>userName</code>.</td>
+</tr>
+<tr>
+<td><code>emails[].primary</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>A Boolean value indicating the preferred email address.</td>
+</tr>
+<tr>
+<td><code>emails[].type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A label indicating the attribute's function, for example, &quot;work&quot; or &quot;home&quot;.</td>
+</tr>
+<tr>
+<td><code>emails[].value</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>The email address value.</td>
+</tr>
+<tr>
+<td><code>externalId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An identifier for the user as defined by the provisioning client (IdP). This value is stored and returned but not interpreted by Cloudflare.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The components of the user's real name.</td>
+</tr>
+<tr>
+<td><code>name.familyName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The family name (last name) of the user.</td>
+</tr>
+<tr>
+<td><code>name.formatted</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The full name, including all middle names, titles, and suffixes as appropriate, formatted for display.</td>
+</tr>
+<tr>
+<td><code>name.givenName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The given name (first name) of the user.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td>Must contain <code>urn:ietf:params:scim:schemas:core:2.0:User</code>.</td>
+</tr>
+<tr>
+<td><code>userName</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>Unique identifier for the user, equal to the user's email address.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-replace-scim-user-response" class="status" data-status="2xx">200: Replace SCIM User response</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>A Boolean value indicating the user's administrative status. Set to <code>false</code> to deprovision the user, removing their membership from the account.</td>
+</tr>
+<tr>
+<td><code>displayName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The display name shown for the user. Falls back to formatted name or userName if not set.</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Always contains a single primary work email matching <code>userName</code>.</td>
+</tr>
+<tr>
+<td><code>emails[].primary</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>A Boolean value indicating the preferred email address.</td>
+</tr>
+<tr>
+<td><code>emails[].type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A label indicating the attribute's function, for example, &quot;work&quot; or &quot;home&quot;.</td>
+</tr>
+<tr>
+<td><code>emails[].value</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>The email address value.</td>
+</tr>
+<tr>
+<td><code>externalId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An identifier for the user as defined by the provisioning client (IdP). This value is stored and returned but not interpreted by Cloudflare.</td>
+</tr>
+<tr>
+<td><code>groups</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>A list of group identifiers to which the user belongs. Includes both system group tags (prefixed <code>cloudflare-v1-</code>) and custom user group tags.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the user, assigned by Cloudflare (user tag).</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Resource metadata for a SCIM User.</td>
+</tr>
+<tr>
+<td><code>meta.resourceType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The name of the resource type.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The components of the user's real name.</td>
+</tr>
+<tr>
+<td><code>name.familyName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The family name (last name) of the user.</td>
+</tr>
+<tr>
+<td><code>name.formatted</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The full name, including all middle names, titles, and suffixes as appropriate, formatted for display.</td>
+</tr>
+<tr>
+<td><code>name.givenName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The given name (first name) of the user.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td>Must contain <code>urn:ietf:params:scim:schemas:core:2.0:User</code>.</td>
+</tr>
+<tr>
+<td><code>userName</code></td>
+<td><code>string (email)</code></td>
+<td>Yes</td>
+<td>Unique identifier for the user, equal to the user's email address.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-replace-scim-user-response-failure">4XX: Replace SCIM User response failure</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A human-readable message describing the error.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scimType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A SCIM detail error keyword (RFC 7644 Section 3.12). Only present for specific error conditions (for example <code>uniqueness</code> for duplicate member).</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The HTTP status code as a string.</td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

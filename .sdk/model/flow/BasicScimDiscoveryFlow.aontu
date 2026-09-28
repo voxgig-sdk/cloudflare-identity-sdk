@@ -1,0 +1,32 @@
+# BasicScimDiscoveryFlow
+
+main: kit: flow: BasicScimDiscoveryFlow:
+{
+  entity: "scim_discovery",
+  kind: "basic",
+  name: "BasicScimDiscoveryFlow",
+  step: [
+    {
+      i: {
+        ref: "scim_discovery_ref01",
+        srcdatavar: "scim_discovery_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "scim_discovery01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-scim_discovery_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicScimDiscoveryFlow"
+}

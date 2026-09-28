@@ -1,0 +1,73 @@
+{
+  "existing": {
+    "resource_sharing_share_response_single": {
+      "RESOURCE_SHARING_SHARE_RESPONSE_SINGLE00": {
+        "errors": [],
+        "name": "s3d",
+        "recipients": [],
+        "resources": [],
+        "result": "s40",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "share_id": "SHARE01",
+        "id": "RESOURCE_SHARING_SHARE_RESPONSE_SINGLE00"
+      },
+      "RESOURCE_SHARING_SHARE_RESPONSE_SINGLE01": {
+        "errors": [],
+        "name": "s79",
+        "recipients": [],
+        "resources": [],
+        "result": "s7c",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "share_id": "SHARE01",
+        "id": "RESOURCE_SHARING_SHARE_RESPONSE_SINGLE01"
+      },
+      "RESOURCE_SHARING_SHARE_RESPONSE_SINGLE02": {
+        "errors": [],
+        "name": "sb5",
+        "recipients": [],
+        "resources": [],
+        "result": "sb8",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "share_id": "SHARE01",
+        "id": "RESOURCE_SHARING_SHARE_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "resource_sharing_share_response_single": {
+      "resource_sharing_share_response_single_ref01": {
+        "errors": [],
+        "name": "sf1",
+        "recipients": [],
+        "resources": [],
+        "result": "sf4",
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/shares": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/shares/{share_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/shares/{share_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/shares/{share_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

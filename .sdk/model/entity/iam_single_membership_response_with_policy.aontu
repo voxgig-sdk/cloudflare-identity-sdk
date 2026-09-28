@@ -1,0 +1,245 @@
+# Entity: iam_single_membership_response_with_policy
+
+main: kit: entity: iam_single_membership_response_with_policy: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Whether to accept or reject this account invitation."
+      t: "`$ANY`"
+    }
+  }
+
+  name: "iam_single_membership_response_with_policy"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /memberships"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "Demo Account"
+                k: "query"
+                n: "account_name"
+                or: "account_name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "desc"
+                k: "query"
+                n: "direction"
+                or: "direction"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "Demo Account"
+                k: "query"
+                n: "name"
+                or: "name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "status"
+                k: "query"
+                n: "order"
+                or: "order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: 20
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "accepted"
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/memberships"
+          q: {
+            exist: [
+              "account_name"
+              "direction"
+              "name"
+              "order"
+              "page"
+              "per_page"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "memberships"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /memberships/{membership_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "4536bcfad5faccb111b47003c79917fa"
+                k: "param"
+                n: "membership_id"
+                or: "membership_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/memberships/{membership_id}"
+          q: {
+            exist: [
+              "membership_id"
+            ]
+          }
+          s: [
+            {
+              lit: "memberships"
+            }
+            {
+              var: "membership_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /user/memberships/{membership_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "4536bcfad5faccb111b47003c79917fa"
+                k: "param"
+                n: "membership_id"
+                or: "membership_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/user/memberships/{membership_id}"
+          q: {
+            exist: [
+              "membership_id"
+            ]
+          }
+          s: [
+            {
+              lit: "user"
+            }
+            {
+              lit: "memberships"
+            }
+            {
+              var: "membership_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /memberships/{membership_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "4536bcfad5faccb111b47003c79917fa"
+                k: "param"
+                n: "membership_id"
+                or: "membership_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/memberships/{membership_id}"
+          q: {
+            exist: [
+              "membership_id"
+            ]
+          }
+          s: [
+            {
+              lit: "memberships"
+            }
+            {
+              var: "membership_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

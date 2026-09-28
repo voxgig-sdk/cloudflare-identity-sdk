@@ -1,0 +1,23 @@
+# BasicBeginVerificationFlow
+
+main: kit: flow: BasicBeginVerificationFlow:
+{
+  entity: "begin_verification",
+  kind: "basic",
+  name: "BasicBeginVerificationFlow",
+  step: [
+    {
+      i: {
+        ref: "begin_verification_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        sso_connector_id: "sso_connector01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicBeginVerificationFlow"
+}

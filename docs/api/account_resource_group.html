@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AccountResourceGroup | Cloudflare Identity &amp; Administration</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Identity &amp; Administration<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-identity-sdk">voxgig-sdk/cloudflare-identity-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Identity &amp; Administration</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/aaa_audit_logs_v2_org_history_response_collection.html">AaaAuditLogsV2OrgHistoryResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_org_response_collection.html">AaaAuditLogsV2OrgResponseCollection</a>
+<a href="../api/account.html">Account</a>
+<a aria-current="page" href="../api/account_resource_group.html">AccountResourceGroup</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idiamresource_groups">POST /accounts/{account_id}/iam/resource_groups</a>
+<a class="nav-section" href="#get-accountsaccount_idiamresource_groups">GET /accounts/{account_id}/iam/resource_groups</a>
+<a class="nav-section" href="#get-accountsaccount_idiamresource_groupsresource_group_id">GET /accounts/{account_id}/iam/resource_groups/{resource_group_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idiamresource_groupsresource_group_id">PUT /accounts/{account_id}/iam/resource_groups/{resource_group_id}</a></div>
+<a href="../api/account_user_group.html">AccountUserGroup</a>
+<a href="../api/account_user_group_member.html">AccountUserGroupMember</a>
+<a href="../api/begin_verification.html">BeginVerification</a>
+<a href="../api/bill_subs_api_client_secret_response_single.html">BillSubsApiClientSecretResponseSingle</a>
+<a href="../api/billable_usage_api_v2_usage.html">BillableUsageApiV2Usage</a>
+<a href="../api/dns_custom_nameservers_empty_response_3.html">DnsCustomNameserversEmptyResponse3</a>
+<a href="../api/dns_custom_nameservers_tcns_response_collection.html">DnsCustomNameserversTcnsResponseCollection</a>
+<a href="../api/dns_custom_nameservers_tcns_response_single.html">DnsCustomNameserversTcnsResponseSingle</a>
+<a href="../api/iam_api_response_single_id.html">IamApiResponseSingleId</a>
+<a href="../api/iam_collection_member_response_with_policy.html">IamCollectionMemberResponseWithPolicy</a>
+<a href="../api/iam_collection_oauth_client.html">IamCollectionOauthClient</a>
+<a href="../api/iam_collection_oauth_scope.html">IamCollectionOauthScope</a>
+<a href="../api/iam_collection_organization.html">IamCollectionOrganization</a>
+<a href="../api/iam_collection_permission_group.html">IamCollectionPermissionGroup</a>
+<a href="../api/iam_collection_role.html">IamCollectionRole</a>
+<a href="../api/iam_collection_token.html">IamCollectionToken</a>
+<a href="../api/iam_oauth_client_rotate_secret.html">IamOauthClientRotateSecret</a>
+<a href="../api/iam_permissions_group_response_collection.html">IamPermissionsGroupResponseCollection</a>
+<a href="../api/iam_response_single_value.html">IamResponseSingleValue</a>
+<a href="../api/iam_schemas_collection_invite.html">IamSchemasCollectionInvite</a>
+<a href="../api/iam_single_invite.html">IamSingleInvite</a>
+<a href="../api/iam_single_member_response_with_policy.html">IamSingleMemberResponseWithPolicy</a>
+<a href="../api/iam_single_membership_response_with_policy.html">IamSingleMembershipResponseWithPolicy</a>
+<a href="../api/iam_single_oauth_client.html">IamSingleOauthClient</a>
+<a href="../api/iam_single_oauth_client_create.html">IamSingleOauthClientCreate</a>
+<a href="../api/iam_single_organization.html">IamSingleOrganization</a>
+<a href="../api/iam_single_permission_group.html">IamSinglePermissionGroup</a>
+<a href="../api/iam_single_role.html">IamSingleRole</a>
+<a href="../api/iam_single_token.html">IamSingleToken</a>
+<a href="../api/iam_single_token_create.html">IamSingleTokenCreate</a>
+<a href="../api/iam_sso_connector.html">IamSsoConnector</a>
+<a href="../api/iam_sso_connector_collection.html">IamSsoConnectorCollection</a>
+<a href="../api/iam_token_verify_response_single_segment.html">IamTokenVerifyResponseSingleSegment</a>
+<a href="../api/member.html">Member</a>
+<a href="../api/oauth_client.html">OauthClient</a>
+<a href="../api/organization.html">Organization</a>
+<a href="../api/organization_member.html">OrganizationMember</a>
+<a href="../api/organizations_api_profile.html">OrganizationsApiProfile</a>
+<a href="../api/resource.html">Resource</a>
+<a href="../api/resource_group.html">ResourceGroup</a>
+<a href="../api/resource_sharing.html">ResourceSharing</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_collection.html">ResourceSharingShareExcludedRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_single.html">ResourceSharingShareExcludedRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_recipient_response_collection.html">ResourceSharingShareRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_recipient_response_single.html">ResourceSharingShareRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_response_collection.html">ResourceSharingShareResponseCollection</a>
+<a href="../api/resource_sharing_share_response_single.html">ResourceSharingShareResponseSingle</a>
+<a href="../api/scim_discovery.html">ScimDiscovery</a>
+<a href="../api/scim_group.html">ScimGroup</a>
+<a href="../api/scim_user.html">ScimUser</a>
+<a href="../api/sso_connector.html">SsoConnector</a>
+<a href="../api/tenant.html">Tenant</a>
+<a href="../api/token.html">Token</a>
+<a href="../api/user.html">User</a>
+<a href="../api/user_group.html">UserGroup</a>
+<a href="../api/users_account_membership.html">UsersAccountMembership</a>
+<a href="../api/users_organization.html">UsersOrganization</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="accountresourcegroup">AccountResourceGroup</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idiamresource_groups"><code>/accounts/{account_id}/iam/resource_groups</code></a></td>
+<td><code>create</code></td>
+<td>Add Resource Group response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idiamresource_groups"><code>/accounts/{account_id}/iam/resource_groups</code></a></td>
+<td><code>list</code></td>
+<td>List Resource Groups response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idiamresource_groupsresource_group_id"><code>/accounts/{account_id}/iam/resource_groups/{resource_group_id}</code></a></td>
+<td><code>load</code></td>
+<td>Resource Group Details response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idiamresource_groupsresource_group_id"><code>/accounts/{account_id}/iam/resource_groups/{resource_group_id}</code></a></td>
+<td><code>update</code></td>
+<td>Update Resource Group response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">account_resource_groups, err := client.AccountResourceGroup(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(account_resource_groups)
+account_resource_group, err := client.AccountResourceGroup(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(account_resource_group)
+created, err := client.AccountResourceGroup(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: []any{}, &quot;messages&quot;: []any{}, &quot;name&quot;: &quot;example&quot;, &quot;result&quot;: map[string]any{}, &quot;scope&quot;: map[string]any{}, &quot;success&quot;: true}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.AccountResourceGroup(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: []any{}}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local account_resource_groups, err = client:AccountResourceGroup():list({ account_id = &quot;example&quot; })
+local account_resource_group, err = client:AccountResourceGroup():load({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+local created, err = client:AccountResourceGroup():create({ account_id = &quot;example&quot;, errors = {}, messages = {}, name = &quot;example&quot;, result = {}, scope = {}, success = true })
+local updated, err = client:AccountResourceGroup():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, errors = {} })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$account_resource_groups = $client-&gt;AccountResourceGroup()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$account_resource_group = $client-&gt;AccountResourceGroup()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+$created = $client-&gt;AccountResourceGroup()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; [], &quot;scope&quot; =&gt; [], &quot;success&quot; =&gt; true]);
+$updated = $client-&gt;AccountResourceGroup()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; []]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">account_resource_groups = client.AccountResourceGroup().list({&quot;account_id&quot;: &quot;example&quot;})
+account_resource_group = client.AccountResourceGroup().load({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+created = client.AccountResourceGroup().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: [], &quot;messages&quot;: [], &quot;name&quot;: &quot;example&quot;, &quot;result&quot;: {}, &quot;scope&quot;: {}, &quot;success&quot;: True })
+updated = client.AccountResourceGroup().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: []})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">account_resource_groups = client.AccountResourceGroup.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+account_resource_group = client.AccountResourceGroup.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+created = client.AccountResourceGroup.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; {}, &quot;scope&quot; =&gt; {}, &quot;success&quot; =&gt; true })
+updated = client.AccountResourceGroup.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [] })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const account_resource_groups = await client.AccountResourceGroup().list({ account_id: &quot;example&quot; })
+const account_resource_group = await client.AccountResourceGroup().load({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+const created = await client.AccountResourceGroup().create({ account_id: &quot;example&quot;, errors: [], messages: [], name: &quot;example&quot;, result: {}, scope: {}, success: true })
+const updated = await client.AccountResourceGroup().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, errors: [] })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the resource group</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>A group of scoped resources.</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>A scope is a combination of scope objects which provides additional context.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idiamresource_groups" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/iam/resource_groups</h3>
+<p>Operation ID: <code>account-resource-group-create</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the resource group</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>A scope is a combination of scope objects which provides additional context.</td>
+</tr>
+<tr>
+<td><code>scope.key</code></td>
+<td><code>any</code></td>
+<td>Yes</td>
+<td>This is a combination of pre-defined resource name and identifier (like Account ID etc.)</td>
+</tr>
+<tr>
+<td><code>scope.objects</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>A list of scope objects for additional context. The number of Scope objects should not be zero.</td>
+</tr>
+<tr>
+<td><code>scope.objects[].key</code></td>
+<td><code>any</code></td>
+<td>Yes</td>
+<td>This is a combination of pre-defined resource name and identifier (like Zone ID etc.)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-add-resource-group-response" class="status" data-status="2xx">200: Add Resource Group response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-add-resource-group-response-failure">4XX: Add Resource Group response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idiamresource_groups" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/iam/resource_groups</h3>
+<p>Operation ID: <code>account-resource-group-list</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>id</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>name</code> | <code>query</code> | <code>string</code> | No |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-list-resource-groups-response" class="status" data-status="2xx">200: List Resource Groups response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-list-resource-groups-response-failure">4XX: List Resource Groups response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idiamresource_groupsresource_group_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/iam/resource_groups/{resource_group_id}</h3>
+<p>Operation ID: <code>account-resource-group-details</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>resource_group_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-resource-group-details-response" class="status" data-status="2xx">200: Resource Group Details response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-resource-group-details-response-failure">4XX: Resource Group Details response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idiamresource_groupsresource_group_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/iam/resource_groups/{resource_group_id}</h3>
+<p>Operation ID: <code>account-resource-group-update</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>resource_group_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Name of the resource group</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>A scope is a combination of scope objects which provides additional context.</td>
+</tr>
+<tr>
+<td><code>scope.key</code></td>
+<td><code>any</code></td>
+<td>Yes</td>
+<td>This is a combination of pre-defined resource name and identifier (like Account ID etc.)</td>
+</tr>
+<tr>
+<td><code>scope.objects</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>A list of scope objects for additional context. The number of Scope objects should not be zero.</td>
+</tr>
+<tr>
+<td><code>scope.objects[].key</code></td>
+<td><code>any</code></td>
+<td>Yes</td>
+<td>This is a combination of pre-defined resource name and identifier (like Zone ID etc.)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-update-resource-group-response" class="status" data-status="2xx">200: Update Resource Group response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-update-resource-group-response-failure">4XX: Update Resource Group response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

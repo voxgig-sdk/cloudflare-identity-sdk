@@ -1,0 +1,71 @@
+# Entity: dns_custom_nameservers_tcns_response_collection
+
+main: kit: entity: dns_custom_nameservers_tcns_response_collection: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "dns_custom_nameservers_tcns_response_collection"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /tenants/{tenant_tag}/custom_ns"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "tenant_tag"
+                or: "tenant_tag"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/tenants/{tenant_tag}/custom_ns"
+          q: {
+            exist: [
+              "tenant_tag"
+            ]
+          }
+          s: [
+            {
+              lit: "tenants"
+            }
+            {
+              var: "tenant_tag"
+            }
+            {
+              lit: "custom_ns"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.tenant")]
+  ]
+
+}

@@ -1,0 +1,33 @@
+# BasicIamSinglePermissionGroupFlow
+
+main: kit: flow: BasicIamSinglePermissionGroupFlow:
+{
+  entity: "iam_single_permission_group",
+  kind: "basic",
+  name: "BasicIamSinglePermissionGroupFlow",
+  step: [
+    {
+      i: {
+        ref: "iam_single_permission_group_ref01",
+        srcdatavar: "iam_single_permission_group_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "iam_single_permission_group01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-iam_single_permission_group_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamSinglePermissionGroupFlow"
+}

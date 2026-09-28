@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "iam_token_verify_response_single_segment": {
+      "IAM_TOKEN_VERIFY_RESPONSE_SINGLE_SEGMENT00": {
+        "result": "sa",
+        "account_id": "ACCOUNT01",
+        "id": "IAM_TOKEN_VERIFY_RESPONSE_SINGLE_SEGMENT00"
+      },
+      "IAM_TOKEN_VERIFY_RESPONSE_SINGLE_SEGMENT01": {
+        "result": "s14",
+        "account_id": "ACCOUNT01",
+        "id": "IAM_TOKEN_VERIFY_RESPONSE_SINGLE_SEGMENT01"
+      },
+      "IAM_TOKEN_VERIFY_RESPONSE_SINGLE_SEGMENT02": {
+        "result": "s1e",
+        "account_id": "ACCOUNT01",
+        "id": "IAM_TOKEN_VERIFY_RESPONSE_SINGLE_SEGMENT02"
+      }
+    }
+  },
+  "new": {
+    "iam_token_verify_response_single_segment": {
+      "iam_token_verify_response_single_segment_ref01": {
+        "result": "s28"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/tokens/verify": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /user/tokens/verify": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

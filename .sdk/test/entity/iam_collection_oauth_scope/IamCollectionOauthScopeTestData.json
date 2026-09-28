@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "iam_collection_oauth_scope": {
+      "IAM_COLLECTION_OAUTH_SCOPE00": {
+        "result": []
+      },
+      "IAM_COLLECTION_OAUTH_SCOPE01": {
+        "result": []
+      },
+      "IAM_COLLECTION_OAUTH_SCOPE02": {
+        "result": []
+      }
+    }
+  },
+  "new": {
+    "iam_collection_oauth_scope": {
+      "iam_collection_oauth_scope_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /oauth/scopes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

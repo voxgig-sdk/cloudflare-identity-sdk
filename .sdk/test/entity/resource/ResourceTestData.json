@@ -1,0 +1,82 @@
+{
+  "existing": {
+    "resource": {
+      "RESOURCE00": {
+        "errors": [],
+        "id": "RESOURCE00",
+        "meta": {},
+        "resource_account_id": "RESOURCE_ACCOUNT01",
+        "resource_id": "RESOURCE01",
+        "resource_type": "s55",
+        "result": "s56",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "share_id": "SHARE01"
+      },
+      "RESOURCE01": {
+        "errors": [],
+        "id": "RESOURCE01",
+        "meta": {},
+        "resource_account_id": "RESOURCE_ACCOUNT01",
+        "resource_id": "RESOURCE01",
+        "resource_type": "sa5",
+        "result": "sa6",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "share_id": "SHARE01"
+      },
+      "RESOURCE02": {
+        "errors": [],
+        "id": "RESOURCE02",
+        "meta": {},
+        "resource_account_id": "RESOURCE_ACCOUNT01",
+        "resource_id": "RESOURCE01",
+        "resource_type": "sf5",
+        "result": "sf6",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "share_id": "SHARE01"
+      }
+    }
+  },
+  "new": {
+    "resource": {
+      "resource_ref01": {
+        "errors": [],
+        "meta": {},
+        "resource_account_id": "RESOURCE_ACCOUNT01",
+        "resource_id": "RESOURCE01",
+        "resource_type": "s145",
+        "result": "s146",
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/shares/{share_id}/resources": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/shares/{share_id}/resources": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

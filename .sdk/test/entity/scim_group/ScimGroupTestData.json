@@ -1,0 +1,55 @@
+{
+  "existing": {
+    "scim_group": {
+      "SCIM_GROUP00": {
+        "id": "SCIM_GROUP00",
+        "account_id": "ACCOUNT01"
+      },
+      "SCIM_GROUP01": {
+        "id": "SCIM_GROUP01",
+        "account_id": "ACCOUNT01"
+      },
+      "SCIM_GROUP02": {
+        "id": "SCIM_GROUP02",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "scim_group": {
+      "scim_group_ref01": {}
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/scim/v2/Groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/scim/v2/Groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/scim/v2/Groups/{group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/scim/v2/Groups/{group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/scim/v2/Groups/{group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/scim/v2/Groups/{group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

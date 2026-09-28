@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>OrganizationsApiProfile | Cloudflare Identity &amp; Administration</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Identity &amp; Administration<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-identity-sdk">voxgig-sdk/cloudflare-identity-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Identity &amp; Administration</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/aaa_audit_logs_v2_org_history_response_collection.html">AaaAuditLogsV2OrgHistoryResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_org_response_collection.html">AaaAuditLogsV2OrgResponseCollection</a>
+<a href="../api/account.html">Account</a>
+<a href="../api/account_resource_group.html">AccountResourceGroup</a>
+<a href="../api/account_user_group.html">AccountUserGroup</a>
+<a href="../api/account_user_group_member.html">AccountUserGroupMember</a>
+<a href="../api/begin_verification.html">BeginVerification</a>
+<a href="../api/bill_subs_api_client_secret_response_single.html">BillSubsApiClientSecretResponseSingle</a>
+<a href="../api/billable_usage_api_v2_usage.html">BillableUsageApiV2Usage</a>
+<a href="../api/dns_custom_nameservers_empty_response_3.html">DnsCustomNameserversEmptyResponse3</a>
+<a href="../api/dns_custom_nameservers_tcns_response_collection.html">DnsCustomNameserversTcnsResponseCollection</a>
+<a href="../api/dns_custom_nameservers_tcns_response_single.html">DnsCustomNameserversTcnsResponseSingle</a>
+<a href="../api/iam_api_response_single_id.html">IamApiResponseSingleId</a>
+<a href="../api/iam_collection_member_response_with_policy.html">IamCollectionMemberResponseWithPolicy</a>
+<a href="../api/iam_collection_oauth_client.html">IamCollectionOauthClient</a>
+<a href="../api/iam_collection_oauth_scope.html">IamCollectionOauthScope</a>
+<a href="../api/iam_collection_organization.html">IamCollectionOrganization</a>
+<a href="../api/iam_collection_permission_group.html">IamCollectionPermissionGroup</a>
+<a href="../api/iam_collection_role.html">IamCollectionRole</a>
+<a href="../api/iam_collection_token.html">IamCollectionToken</a>
+<a href="../api/iam_oauth_client_rotate_secret.html">IamOauthClientRotateSecret</a>
+<a href="../api/iam_permissions_group_response_collection.html">IamPermissionsGroupResponseCollection</a>
+<a href="../api/iam_response_single_value.html">IamResponseSingleValue</a>
+<a href="../api/iam_schemas_collection_invite.html">IamSchemasCollectionInvite</a>
+<a href="../api/iam_single_invite.html">IamSingleInvite</a>
+<a href="../api/iam_single_member_response_with_policy.html">IamSingleMemberResponseWithPolicy</a>
+<a href="../api/iam_single_membership_response_with_policy.html">IamSingleMembershipResponseWithPolicy</a>
+<a href="../api/iam_single_oauth_client.html">IamSingleOauthClient</a>
+<a href="../api/iam_single_oauth_client_create.html">IamSingleOauthClientCreate</a>
+<a href="../api/iam_single_organization.html">IamSingleOrganization</a>
+<a href="../api/iam_single_permission_group.html">IamSinglePermissionGroup</a>
+<a href="../api/iam_single_role.html">IamSingleRole</a>
+<a href="../api/iam_single_token.html">IamSingleToken</a>
+<a href="../api/iam_single_token_create.html">IamSingleTokenCreate</a>
+<a href="../api/iam_sso_connector.html">IamSsoConnector</a>
+<a href="../api/iam_sso_connector_collection.html">IamSsoConnectorCollection</a>
+<a href="../api/iam_token_verify_response_single_segment.html">IamTokenVerifyResponseSingleSegment</a>
+<a href="../api/member.html">Member</a>
+<a href="../api/oauth_client.html">OauthClient</a>
+<a href="../api/organization.html">Organization</a>
+<a href="../api/organization_member.html">OrganizationMember</a>
+<a aria-current="page" href="../api/organizations_api_profile.html">OrganizationsApiProfile</a><div class="nav-sections"><a class="nav-section" href="#get-organizationsorganization_idprofile">GET /organizations/{organization_id}/profile</a></div>
+<a href="../api/resource.html">Resource</a>
+<a href="../api/resource_group.html">ResourceGroup</a>
+<a href="../api/resource_sharing.html">ResourceSharing</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_collection.html">ResourceSharingShareExcludedRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_single.html">ResourceSharingShareExcludedRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_recipient_response_collection.html">ResourceSharingShareRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_recipient_response_single.html">ResourceSharingShareRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_response_collection.html">ResourceSharingShareResponseCollection</a>
+<a href="../api/resource_sharing_share_response_single.html">ResourceSharingShareResponseSingle</a>
+<a href="../api/scim_discovery.html">ScimDiscovery</a>
+<a href="../api/scim_group.html">ScimGroup</a>
+<a href="../api/scim_user.html">ScimUser</a>
+<a href="../api/sso_connector.html">SsoConnector</a>
+<a href="../api/tenant.html">Tenant</a>
+<a href="../api/token.html">Token</a>
+<a href="../api/user.html">User</a>
+<a href="../api/user_group.html">UserGroup</a>
+<a href="../api/users_account_membership.html">UsersAccountMembership</a>
+<a href="../api/users_organization.html">UsersOrganization</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="organizationsapiprofile">OrganizationsApiProfile</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-organizationsorganization_idprofile"><code>/organizations/{organization_id}/profile</code></a></td>
+<td><code>list</code></td>
+<td>The request has succeeded</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">organizations_api_profiles, err := client.OrganizationsApiProfile(nil).List(map[string]any{&quot;organization_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(organizations_api_profiles)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local organizations_api_profiles, err = client:OrganizationsApiProfile():list({ organization_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$organizations_api_profiles = $client-&gt;OrganizationsApiProfile()-&gt;list([&quot;organization_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">organizations_api_profiles = client.OrganizationsApiProfile().list({&quot;organization_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">organizations_api_profiles = client.OrganizationsApiProfile.list({ &quot;organization_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const organizations_api_profiles = await client.OrganizationsApiProfile().list({ organization_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Code</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Message</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-organizationsorganization_idprofile" class="operation" data-method="get"><code>GET</code> /organizations/{organization_id}/profile</h3>
+<p>Operation ID: <code>Organizations_getProfile</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>organization_id</code> | <code>path</code> | <code>string</code> | Yes | The ID of the organization to retrieve a profile for. |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-the-request-has-succeeded" class="status" data-status="2xx">200: The request has succeeded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.business_address</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.business_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.business_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.business_phone</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.external_metadata</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-an-unexpected-error-response">4XX: An unexpected error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

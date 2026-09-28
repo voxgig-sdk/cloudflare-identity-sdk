@@ -1,0 +1,198 @@
+
+
+import Path from 'node:path'
+import * as Fs from 'node:fs'
+
+import { test, describe, afterEach } from 'node:test'
+import assert from 'node:assert'
+import { createLiveTransport } from '../../live-runner'
+import { runLiveEntity } from '../../live-entity'
+
+
+import { CloudflareIdentitySDK, BaseFeature, stdutil } from '../../..'
+
+import {
+  envOverride,
+  liveClientOptions,
+  liveDelay,
+  loadEnvLocal,
+  makeCtrl,
+  makeMatch,
+  makeReqdata,
+  makeStepData,
+  makeValid,
+  maybeSkipControl,
+} from '../../utility'
+
+
+loadEnvLocal(__dirname + '/../../../.env.local')
+
+
+describe('OrganizationEntity', async () => {
+
+  // Per-test live pacing. Delay is read from sdk-test-control.json's
+  // `test.live.delayMs`; only sleeps when CLOUDFLARE_IDENTITY_TEST_LIVE=TRUE.
+  afterEach(liveDelay('CLOUDFLARE_IDENTITY_TEST_LIVE'))
+
+  test('instance', async () => {
+    const testsdk = CloudflareIdentitySDK.test()
+    const ent = testsdk.Organization()
+    assert(null != ent)
+  })
+
+
+  test('basic', async (t) => {
+
+    const live = 'TRUE' === process.env.CLOUDFLARE_IDENTITY_TEST_LIVE
+    for (const op of ['create', 'list', 'update', 'load', 'remove']) {
+      if (!live && maybeSkipControl(t, 'entityOp', 'organization.' + op, live)) return
+    }
+
+    
+    const setup = basicSetup()
+    if (setup.live) {
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"create_time":{"a":true,"fo":"date-time","h":"Create Time","n":"create_time","r":true,"ro":true,"t":"`$STRING`","key$":"create_time","index$":0},"errors":{"a":true,"h":"Errors","n":"errors","r":true,"t":"`$ARRAY`","key$":"errors","index$":1},"id":{"a":true,"h":"Id","n":"id","r":true,"ro":true,"t":"`$STRING`","key$":"id","index$":2},"messages":{"a":true,"h":"Messages","n":"messages","r":true,"t":"`$ARRAY`","key$":"messages","index$":3},"meta":{"a":true,"h":"Meta","n":"meta","r":true,"ro":true,"t":"`$OBJECT`","key$":"meta","index$":4},"name":{"a":true,"h":"Name","n":"name","r":true,"t":"`$STRING`","key$":"name","index$":5},"parent":{"a":true,"h":"Parent","n":"parent","r":true,"t":"`$OBJECT`","key$":"parent","index$":6},"profile":{"a":true,"h":"Profile","n":"profile","r":true,"t":"`$OBJECT`","key$":"profile","index$":7},"result":{"a":true,"h":"Result","n":"result","r":true,"sh":"References an Organization in the Cloudflare data model.","t":"`$OBJECT`","key$":"result","index$":8},"result_info":{"a":true,"h":"Result Info","n":"result_info","r":true,"t":"`$OBJECT`","key$":"result_info","index$":9},"status":{"a":true,"h":"Status","n":"status","r":true,"t":"`$STRING`","key$":"status","index$":10},"success":{"a":true,"h":"Success","n":"success","r":true,"t":"`$BOOLEAN`","key$":"success","index$":11}},"id":{"field":"id","name":"id"},"name":"organization","op":{"create":{"input":"data","name":"create","points":[{"a":true,"co":{"id":"POST /organizations/{organization_id}/members:batchCreate","source":"openapi3","version":2},"g":{"params":[{"a":true,"ex":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","k":"param","n":"id","or":"organization_id","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/organizations/{organization_id}/members:batchCreate","q":{"$action":"membersbatch_create","exist":["id"]},"r":{"param":{"organization_id":"id"}},"s":[{"lit":"organizations"},{"var":"id"},{"lit":"members:batchCreate"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"POST /organizations","source":"openapi3","version":2},"g":{},"k":"http","m":"POST","o":"/organizations","q":{},"r":{},"s":[{"lit":"organizations"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1}],"key$":"create"},"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /organizations/{organization_id}/accounts","source":"openapi3","version":2},"g":{"params":[{"a":true,"ex":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","k":"param","n":"id","or":"organization_id","r":true,"t":"`$STRING`","index$":0}],"query":[{"a":true,"k":"query","n":"account_pubname","or":"account_pubname","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"account_pubname_contain","or":"account_pubname_contain","r":false,"t":"`$STRING`","index$":1},{"a":true,"k":"query","n":"account_pubname_ends_with","or":"account_pubname_ends_with","r":false,"t":"`$STRING`","index$":2},{"a":true,"k":"query","n":"account_pubname_starts_with","or":"account_pubname_starts_with","r":false,"t":"`$STRING`","index$":3},{"a":true,"k":"query","n":"direction","or":"direction","r":false,"t":"`$STRING`","index$":4},{"a":true,"k":"query","n":"include_tag","or":"include_tag","r":false,"t":"`$BOOLEAN`","index$":5},{"a":true,"ex":true,"k":"query","n":"include_total","or":"include_total","r":false,"t":"`$BOOLEAN`","index$":6},{"a":true,"k":"query","n":"name","or":"name","r":false,"t":"`$STRING`","index$":7},{"a":true,"k":"query","n":"name_contain","or":"name_contain","r":false,"t":"`$STRING`","index$":8},{"a":true,"k":"query","n":"name_ends_with","or":"name_ends_with","r":false,"t":"`$STRING`","index$":9},{"a":true,"k":"query","n":"name_starts_with","or":"name_starts_with","r":false,"t":"`$STRING`","index$":10},{"a":true,"k":"query","n":"order_by","or":"order_by","r":false,"t":"`$STRING`","index$":11},{"a":true,"k":"query","n":"page_size","or":"page_size","r":false,"t":"`$INTEGER`","index$":12},{"a":true,"k":"query","n":"page_token","or":"page_token","r":false,"t":"`$STRING`","index$":13}]},"k":"http","m":"GET","o":"/organizations/{organization_id}/accounts","q":{"$action":"account","exist":["account_pubname","account_pubname_contain","account_pubname_ends_with","account_pubname_starts_with","direction","id","include_tag","include_total","name","name_contain","name_ends_with","name_starts_with","order_by","page_size","page_token"]},"r":{"param":{"organization_id":"id"}},"s":[{"lit":"organizations"},{"var":"id"},{"lit":"accounts"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"GET /organizations","source":"openapi3","version":2},"g":{"query":[{"a":true,"k":"query","n":"containing_account","or":"containing_account","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"containing_organization","or":"containing_organization","r":false,"t":"`$STRING`","index$":1},{"a":true,"k":"query","n":"containing_user","or":"containing_user","r":false,"t":"`$STRING`","index$":2},{"a":true,"k":"query","n":"id","or":"id","r":false,"t":"`$ARRAY`","index$":3},{"a":true,"k":"query","n":"name","or":"name","r":false,"t":"`$STRING`","index$":4},{"a":true,"k":"query","n":"name_contain","or":"name_contain","r":false,"t":"`$STRING`","index$":5},{"a":true,"k":"query","n":"name_ends_with","or":"name_ends_with","r":false,"t":"`$STRING`","index$":6},{"a":true,"k":"query","n":"name_starts_with","or":"name_starts_with","r":false,"t":"`$STRING`","index$":7},{"a":true,"k":"query","n":"page_size","or":"page_size","r":false,"t":"`$INTEGER`","index$":8},{"a":true,"k":"query","n":"page_token","or":"page_token","r":false,"t":"`$STRING`","index$":9},{"a":true,"k":"query","n":"parent_id","or":"parent_id","r":false,"t":"`$STRING`","index$":10}]},"k":"http","m":"GET","o":"/organizations","q":{"exist":["containing_account","containing_organization","containing_user","id","name","name_contain","name_ends_with","name_starts_with","page_size","page_token","parent_id"]},"r":{},"s":[{"lit":"organizations"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1}],"key$":"list"},"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /organizations/{organization_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"ex":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","k":"param","n":"id","or":"organization_id","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"GET","o":"/organizations/{organization_id}","q":{"exist":["id"]},"r":{"param":{"organization_id":"id"}},"s":[{"lit":"organizations"},{"var":"id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"},"remove":{"input":"data","name":"remove","points":[{"a":true,"co":{"id":"DELETE /organizations/{organization_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"ex":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","k":"param","n":"id","or":"organization_id","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"DELETE","o":"/organizations/{organization_id}","q":{"exist":["id"]},"r":{"param":{"organization_id":"id"}},"s":[{"lit":"organizations"},{"var":"id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"remove"},"update":{"input":"data","name":"update","points":[{"a":true,"co":{"id":"PUT /organizations/{organization_id}/invites/{member_code}","source":"openapi3","version":2},"g":{"params":[{"a":true,"ex":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","k":"param","n":"id","or":"organization_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"member_code","or":"member_code","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"PUT","o":"/organizations/{organization_id}/invites/{member_code}","q":{"exist":["id","member_code"]},"r":{"param":{"organization_id":"id"}},"s":[{"lit":"organizations"},{"var":"id"},{"lit":"invites"},{"var":"member_code"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"PUT /organizations/{organization_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"ex":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","k":"param","n":"id","or":"organization_id","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"PUT","o":"/organizations/{organization_id}","q":{"exist":["id"]},"r":{"param":{"organization_id":"id"}},"s":[{"lit":"organizations"},{"var":"id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1},{"a":true,"co":{"id":"PUT /organizations/{organization_id}/profile","source":"openapi3","version":2},"g":{"params":[{"a":true,"ex":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","k":"param","n":"id","or":"organization_id","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"PUT","o":"/organizations/{organization_id}/profile","q":{"$action":"profile","exist":["id"]},"r":{"param":{"organization_id":"id"}},"s":[{"lit":"organizations"},{"var":"id"},{"lit":"profile"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":2}],"key$":"update"}},"relations":{"ancestors":[]},"key$":"organization","name__orig":"organization","Name":"Organization","name_":"organization","name-":"organization","NAME":"ORGANIZATION","index$":39}, {"active":true,"entity":"organization","key$":"BasicOrganizationFlow","kind":"basic","name":"BasicOrganizationFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"organization_ref01"},"m":{},"o":"create","s":[],"v":[],"index$":0},{"a":true,"d":{},"i":{},"m":{},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"organization_ref01"}}],"index$":1},{"a":true,"d":{},"i":{"ref":"organization_ref01","srcdatavar":"organization_ref01_data","suffix":"_up0","textfield":"name"},"m":{},"o":"update","s":[{"apply":"TextFieldMark","def":{"mark":"Mark01-organization_ref01"}}],"v":[],"index$":2},{"a":true,"d":{},"i":{"ref":"organization_ref01","srcdatavar":"organization_ref01_data","suffix":"_dt0"},"m":{"id":"organization01"},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-organization_ref01"}}],"index$":3},{"a":true,"d":{},"i":{"ref":"organization_ref01","suffix":"_rm0"},"m":{"id":"organization01"},"o":"remove","s":[],"v":[],"index$":4},{"a":true,"d":{},"i":{"suffix":"_rt0"},"m":{},"o":"list","s":[],"v":[{"apply":"ItemNotExists","def":{"ref":"organization_ref01"}}],"index$":5}]}, 'Organization', {"POST /organizations/{organization_id}/members:batchCreate":{"protocol":"http","requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"members":{"type":"array","items":{"type":"object","properties":{"status":{"type":"string","enum":[],"x-auditable":true},"user":{"type":"object","properties":{},"required":[]}},"required":["user"],"x-ref":"#/components/schemas/organizations-api_CreateSingleMember"},"maxItems":10}},"required":["members"],"x-ref":"#/components/schemas/organizations-api_BatchCreateMembersRequest"}}}},"parameters":[{"name":"organization_id","in":"path","required":true,"schema":{"type":"string","example":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","pattern":"^[a-f0-9]{32}$","title":"Organization ID","x-auditable":true,"x-ref":"#/components/schemas/organizations-api_OrganizationID"},"index$":0}]},"POST /organizations":{"protocol":"http","requestBody":{"required":true,"content":{"application/json":{"schema":{"description":"References an Organization in the Cloudflare data model.","type":"object","properties":{"create_time":{"format":"date-time","readOnly":true,"type":"string","key$":"create_time"},"id":{"allOf":[{"example":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","pattern":"^[a-f0-9]{32}$","title":"Organization ID","type":"string","x-auditable":true,"x-ref":"#/components/schemas/organizations-api_OrganizationID"}],"readOnly":true,"key$":"id"},"meta":{"additionalProperties":{"type":"object"},"properties":{"hierarchy_tags":{"description":"Ordered chain of organization tags from the root organization down to\n(and including) this organization itself. Root organizations return a\nsingle-element array containing their own tag; sub-organizations return\n`[rootTag, ...intermediateTags, parentTag, selfTag]`. Useful for\nconstructing authorization scopes that need to cover every ancestor\nin the hierarchy.","items":{"type":"string"},"type":"array"},"managed_by":{"type":"string"},"tenant_flags":{"allOf":[{}]}},"readOnly":true,"type":"object","key$":"meta"},"name":{"type":"string","x-auditable":true,"key$":"name"},"parent":{"properties":{"id":{"example":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","pattern":"^[a-f0-9]{32}$","title":"Organization ID","type":"string","x-auditable":true,"x-ref":"#/components/schemas/organizations-api_OrganizationID"},"name":{"readOnly":true,"type":"string","x-auditable":true}},"required":["id","name"],"type":"object","key$":"parent"},"profile":{"properties":{"business_address":{"type":"string"},"business_email":{"type":"string"},"business_name":{"type":"string"},"business_phone":{"type":"string"},"external_metadata":{"type":"string"}},"required":["business_name","business_email","business_phone","business_address","external_metadata"],"type":"object","x-ref":"#/components/schemas/organizations-api_Profile","key$":"profile"}},"required":["id","name","create_time","meta"],"x-ref":"#/components/schemas/organizations-api_Organization","index$":1}}}},"parameters":[]},"GET /organizations/{organization_id}/accounts":{"protocol":"http","parameters":[{"name":"organization_id","in":"path","description":"The ID of the organization to retrieve a list of accounts for.","required":true,"schema":{"type":"string","example":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","pattern":"^[a-f0-9]{32}$","title":"Organization ID","x-auditable":true,"x-ref":"#/components/schemas/organizations-api_OrganizationID"},"index$":0},{"name":"account_pubname","in":"query","description":"(case-insensitive) Filter the list of accounts to where the account_pubname is equal to\na particular string.","schema":{"type":"string"},"deprecated":true,"explode":false,"index$":1},{"name":"account_pubname.startsWith","in":"query","description":"(case-insensitive) Filter the list of accounts to where the account_pubname starts with\na particular string.","schema":{"type":"string"},"deprecated":true,"explode":false,"index$":2},{"name":"account_pubname.endsWith","in":"query","description":"(case-insensitive) Filter the list of accounts to where the account_pubname ends with\na particular string.","schema":{"type":"string"},"deprecated":true,"explode":false,"index$":3},{"name":"account_pubname.contains","in":"query","description":"(case-insensitive) Filter the list of accounts to where the account_pubname contains\na particular string.","schema":{"type":"string"},"deprecated":true,"explode":false,"index$":4},{"name":"name","in":"query","description":"(case-insensitive) Filter the list of accounts to where the name is equal to a\nparticular string.","schema":{"type":"string"},"explode":false,"index$":5},{"name":"name.startsWith","in":"query","description":"(case-insensitive) Filter the list of accounts to where the name starts with a\nparticular string.","schema":{"type":"string"},"explode":false,"index$":6},{"name":"name.endsWith","in":"query","description":"(case-insensitive) Filter the list of accounts to where the name ends with a particular\nstring.","schema":{"type":"string"},"explode":false,"index$":7},{"name":"name.contains","in":"query","description":"(case-insensitive) Filter the list of accounts to where the name contains a particular\nstring.","schema":{"type":"string"},"explode":false,"index$":8},{"name":"order_by","in":"query","description":"Field to order results by. Currently supported values: `account_name`.\nWhen not specified, results are ordered by internal account ID.","schema":{"type":"string","enum":["account_name"]},"explode":false,"index$":9},{"name":"direction","in":"query","description":"Sort direction for the order_by field. Valid values: `asc`, `desc`.\nDefaults to `asc` when order_by is specified.","schema":{"type":"string","enum":["asc","desc"]},"explode":false,"index$":10},{"name":"include_tags","in":"query","description":"Include Account tags from the resource tag mirror. Omit this parameter to preserve the existing Account response shape.","schema":{"type":"boolean"},"explode":false,"index$":11},{"name":"include_total","in":"query","description":"Whether to calculate and return the exact result_info.total_size for cursor\npagination. Defaults to true. When false, total_size is omitted. page_size and\ninclude_total may change between pages; next_page_token remains the authoritative\ncontinuation signal.\nLegacy page/per_page requests always calculate total_count.","schema":{"type":"boolean","default":true},"explode":false,"index$":12},{"description":"An opaque token returned from the last list response that when\nprovided will retrieve the next page.\n\nParameters used to filter the retrieved list must remain in subsequent\nrequests with a page token.","explode":false,"in":"query","name":"page_token","schema":{"type":"string"},"x-ref":"#/components/parameters/organizations-api_PageTokenParamsPageToken","index$":13},{"description":"The amount of items to return. Defaults to 10.","explode":false,"in":"query","name":"page_size","schema":{"type":"integer","maximum":1000,"minimum":0},"x-ref":"#/components/parameters/organizations-api_PageTokenParamsPageSize","index$":14}]},"GET /organizations":{"protocol":"http","parameters":[{"description":"Only return organizations with the specified IDs (ex. id=foo&id=bar). Send multiple elements\nby repeating the query value.","explode":false,"in":"query","name":"id","schema":{"type":"array","items":{"type":"string","example":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","pattern":"^[a-f0-9]{32}$","title":"Organization ID","x-auditable":true,"x-ref":"#/components/schemas/organizations-api_OrganizationID"}},"x-ref":"#/components/parameters/organizations-api_OrganizationListFiltersId","index$":0},{"description":"(case-sensitive) Filter the list of organizations to where the name is equal to a\nparticular string.","explode":false,"in":"query","name":"name","schema":{"type":"string"},"x-ref":"#/components/parameters/organizations-api_OrganizationListFiltersName","index$":1},{"description":"(case-insensitive) Filter the list of organizations to where the name starts with a\nparticular string.","explode":false,"in":"query","name":"name.startsWith","schema":{"type":"string"},"x-ref":"#/components/parameters/organizations-api_OrganizationListFiltersNameStartsWith","index$":2},{"description":"(case-insensitive) Filter the list of organizations to where the name ends with a particular\nstring.","explode":false,"in":"query","name":"name.endsWith","schema":{"type":"string"},"x-ref":"#/components/parameters/organizations-api_OrganizationListFiltersNameEndsWith","index$":3},{"description":"(case-insensitive) Filter the list of organizations to where the name contains a particular\nstring.","explode":false,"in":"query","name":"name.contains","schema":{"type":"string"},"x-ref":"#/components/parameters/organizations-api_OrganizationListFiltersNameContains","index$":4},{"description":"Filter the list of organizations to the ones that contain this particular\naccount.","explode":false,"in":"query","name":"containing.account","schema":{"type":"string"},"x-ref":"#/components/parameters/organizations-api_OrganizationListFiltersContainingAccount","index$":5},{"description":"Filter the list of organizations to the ones that contain this particular\nuser.\n\nIMPORTANT: Just because an organization \"contains\" a user is not a\nrepresentation of any authorization or privilege to manage any resources\ntherein. An organization \"containing\" a user simply means the user is managed by\nthat organization.","explode":false,"in":"query","name":"containing.user","schema":{"type":"string"},"x-ref":"#/components/parameters/organizations-api_OrganizationListFiltersContainingUser","index$":6},{"description":"Filter the list of organizations to the ones that contain this particular\norganization.","explode":false,"in":"query","name":"containing.organization","schema":{"type":"string"},"x-ref":"#/components/parameters/organizations-api_OrganizationListFiltersContainingOrganization","index$":7},{"description":"Filter the list of organizations to the ones that are a sub-organization\nof the specified organization.\n\n\"null\" is a valid value to provide for this parameter. It means \"where\nan organization has no parent (i.e. it is a 'root' organization).\"","explode":false,"in":"query","name":"parent.id","schema":{"anyOf":[{"type":"string","example":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","pattern":"^[a-f0-9]{32}$","title":"Organization ID","x-auditable":true,"x-ref":"#/components/schemas/organizations-api_OrganizationID"},{"enum":["null"],"type":"string"}]},"x-ref":"#/components/parameters/organizations-api_OrganizationListFiltersParentId","index$":8},{"description":"An opaque token returned from the last list response that when\nprovided will retrieve the next page.\n\nParameters used to filter the retrieved list must remain in subsequent\nrequests with a page token.","explode":false,"in":"query","name":"page_token","schema":{"type":"string"},"x-ref":"#/components/parameters/organizations-api_PageTokenParamsPageToken","index$":9},{"description":"The amount of items to return. Defaults to 10.","explode":false,"in":"query","name":"page_size","schema":{"type":"integer","maximum":1000,"minimum":0},"x-ref":"#/components/parameters/organizations-api_PageTokenParamsPageSize","index$":10}]},"GET /organizations/{organization_id}":{"protocol":"http","parameters":[{"name":"organization_id","in":"path","description":"The ID of the organization to retrieve.","required":true,"schema":{"type":"string","example":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","pattern":"^[a-f0-9]{32}$","title":"Organization ID","x-auditable":true,"x-ref":"#/components/schemas/organizations-api_OrganizationID"},"index$":0}]},"DELETE /organizations/{organization_id}":{"protocol":"http","parameters":[{"name":"organization_id","in":"path","description":"The ID of the organization to delete.","required":true,"schema":{"type":"string","example":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","pattern":"^[a-f0-9]{32}$","title":"Organization ID","x-auditable":true,"x-ref":"#/components/schemas/organizations-api_OrganizationID"},"index$":0}]},"PUT /organizations/{organization_id}/invites/{member_code}":{"protocol":"http","requestBody":{"description":"The invitation action. Use `accept` to join the organization or `reject` to decline the invitation.","required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"string","enum":["accept","reject"],"x-auditable":true,"key$":"status"}},"required":["status"],"x-ref":"#/components/schemas/organizations-api_HandleOrganizationInviteRequest","index$":1}}}},"parameters":[{"name":"organization_id","in":"path","description":"The ID of the organization associated with the invitation.","required":true,"schema":{"type":"string","example":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","pattern":"^[a-f0-9]{32}$","title":"Organization ID","x-auditable":true,"x-ref":"#/components/schemas/organizations-api_OrganizationID"},"index$":0},{"name":"member_code","in":"path","description":"The invitation code to accept or reject.","required":true,"schema":{"type":"string"},"index$":1}]},"PUT /organizations/{organization_id}":{"protocol":"http","requestBody":{"description":"The new details of the organization. Only accepts updates\nto \"name\" currently.","required":true,"content":{"application/json":{"schema":{"description":"References an Organization in the Cloudflare data model.","type":"object","properties":{"create_time":{"format":"date-time","readOnly":true,"type":"string","key$":"create_time"},"id":{"allOf":[{"example":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","pattern":"^[a-f0-9]{32}$","title":"Organization ID","type":"string","x-auditable":true,"x-ref":"#/components/schemas/organizations-api_OrganizationID"}],"readOnly":true,"key$":"id"},"meta":{"additionalProperties":{"type":"object"},"properties":{"hierarchy_tags":{"description":"Ordered chain of organization tags from the root organization down to\n(and including) this organization itself. Root organizations return a\nsingle-element array containing their own tag; sub-organizations return\n`[rootTag, ...intermediateTags, parentTag, selfTag]`. Useful for\nconstructing authorization scopes that need to cover every ancestor\nin the hierarchy.","items":{"type":"string"},"type":"array"},"managed_by":{"type":"string"},"tenant_flags":{"allOf":[{}]}},"readOnly":true,"type":"object","key$":"meta"},"name":{"type":"string","x-auditable":true,"key$":"name"},"parent":{"properties":{"id":{"example":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","pattern":"^[a-f0-9]{32}$","title":"Organization ID","type":"string","x-auditable":true,"x-ref":"#/components/schemas/organizations-api_OrganizationID"},"name":{"readOnly":true,"type":"string","x-auditable":true}},"required":["id","name"],"type":"object","key$":"parent"},"profile":{"properties":{"business_address":{"type":"string"},"business_email":{"type":"string"},"business_name":{"type":"string"},"business_phone":{"type":"string"},"external_metadata":{"type":"string"}},"required":["business_name","business_email","business_phone","business_address","external_metadata"],"type":"object","x-ref":"#/components/schemas/organizations-api_Profile","key$":"profile"}},"required":["id","name","create_time","meta"],"x-ref":"#/components/schemas/organizations-api_Organization","index$":1}}}},"parameters":[{"name":"organization_id","in":"path","description":"The ID of the organization to modify.","required":true,"schema":{"type":"string","example":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","pattern":"^[a-f0-9]{32}$","title":"Organization ID","x-auditable":true,"x-ref":"#/components/schemas/organizations-api_OrganizationID"},"index$":0}]},"PUT /organizations/{organization_id}/profile":{"protocol":"http","requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"business_address":{"type":"string","x-auditable":true},"business_email":{"type":"string","x-auditable":true},"business_name":{"type":"string","x-auditable":true},"business_phone":{"type":"string","x-auditable":true},"external_metadata":{"type":"string"}},"required":["business_name","business_email","business_phone","business_address","external_metadata"],"x-ref":"#/components/schemas/organizations-api_ModifyOrganizationProfileRequest"}}}},"parameters":[{"name":"organization_id","in":"path","required":true,"schema":{"type":"string","example":"a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8","pattern":"^[a-f0-9]{32}$","title":"Organization ID","x-auditable":true,"x-ref":"#/components/schemas/organizations-api_OrganizationID"},"index$":0}]}})
+    }
+    const client = setup.client
+    const struct = setup.struct
+
+    const isempty = struct.isempty
+    const select = struct.select
+
+
+    // CREATE
+    const organization_ref01_ent = client.Organization()
+    let organization_ref01_data = setup.data.new.organization['organization_ref01']
+
+    organization_ref01_data = (await organization_ref01_ent.create(organization_ref01_data)).data()
+    assert(null != organization_ref01_data.id)
+
+
+    // LIST
+    const organization_ref01_match: any = {}
+
+    const organization_ref01_list = (await organization_ref01_ent.list(organization_ref01_match)).map((e: any) => e.data())
+
+    assert(!isempty(select(organization_ref01_list, { id: organization_ref01_data.id })))
+
+
+    // UPDATE
+    const organization_ref01_data_up0: any = {}
+    organization_ref01_data_up0.id = organization_ref01_data.id
+
+    const organization_ref01_markdef_up0 = { name: 'name', value: 'Mark01-organization_ref01_' + setup.now }
+    ;(organization_ref01_data_up0 as any)[organization_ref01_markdef_up0.name] = organization_ref01_markdef_up0.value
+
+    const organization_ref01_resdata_up0 = (await organization_ref01_ent.update(organization_ref01_data_up0)).data()
+    assert(organization_ref01_resdata_up0.id === organization_ref01_data_up0.id)
+
+    assert((organization_ref01_resdata_up0 as any)[organization_ref01_markdef_up0.name] === organization_ref01_markdef_up0.value)
+
+
+    // LOAD
+    const organization_ref01_match_dt0: any = {}
+    organization_ref01_match_dt0.id = organization_ref01_data.id
+    const organization_ref01_data_dt0 = (await organization_ref01_ent.load(organization_ref01_match_dt0)).data()
+    assert(organization_ref01_data_dt0.id === organization_ref01_data.id)
+
+
+    // REMOVE
+    const organization_ref01_match_rm0: any = { id: organization_ref01_data.id }
+    await organization_ref01_ent.remove(organization_ref01_match_rm0)
+  
+
+    // LIST
+    const organization_ref01_match_rt0: any = {}
+
+    const organization_ref01_list_rt0 = (await organization_ref01_ent.list(organization_ref01_match_rt0)).map((e: any) => e.data())
+
+    assert(isempty(select(organization_ref01_list_rt0, { id: organization_ref01_data.id })))
+
+
+  })
+})
+
+
+
+function basicSetup(extra?: any) {
+  // TODO: fix test def options
+  const options: any = {} // null
+
+  // TODO: needs test utility to resolve path
+  const entityDataFile =
+    Path.resolve(__dirname, 
+      '../../../../.sdk/test/entity/organization/OrganizationTestData.json')
+
+  // TODO: file ready util needed?
+  const entityDataSource = Fs.readFileSync(entityDataFile).toString('utf8')
+
+  // TODO: need a xlang JSON parse utility in voxgig/struct with better error msgs
+  const entityData = JSON.parse(entityDataSource)
+
+  options.entity = entityData.existing
+
+  let client = CloudflareIdentitySDK.test(options, extra)
+  const struct = client.utility().struct
+  const merge = struct.merge
+  const transform = struct.transform
+
+  let idmap = transform(
+    ['organization01','organization02','organization03'],
+    {
+      '`$PACK`': ['', {
+        '`$KEY`': '`$COPY`',
+        '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
+      }]
+    })
+
+  const env = envOverride({
+    'CLOUDFLARE_IDENTITY_TEST_ORGANIZATION_ENTID': idmap,
+    'CLOUDFLARE_IDENTITY_TEST_LIVE': 'FALSE',
+    'CLOUDFLARE_IDENTITY_TEST_EXPLAIN': 'FALSE',
+    'CLOUDFLARE_IDENTITY_APIKEY': '',
+  })
+
+  idmap = env['CLOUDFLARE_IDENTITY_TEST_ORGANIZATION_ENTID']
+
+  const live = 'TRUE' === env.CLOUDFLARE_IDENTITY_TEST_LIVE
+
+  const transport = createLiveTransport()
+  if (live) {
+    const rawIds = process.env['CLOUDFLARE_IDENTITY_TEST_ORGANIZATION_ENTID']
+    idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {}
+    if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+      throw new Error('Live ENTID must be a JSON object')
+    }
+    client = new CloudflareIdentitySDK(merge([
+      // FIRST, so the generated fields below win: sdk-test-control.json's
+      // test.client.options adds to the live client, it does not redirect it.
+      liveClientOptions(),
+      {
+        apikey: env.CLOUDFLARE_IDENTITY_APIKEY,
+      },
+      // 'extra || {}', not a bare 'extra': struct.merge returns UNDEFINED when the
+      // last entry is undefined, and basicSetup is normally called with no
+      // argument at all - so a bare 'extra' silently discarded the apikey
+      // and server values above and handed the SDK undefined. Harmless
+      // while there was nothing in that object; not harmless now.
+      extra || {},
+      { system: { fetch: transport.fetch } }
+    ]))
+  }
+
+  const setup = {
+    idmap,
+    env,
+    options,
+    client,
+    struct,
+    data: entityData,
+    explain: 'TRUE' === env.CLOUDFLARE_IDENTITY_TEST_EXPLAIN,
+    live,
+    transport,
+    now: Date.now(),
+  }
+
+  return setup
+}
+  

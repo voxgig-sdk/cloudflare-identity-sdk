@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AccountUserGroupMember | Cloudflare Identity &amp; Administration</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Identity &amp; Administration<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-identity-sdk">voxgig-sdk/cloudflare-identity-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Identity &amp; Administration</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/aaa_audit_logs_v2_org_history_response_collection.html">AaaAuditLogsV2OrgHistoryResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_org_response_collection.html">AaaAuditLogsV2OrgResponseCollection</a>
+<a href="../api/account.html">Account</a>
+<a href="../api/account_resource_group.html">AccountResourceGroup</a>
+<a href="../api/account_user_group.html">AccountUserGroup</a>
+<a aria-current="page" href="../api/account_user_group_member.html">AccountUserGroupMember</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idiamuser_groupsuser_group_idmembers">POST /accounts/{account_id}/iam/user_groups/{user_group_id}/members</a>
+<a class="nav-section" href="#get-accountsaccount_idiamuser_groupsuser_group_idmembers">GET /accounts/{account_id}/iam/user_groups/{user_group_id}/members</a>
+<a class="nav-section" href="#get-accountsaccount_idiamuser_groupsuser_group_idmembersmember_id">GET /accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idiamuser_groupsuser_group_idmembersmember_id">DELETE /accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idiamuser_groupsuser_group_idmembers">PUT /accounts/{account_id}/iam/user_groups/{user_group_id}/members</a></div>
+<a href="../api/begin_verification.html">BeginVerification</a>
+<a href="../api/bill_subs_api_client_secret_response_single.html">BillSubsApiClientSecretResponseSingle</a>
+<a href="../api/billable_usage_api_v2_usage.html">BillableUsageApiV2Usage</a>
+<a href="../api/dns_custom_nameservers_empty_response_3.html">DnsCustomNameserversEmptyResponse3</a>
+<a href="../api/dns_custom_nameservers_tcns_response_collection.html">DnsCustomNameserversTcnsResponseCollection</a>
+<a href="../api/dns_custom_nameservers_tcns_response_single.html">DnsCustomNameserversTcnsResponseSingle</a>
+<a href="../api/iam_api_response_single_id.html">IamApiResponseSingleId</a>
+<a href="../api/iam_collection_member_response_with_policy.html">IamCollectionMemberResponseWithPolicy</a>
+<a href="../api/iam_collection_oauth_client.html">IamCollectionOauthClient</a>
+<a href="../api/iam_collection_oauth_scope.html">IamCollectionOauthScope</a>
+<a href="../api/iam_collection_organization.html">IamCollectionOrganization</a>
+<a href="../api/iam_collection_permission_group.html">IamCollectionPermissionGroup</a>
+<a href="../api/iam_collection_role.html">IamCollectionRole</a>
+<a href="../api/iam_collection_token.html">IamCollectionToken</a>
+<a href="../api/iam_oauth_client_rotate_secret.html">IamOauthClientRotateSecret</a>
+<a href="../api/iam_permissions_group_response_collection.html">IamPermissionsGroupResponseCollection</a>
+<a href="../api/iam_response_single_value.html">IamResponseSingleValue</a>
+<a href="../api/iam_schemas_collection_invite.html">IamSchemasCollectionInvite</a>
+<a href="../api/iam_single_invite.html">IamSingleInvite</a>
+<a href="../api/iam_single_member_response_with_policy.html">IamSingleMemberResponseWithPolicy</a>
+<a href="../api/iam_single_membership_response_with_policy.html">IamSingleMembershipResponseWithPolicy</a>
+<a href="../api/iam_single_oauth_client.html">IamSingleOauthClient</a>
+<a href="../api/iam_single_oauth_client_create.html">IamSingleOauthClientCreate</a>
+<a href="../api/iam_single_organization.html">IamSingleOrganization</a>
+<a href="../api/iam_single_permission_group.html">IamSinglePermissionGroup</a>
+<a href="../api/iam_single_role.html">IamSingleRole</a>
+<a href="../api/iam_single_token.html">IamSingleToken</a>
+<a href="../api/iam_single_token_create.html">IamSingleTokenCreate</a>
+<a href="../api/iam_sso_connector.html">IamSsoConnector</a>
+<a href="../api/iam_sso_connector_collection.html">IamSsoConnectorCollection</a>
+<a href="../api/iam_token_verify_response_single_segment.html">IamTokenVerifyResponseSingleSegment</a>
+<a href="../api/member.html">Member</a>
+<a href="../api/oauth_client.html">OauthClient</a>
+<a href="../api/organization.html">Organization</a>
+<a href="../api/organization_member.html">OrganizationMember</a>
+<a href="../api/organizations_api_profile.html">OrganizationsApiProfile</a>
+<a href="../api/resource.html">Resource</a>
+<a href="../api/resource_group.html">ResourceGroup</a>
+<a href="../api/resource_sharing.html">ResourceSharing</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_collection.html">ResourceSharingShareExcludedRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_single.html">ResourceSharingShareExcludedRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_recipient_response_collection.html">ResourceSharingShareRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_recipient_response_single.html">ResourceSharingShareRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_response_collection.html">ResourceSharingShareResponseCollection</a>
+<a href="../api/resource_sharing_share_response_single.html">ResourceSharingShareResponseSingle</a>
+<a href="../api/scim_discovery.html">ScimDiscovery</a>
+<a href="../api/scim_group.html">ScimGroup</a>
+<a href="../api/scim_user.html">ScimUser</a>
+<a href="../api/sso_connector.html">SsoConnector</a>
+<a href="../api/tenant.html">Tenant</a>
+<a href="../api/token.html">Token</a>
+<a href="../api/user.html">User</a>
+<a href="../api/user_group.html">UserGroup</a>
+<a href="../api/users_account_membership.html">UsersAccountMembership</a>
+<a href="../api/users_organization.html">UsersOrganization</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="accountusergroupmember">AccountUserGroupMember</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idiamuser_groupsuser_group_idmembers"><code>/accounts/{account_id}/iam/user_groups/{user_group_id}/members</code></a></td>
+<td><code>create</code></td>
+<td>Add User Group Members response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idiamuser_groupsuser_group_idmembers"><code>/accounts/{account_id}/iam/user_groups/{user_group_id}/members</code></a></td>
+<td><code>list</code></td>
+<td>List User Group Members</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idiamuser_groupsuser_group_idmembersmember_id"><code>/accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}</code></a></td>
+<td><code>load</code></td>
+<td>Get User Group Member response</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idiamuser_groupsuser_group_idmembersmember_id"><code>/accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Delete User Group Member response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idiamuser_groupsuser_group_idmembers"><code>/accounts/{account_id}/iam/user_groups/{user_group_id}/members</code></a></td>
+<td><code>update</code></td>
+<td>Update User Group Members response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">account_user_group_members, err := client.AccountUserGroupMember(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;user_group_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(account_user_group_members)
+account_user_group_member, err := client.AccountUserGroupMember(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;, &quot;user_group_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(account_user_group_member)
+created, err := client.AccountUserGroupMember(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;user_group_id&quot;: &quot;example&quot;, &quot;result&quot;: map[string]any{}}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.AccountUserGroupMember(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;user_group_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.AccountUserGroupMember(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;, &quot;user_group_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local account_user_group_members, err = client:AccountUserGroupMember():list({ account_id = &quot;example&quot;, user_group_id = &quot;example&quot; })
+local account_user_group_member, err = client:AccountUserGroupMember():load({ account_id = &quot;example&quot;, id = &quot;example_id&quot;, user_group_id = &quot;example&quot; })
+local created, err = client:AccountUserGroupMember():create({ account_id = &quot;example&quot;, user_group_id = &quot;example&quot;, result = {} })
+local updated, err = client:AccountUserGroupMember():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, user_group_id = &quot;example&quot; })
+local removed, err = client:AccountUserGroupMember():remove({ account_id = &quot;example&quot;, id = &quot;example_id&quot;, user_group_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$account_user_group_members = $client-&gt;AccountUserGroupMember()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;user_group_id&quot; =&gt; &quot;example&quot;]);
+$account_user_group_member = $client-&gt;AccountUserGroupMember()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;user_group_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;AccountUserGroupMember()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;user_group_id&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; []]);
+$updated = $client-&gt;AccountUserGroupMember()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;user_group_id&quot; =&gt; &quot;example&quot;]);
+$client-&gt;AccountUserGroupMember()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;user_group_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">account_user_group_members = client.AccountUserGroupMember().list({&quot;account_id&quot;: &quot;example&quot;, &quot;user_group_id&quot;: &quot;example&quot;})
+account_user_group_member = client.AccountUserGroupMember().load({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;, &quot;user_group_id&quot;: &quot;example&quot;})
+created = client.AccountUserGroupMember().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;user_group_id&quot;: &quot;example&quot;, &quot;result&quot;: {} })
+updated = client.AccountUserGroupMember().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;user_group_id&quot;: &quot;example&quot;})
+client.AccountUserGroupMember().remove({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;, &quot;user_group_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">account_user_group_members = client.AccountUserGroupMember.list({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;user_group_id&quot; =&gt; &quot;example&quot; })
+account_user_group_member = client.AccountUserGroupMember.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;user_group_id&quot; =&gt; &quot;example&quot; })
+created = client.AccountUserGroupMember.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;user_group_id&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; {} })
+updated = client.AccountUserGroupMember.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;user_group_id&quot; =&gt; &quot;example&quot; })
+client.AccountUserGroupMember.remove({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;user_group_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const account_user_group_members = await client.AccountUserGroupMember().list({ account_id: &quot;example&quot;, user_group_id: &quot;example&quot; })
+const account_user_group_member = await client.AccountUserGroupMember().load({ account_id: &quot;example&quot;, id: &quot;example_id&quot;, user_group_id: &quot;example&quot; })
+const created = await client.AccountUserGroupMember().create({ account_id: &quot;example&quot;, user_group_id: &quot;example&quot;, result: {} })
+const updated = await client.AccountUserGroupMember().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, user_group_id: &quot;example&quot; })
+await client.AccountUserGroupMember().remove({ account_id: &quot;example&quot;, id: &quot;example_id&quot;, user_group_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Detailed member information for a User Group member.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idiamuser_groupsuser_group_idmembers" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/iam/user_groups/{user_group_id}/members</h3>
+<p>Operation ID: <code>account-user-group-member-create</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>user_group_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The identifier of an existing account Member.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-add-user-group-members-response" class="status" data-status="2xx">200: Add User Group Members response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-add-user-group-members-response-failure">4XX: Add User Group Members response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idiamuser_groupsuser_group_idmembers" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/iam/user_groups/{user_group_id}/members</h3>
+<p>Operation ID: <code>account-user-group-member-list</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>user_group_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>page</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>per_page</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>fuzzyEmail</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>direction</code> | <code>query</code> | <code>enum: asc, desc</code> | No |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-list-user-group-members" class="status" data-status="2xx">200: List User Group Members</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-user-group-details-response-failure">4XX: User Group Details response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idiamuser_groupsuser_group_idmembersmember_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}</h3>
+<p>Operation ID: <code>account-user-group-member-get</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>user_group_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>member_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-get-user-group-member-response" class="status" data-status="2xx">200: Get User Group Member response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-get-user-group-member-response-failure">4XX: Get User Group Member response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_idiamuser_groupsuser_group_idmembersmember_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}</h3>
+<p>Operation ID: <code>account-user-group-member-delete</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>user_group_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>member_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-delete-user-group-member-response" class="status" data-status="2xx">200: Delete User Group Member response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-delete-user-group-response-failure">4XX: Delete User Group response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idiamuser_groupsuser_group_idmembers" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/iam/user_groups/{user_group_id}/members</h3>
+<p>Operation ID: <code>account-user-group-members-update</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>user_group_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The identifier of an existing account Member.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-update-user-group-members-response" class="status" data-status="2xx">200: Update User Group Members response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-update-user-group-response-failure">4XX: Update User Group response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

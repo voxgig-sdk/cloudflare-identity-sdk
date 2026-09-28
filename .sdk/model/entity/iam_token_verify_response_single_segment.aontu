@@ -1,0 +1,97 @@
+# Entity: iam_token_verify_response_single_segment
+
+main: kit: entity: iam_token_verify_response_single_segment: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      t: "`$ANY`"
+    }
+  }
+
+  name: "iam_token_verify_response_single_segment"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/tokens/verify"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/tokens/verify"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "tokens"
+            }
+            {
+              lit: "verify"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /user/tokens/verify"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/user/tokens/verify"
+          s: [
+            {
+              lit: "user"
+            }
+            {
+              lit: "tokens"
+            }
+            {
+              lit: "verify"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.account")]
+  ]
+
+}

@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "iam_single_oauth_client": {
+      "IAM_SINGLE_OAUTH_CLIENT00": {
+        "id": "IAM_SINGLE_OAUTH_CLIENT00",
+        "result": "s15",
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_SINGLE_OAUTH_CLIENT01": {
+        "id": "IAM_SINGLE_OAUTH_CLIENT01",
+        "result": "s29",
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_SINGLE_OAUTH_CLIENT02": {
+        "id": "IAM_SINGLE_OAUTH_CLIENT02",
+        "result": "s3d",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "iam_single_oauth_client": {
+      "iam_single_oauth_client_ref01": {
+        "result": "s51"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/oauth_clients/{oauth_client_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/oauth_clients/{oauth_client_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

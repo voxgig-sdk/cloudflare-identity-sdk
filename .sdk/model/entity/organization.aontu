@@ -1,0 +1,697 @@
+# Entity: organization
+
+main: kit: entity: organization: {
+
+  alias: field: {}
+
+  fields: {
+    create_time: {
+      fo: "date-time"
+      h: "Create Time"
+      n: "create_time"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    meta: {
+      h: "Meta"
+      n: "meta"
+      r: true
+      ro: true
+      t: "`$OBJECT`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    parent: {
+      h: "Parent"
+      n: "parent"
+      r: true
+      t: "`$OBJECT`"
+    }
+    profile: {
+      h: "Profile"
+      n: "profile"
+      r: true
+      t: "`$OBJECT`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      sh: "References an Organization in the Cloudflare data model."
+      t: "`$OBJECT`"
+    }
+    result_info: {
+      h: "Result Info"
+      n: "result_info"
+      r: true
+      t: "`$OBJECT`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      t: "`$STRING`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "organization"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /organizations/{organization_id}/members:batchCreate"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "id"
+                or: "organization_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/organizations/{organization_id}/members:batchCreate"
+          q: {
+            "$action": "membersbatch_create"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              organization_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "members:batchCreate"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /organizations"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/organizations"
+          s: [
+            {
+              lit: "organizations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /organizations/{organization_id}/accounts"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "id"
+                or: "organization_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "account_pubname"
+                or: "account_pubname"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "account_pubname_contain"
+                or: "account_pubname_contain"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "account_pubname_ends_with"
+                or: "account_pubname_ends_with"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "account_pubname_starts_with"
+                or: "account_pubname_starts_with"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "direction"
+                or: "direction"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "include_tag"
+                or: "include_tag"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: true
+                k: "query"
+                n: "include_total"
+                or: "include_total"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "name"
+                or: "name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "name_contain"
+                or: "name_contain"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "name_ends_with"
+                or: "name_ends_with"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "name_starts_with"
+                or: "name_starts_with"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order_by"
+                or: "order_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page_token"
+                or: "page_token"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/organizations/{organization_id}/accounts"
+          q: {
+            "$action": "account"
+            exist: [
+              "account_pubname"
+              "account_pubname_contain"
+              "account_pubname_ends_with"
+              "account_pubname_starts_with"
+              "direction"
+              "id"
+              "include_tag"
+              "include_total"
+              "name"
+              "name_contain"
+              "name_ends_with"
+              "name_starts_with"
+              "order_by"
+              "page_size"
+              "page_token"
+            ]
+          }
+          r: {
+            param: {
+              organization_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "accounts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /organizations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "containing_account"
+                or: "containing_account"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "containing_organization"
+                or: "containing_organization"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "containing_user"
+                or: "containing_user"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "id"
+                or: "id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "name"
+                or: "name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "name_contain"
+                or: "name_contain"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "name_ends_with"
+                or: "name_ends_with"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "name_starts_with"
+                or: "name_starts_with"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page_token"
+                or: "page_token"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "parent_id"
+                or: "parent_id"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/organizations"
+          q: {
+            exist: [
+              "containing_account"
+              "containing_organization"
+              "containing_user"
+              "id"
+              "name"
+              "name_contain"
+              "name_ends_with"
+              "name_starts_with"
+              "page_size"
+              "page_token"
+              "parent_id"
+            ]
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /organizations/{organization_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "id"
+                or: "organization_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/organizations/{organization_id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              organization_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /organizations/{organization_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "id"
+                or: "organization_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/organizations/{organization_id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              organization_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /organizations/{organization_id}/invites/{member_code}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "id"
+                or: "organization_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "member_code"
+                or: "member_code"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/organizations/{organization_id}/invites/{member_code}"
+          q: {
+            exist: [
+              "id"
+              "member_code"
+            ]
+          }
+          r: {
+            param: {
+              organization_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "invites"
+            }
+            {
+              var: "member_code"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /organizations/{organization_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "id"
+                or: "organization_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/organizations/{organization_id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              organization_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /organizations/{organization_id}/profile"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "id"
+                or: "organization_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/organizations/{organization_id}/profile"
+          q: {
+            "$action": "profile"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              organization_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "profile"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

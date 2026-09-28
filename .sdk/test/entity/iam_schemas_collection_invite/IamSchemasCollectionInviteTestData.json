@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "iam_schemas_collection_invite": {
+      "IAM_SCHEMAS_COLLECTION_INVITE00": {
+        "result": []
+      },
+      "IAM_SCHEMAS_COLLECTION_INVITE01": {
+        "result": []
+      },
+      "IAM_SCHEMAS_COLLECTION_INVITE02": {
+        "result": []
+      }
+    }
+  },
+  "new": {
+    "iam_schemas_collection_invite": {
+      "iam_schemas_collection_invite_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /user/invites": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "dns_custom_nameservers_empty_response_3": {
+      "DNS_CUSTOM_NAMESERVERS_EMPTY_RESPONSE_300": {
+        "custom_ns_id": "CUSTOM_NS01",
+        "tenant_tag": "TENANT_TAG01",
+        "id": "DNS_CUSTOM_NAMESERVERS_EMPTY_RESPONSE_300"
+      },
+      "DNS_CUSTOM_NAMESERVERS_EMPTY_RESPONSE_301": {
+        "custom_ns_id": "CUSTOM_NS01",
+        "tenant_tag": "TENANT_TAG01",
+        "id": "DNS_CUSTOM_NAMESERVERS_EMPTY_RESPONSE_301"
+      },
+      "DNS_CUSTOM_NAMESERVERS_EMPTY_RESPONSE_302": {
+        "custom_ns_id": "CUSTOM_NS01",
+        "tenant_tag": "TENANT_TAG01",
+        "id": "DNS_CUSTOM_NAMESERVERS_EMPTY_RESPONSE_302"
+      }
+    }
+  },
+  "new": {
+    "dns_custom_nameservers_empty_response_3": {
+      "dns_custom_nameservers_empty_response_3_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /tenants/{tenant_tag}/custom_ns/{custom_ns_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

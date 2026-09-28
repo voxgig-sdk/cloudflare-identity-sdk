@@ -1,0 +1,22 @@
+# BasicIamCollectionTokenFlow
+
+main: kit: flow: BasicIamCollectionTokenFlow:
+{
+  entity: "iam_collection_token",
+  kind: "basic",
+  name: "BasicIamCollectionTokenFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "iam_collection_token_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamCollectionTokenFlow"
+}

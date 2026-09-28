@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "users_organization": {
+      "USERS_ORGANIZATION00": {
+        "id": "USERS_ORGANIZATION00"
+      },
+      "USERS_ORGANIZATION01": {
+        "id": "USERS_ORGANIZATION01"
+      },
+      "USERS_ORGANIZATION02": {
+        "id": "USERS_ORGANIZATION02"
+      }
+    }
+  },
+  "new": {
+    "users_organization": {
+      "users_organization_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /user/organizations/{organization_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

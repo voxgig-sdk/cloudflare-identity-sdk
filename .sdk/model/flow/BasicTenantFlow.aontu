@@ -1,0 +1,48 @@
+# BasicTenantFlow
+
+main: kit: flow: BasicTenantFlow:
+{
+  entity: "tenant",
+  kind: "basic",
+  name: "BasicTenantFlow",
+  step: [
+    {
+      m: {
+        tenant_id: "tenant01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "tenant_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "tenant_ref01",
+        srcdatavar: "tenant_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "tenant01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tenant_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTenantFlow"
+}

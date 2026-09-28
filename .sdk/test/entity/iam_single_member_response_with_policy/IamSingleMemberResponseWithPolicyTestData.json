@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "iam_single_member_response_with_policy": {
+      "IAM_SINGLE_MEMBER_RESPONSE_WITH_POLICY00": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "member_id": "MEMBER01",
+        "id": "IAM_SINGLE_MEMBER_RESPONSE_WITH_POLICY00"
+      },
+      "IAM_SINGLE_MEMBER_RESPONSE_WITH_POLICY01": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "member_id": "MEMBER01",
+        "id": "IAM_SINGLE_MEMBER_RESPONSE_WITH_POLICY01"
+      },
+      "IAM_SINGLE_MEMBER_RESPONSE_WITH_POLICY02": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "member_id": "MEMBER01",
+        "id": "IAM_SINGLE_MEMBER_RESPONSE_WITH_POLICY02"
+      }
+    }
+  },
+  "new": {
+    "iam_single_member_response_with_policy": {
+      "iam_single_member_response_with_policy_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/members": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/members/{member_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/members/{member_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

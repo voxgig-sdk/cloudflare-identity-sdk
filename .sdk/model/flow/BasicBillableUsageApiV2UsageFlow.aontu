@@ -1,0 +1,26 @@
+# BasicBillableUsageApiV2UsageFlow
+
+main: kit: flow: BasicBillableUsageApiV2UsageFlow:
+{
+  entity: "billable_usage_api_v2_usage",
+  kind: "basic",
+  name: "BasicBillableUsageApiV2UsageFlow",
+  step: [
+    {
+      m: {
+        organization_id: "organization01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "billable_usage_api_v2_usage_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicBillableUsageApiV2UsageFlow"
+}

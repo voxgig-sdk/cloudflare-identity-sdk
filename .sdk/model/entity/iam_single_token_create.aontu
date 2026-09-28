@@ -1,0 +1,126 @@
+# Entity: iam_single_token_create
+
+main: kit: entity: iam_single_token_create: {
+
+  alias: field: {}
+
+  fields: {
+    condition: {
+      h: "Condition"
+      n: "condition"
+      r: false
+      t: "`$OBJECT`"
+    }
+    expires_on: {
+      fo: "date-time"
+      h: "Expires On"
+      n: "expires_on"
+      r: false
+      sh: "The expiration time on or after which the JWT MUST NOT be accepted for processing."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "Token name."
+      t: "`$STRING`"
+    }
+    not_before: {
+      fo: "date-time"
+      h: "Not Before"
+      n: "not_before"
+      r: false
+      sh: "The time before which the token MUST NOT be accepted for processing."
+      t: "`$STRING`"
+    }
+    policies: {
+      h: "Policies"
+      n: "policies"
+      r: true
+      sh: "List of access policies assigned to the token."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 3
+      }
+    }
+  }
+
+  name: "iam_single_token_create"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/tokens"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/tokens"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "tokens"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /user/tokens"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/user/tokens"
+          s: [
+            {
+              lit: "user"
+            }
+            {
+              lit: "tokens"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.account")]
+  ]
+
+}

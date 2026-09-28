@@ -1,0 +1,124 @@
+# BasicResourceFlow
+
+main: kit: flow: BasicResourceFlow:
+{
+  entity: "resource",
+  kind: "basic",
+  name: "BasicResourceFlow",
+  step: [
+    {
+      i: {
+        ref: "resource_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        share_id: "share01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        account_id: "account01",
+        share_id: "share01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "resource_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      d: {
+        account_id: "account01",
+        share_id: "share01"
+      }
+
+      i: {
+        ref: "resource_ref01",
+        srcdatavar: "resource_ref01_data",
+        suffix: "_up0",
+        textfield: "resource_account_id"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-resource_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "resource_ref01",
+        srcdatavar: "resource_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "resource01",
+        share_id: "share01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-resource_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "resource_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "resource01",
+        share_id: "share01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      m: {
+        account_id: "account01",
+        share_id: "share01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "resource_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicResourceFlow"
+}

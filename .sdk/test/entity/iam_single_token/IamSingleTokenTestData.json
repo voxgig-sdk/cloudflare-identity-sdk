@@ -1,0 +1,50 @@
+{
+  "existing": {
+    "iam_single_token": {
+      "IAM_SINGLE_TOKEN00": {
+        "id": "IAM_SINGLE_TOKEN00",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_SINGLE_TOKEN01": {
+        "id": "IAM_SINGLE_TOKEN01",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_SINGLE_TOKEN02": {
+        "id": "IAM_SINGLE_TOKEN02",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "iam_single_token": {
+      "iam_single_token_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/tokens/{token_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /user/tokens/{token_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/tokens/{token_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /user/tokens/{token_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

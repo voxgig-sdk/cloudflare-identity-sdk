@@ -1,0 +1,26 @@
+# BasicIamCollectionOauthClientFlow
+
+main: kit: flow: BasicIamCollectionOauthClientFlow:
+{
+  entity: "iam_collection_oauth_client",
+  kind: "basic",
+  name: "BasicIamCollectionOauthClientFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "iam_collection_oauth_client_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamCollectionOauthClientFlow"
+}

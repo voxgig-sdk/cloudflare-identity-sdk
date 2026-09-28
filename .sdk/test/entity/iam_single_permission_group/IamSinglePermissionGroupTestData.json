@@ -1,0 +1,35 @@
+{
+  "existing": {
+    "iam_single_permission_group": {
+      "IAM_SINGLE_PERMISSION_GROUP00": {
+        "id": "IAM_SINGLE_PERMISSION_GROUP00",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_SINGLE_PERMISSION_GROUP01": {
+        "id": "IAM_SINGLE_PERMISSION_GROUP01",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_SINGLE_PERMISSION_GROUP02": {
+        "id": "IAM_SINGLE_PERMISSION_GROUP02",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "iam_single_permission_group": {
+      "iam_single_permission_group_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/iam/permission_groups/{permission_group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

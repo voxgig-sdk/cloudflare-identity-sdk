@@ -1,0 +1,62 @@
+# BasicResourceSharingShareExcludedRecipientResponseSingleFlow
+
+main: kit: flow: BasicResourceSharingShareExcludedRecipientResponseSingleFlow:
+{
+  entity: "resource_sharing_share_excluded_recipient_response_single",
+  kind: "basic",
+  name: "BasicResourceSharingShareExcludedRecipientResponseSingleFlow",
+  step: [
+    {
+      i: {
+        ref: "resource_sharing_share_excluded_recipient_response_single_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        share_id: "share01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "resource_sharing_share_excluded_recipient_response_single_ref01",
+        srcdatavar: "resource_sharing_share_excluded_recipient_response_single_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "resource_sharing_share_excluded_recipient_response_single01",
+        share_id: "share01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-resource_sharing_share_excluded_recipient_response_single_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "resource_sharing_share_excluded_recipient_response_single_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "resource_sharing_share_excluded_recipient_response_single01",
+        share_id: "share01"
+      }
+
+      o: "remove"
+    }
+  ],
+  "key$": "BasicResourceSharingShareExcludedRecipientResponseSingleFlow"
+}

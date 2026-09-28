@@ -1,0 +1,56 @@
+{
+  "existing": {
+    "scim_discovery": {
+      "SCIM_DISCOVERY00": {
+        "account_id": "ACCOUNT01",
+        "resource_type_id": "RESOURCE_TYPE01",
+        "schema_id": "SCHEMA01",
+        "id": "SCIM_DISCOVERY00"
+      },
+      "SCIM_DISCOVERY01": {
+        "account_id": "ACCOUNT01",
+        "resource_type_id": "RESOURCE_TYPE01",
+        "schema_id": "SCHEMA01",
+        "id": "SCIM_DISCOVERY01"
+      },
+      "SCIM_DISCOVERY02": {
+        "account_id": "ACCOUNT01",
+        "resource_type_id": "RESOURCE_TYPE01",
+        "schema_id": "SCHEMA01",
+        "id": "SCIM_DISCOVERY02"
+      }
+    }
+  },
+  "new": {
+    "scim_discovery": {
+      "scim_discovery_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/scim/v2/ResourceTypes/{resource_type_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/scim/v2/Schemas/{schema_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/scim/v2/ResourceTypes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/scim/v2/Schemas": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/scim/v2/ServiceProviderConfig": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

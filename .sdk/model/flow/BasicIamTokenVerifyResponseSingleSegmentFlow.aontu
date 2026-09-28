@@ -1,0 +1,28 @@
+# BasicIamTokenVerifyResponseSingleSegmentFlow
+
+main: kit: flow: BasicIamTokenVerifyResponseSingleSegmentFlow:
+{
+  entity: "iam_token_verify_response_single_segment",
+  kind: "basic",
+  name: "BasicIamTokenVerifyResponseSingleSegmentFlow",
+  step: [
+    {
+      i: {
+        ref: "iam_token_verify_response_single_segment_ref01",
+        srcdatavar: "iam_token_verify_response_single_segment_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-iam_token_verify_response_single_segment_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamTokenVerifyResponseSingleSegmentFlow"
+}

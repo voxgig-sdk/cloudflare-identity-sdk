@@ -1,0 +1,46 @@
+{
+  "existing": {
+    "begin_verification": {
+      "BEGIN_VERIFICATION00": {
+        "errors": [],
+        "messages": [],
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "sso_connector_id": "SSO_CONNECTOR01",
+        "id": "BEGIN_VERIFICATION00"
+      },
+      "BEGIN_VERIFICATION01": {
+        "errors": [],
+        "messages": [],
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "sso_connector_id": "SSO_CONNECTOR01",
+        "id": "BEGIN_VERIFICATION01"
+      },
+      "BEGIN_VERIFICATION02": {
+        "errors": [],
+        "messages": [],
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "sso_connector_id": "SSO_CONNECTOR01",
+        "id": "BEGIN_VERIFICATION02"
+      }
+    }
+  },
+  "new": {
+    "begin_verification": {
+      "begin_verification_ref01": {
+        "errors": [],
+        "messages": [],
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/sso_connectors/{sso_connector_id}/begin_verification": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

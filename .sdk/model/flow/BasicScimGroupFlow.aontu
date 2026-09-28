@@ -1,0 +1,81 @@
+# BasicScimGroupFlow
+
+main: kit: flow: BasicScimGroupFlow:
+{
+  entity: "scim_group",
+  kind: "basic",
+  name: "BasicScimGroupFlow",
+  step: [
+    {
+      i: {
+        ref: "scim_group_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "scim_group_ref01",
+        srcdatavar: "scim_group_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-scim_group_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "scim_group_ref01",
+        srcdatavar: "scim_group_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "scim_group01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-scim_group_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "scim_group_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "scim_group01"
+      }
+
+      o: "remove"
+    }
+  ],
+  "key$": "BasicScimGroupFlow"
+}

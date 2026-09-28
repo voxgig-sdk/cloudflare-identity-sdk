@@ -1,0 +1,58 @@
+{
+  "existing": {
+    "account_user_group_member": {
+      "ACCOUNT_USER_GROUP_MEMBER00": {
+        "id": "ACCOUNT_USER_GROUP_MEMBER00",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "user_group_id": "USER_GROUP01"
+      },
+      "ACCOUNT_USER_GROUP_MEMBER01": {
+        "id": "ACCOUNT_USER_GROUP_MEMBER01",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "user_group_id": "USER_GROUP01"
+      },
+      "ACCOUNT_USER_GROUP_MEMBER02": {
+        "id": "ACCOUNT_USER_GROUP_MEMBER02",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "user_group_id": "USER_GROUP01"
+      }
+    }
+  },
+  "new": {
+    "account_user_group_member": {
+      "account_user_group_member_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/iam/user_groups/{user_group_id}/members": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/iam/user_groups/{user_group_id}/members": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/iam/user_groups/{user_group_id}/members": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

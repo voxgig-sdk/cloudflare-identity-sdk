@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "iam_sso_connector_collection": {
+      "IAM_SSO_CONNECTOR_COLLECTION00": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_SSO_CONNECTOR_COLLECTION01": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_SSO_CONNECTOR_COLLECTION02": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "iam_sso_connector_collection": {
+      "iam_sso_connector_collection_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/sso_connectors": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

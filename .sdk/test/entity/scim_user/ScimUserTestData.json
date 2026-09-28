@@ -1,0 +1,55 @@
+{
+  "existing": {
+    "scim_user": {
+      "SCIM_USER00": {
+        "id": "SCIM_USER00",
+        "account_id": "ACCOUNT01"
+      },
+      "SCIM_USER01": {
+        "id": "SCIM_USER01",
+        "account_id": "ACCOUNT01"
+      },
+      "SCIM_USER02": {
+        "id": "SCIM_USER02",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "scim_user": {
+      "scim_user_ref01": {}
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/scim/v2/Users": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/scim/v2/Users": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/scim/v2/Users/{user_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/scim/v2/Users/{user_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/scim/v2/Users/{user_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/scim/v2/Users/{user_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

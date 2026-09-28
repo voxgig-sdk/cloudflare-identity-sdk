@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "resource_sharing_share_response_collection": {
+      "RESOURCE_SHARING_SHARE_RESPONSE_COLLECTION00": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "organization_id": "ORGANIZATION01"
+      },
+      "RESOURCE_SHARING_SHARE_RESPONSE_COLLECTION01": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "organization_id": "ORGANIZATION01"
+      },
+      "RESOURCE_SHARING_SHARE_RESPONSE_COLLECTION02": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "organization_id": "ORGANIZATION01"
+      }
+    }
+  },
+  "new": {
+    "resource_sharing_share_response_collection": {
+      "resource_sharing_share_response_collection_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/shares": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /organizations/{organization_id}/shares": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

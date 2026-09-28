@@ -1,0 +1,22 @@
+# BasicIamCollectionOrganizationFlow
+
+main: kit: flow: BasicIamCollectionOrganizationFlow:
+{
+  entity: "iam_collection_organization",
+  kind: "basic",
+  name: "BasicIamCollectionOrganizationFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "iam_collection_organization_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamCollectionOrganizationFlow"
+}

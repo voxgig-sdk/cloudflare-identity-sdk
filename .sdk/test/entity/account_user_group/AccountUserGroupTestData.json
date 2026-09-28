@@ -1,0 +1,58 @@
+{
+  "existing": {
+    "account_user_group": {
+      "ACCOUNT_USER_GROUP00": {
+        "id": "ACCOUNT_USER_GROUP00",
+        "name": "s29",
+        "policies": [],
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "ACCOUNT_USER_GROUP01": {
+        "id": "ACCOUNT_USER_GROUP01",
+        "name": "s51",
+        "policies": [],
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "ACCOUNT_USER_GROUP02": {
+        "id": "ACCOUNT_USER_GROUP02",
+        "name": "s79",
+        "policies": [],
+        "result": {},
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "account_user_group": {
+      "account_user_group_ref01": {
+        "name": "sa1",
+        "policies": [],
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/iam/user_groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/iam/user_groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/iam/user_groups/{user_group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/iam/user_groups/{user_group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

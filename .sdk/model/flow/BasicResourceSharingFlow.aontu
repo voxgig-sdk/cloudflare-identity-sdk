@@ -1,0 +1,32 @@
+# BasicResourceSharingFlow
+
+main: kit: flow: BasicResourceSharingFlow:
+{
+  entity: "resource_sharing",
+  kind: "basic",
+  name: "BasicResourceSharingFlow",
+  step: [
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "resource_sharing_ref01",
+        srcdatavar: "resource_sharing_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-resource_sharing_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicResourceSharingFlow"
+}

@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "iam_single_invite": {
+      "IAM_SINGLE_INVITE00": {
+        "id": "IAM_SINGLE_INVITE00",
+        "result": {},
+        "status": "s20"
+      },
+      "IAM_SINGLE_INVITE01": {
+        "id": "IAM_SINGLE_INVITE01",
+        "result": {},
+        "status": "s3e"
+      },
+      "IAM_SINGLE_INVITE02": {
+        "id": "IAM_SINGLE_INVITE02",
+        "result": {},
+        "status": "s5c"
+      }
+    }
+  },
+  "new": {
+    "iam_single_invite": {
+      "iam_single_invite_ref01": {
+        "result": {},
+        "status": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "GET /user/invites/{invite_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /user/invites/{invite_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

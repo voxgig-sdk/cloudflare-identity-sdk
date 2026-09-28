@@ -1,0 +1,26 @@
+# BasicDnsCustomNameserversTcnsResponseCollectionFlow
+
+main: kit: flow: BasicDnsCustomNameserversTcnsResponseCollectionFlow:
+{
+  entity: "dns_custom_nameservers_tcns_response_collection",
+  kind: "basic",
+  name: "BasicDnsCustomNameserversTcnsResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        tenant_tag: "tenant_tag01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "dns_custom_nameservers_tcns_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDnsCustomNameserversTcnsResponseCollectionFlow"
+}

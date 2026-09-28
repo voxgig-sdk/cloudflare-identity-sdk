@@ -1,0 +1,9 @@
+# BasicIamApiResponseSingleIdFlow
+
+main: kit: flow: BasicIamApiResponseSingleIdFlow:
+{
+  entity: "iam_api_response_single_id",
+  kind: "basic",
+  name: "BasicIamApiResponseSingleIdFlow",
+  "key$": "BasicIamApiResponseSingleIdFlow"
+}

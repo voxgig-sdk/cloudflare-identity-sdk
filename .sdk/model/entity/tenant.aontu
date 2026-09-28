@@ -1,0 +1,287 @@
+# Entity: tenant
+
+main: kit: entity: tenant: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      t: "`$OBJECT`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "tenant"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /tenants/{tenant_id}/accounts"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "tenant_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/tenants/{tenant_id}/accounts"
+          q: {
+            "$action": "account"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              tenant_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "tenants"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "accounts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /tenants/{tenant_id}/account_types"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "tenant_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/tenants/{tenant_id}/account_types"
+          q: {
+            "$action": "account_type"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              tenant_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "tenants"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "account_types"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /tenants/{tenant_id}/entitlements"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "tenant_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/tenants/{tenant_id}/entitlements"
+          q: {
+            "$action": "entitlement"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              tenant_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "tenants"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "entitlements"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /tenants/{tenant_id}/memberships"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "tenant_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/tenants/{tenant_id}/memberships"
+          q: {
+            "$action": "membership"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              tenant_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "tenants"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "memberships"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /tenants/{tenant_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "tenant_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/tenants/{tenant_id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              tenant_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "tenants"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

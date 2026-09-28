@@ -1,0 +1,22 @@
+# BasicIamSchemasCollectionInviteFlow
+
+main: kit: flow: BasicIamSchemasCollectionInviteFlow:
+{
+  entity: "iam_schemas_collection_invite",
+  kind: "basic",
+  name: "BasicIamSchemasCollectionInviteFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "iam_schemas_collection_invite_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamSchemasCollectionInviteFlow"
+}

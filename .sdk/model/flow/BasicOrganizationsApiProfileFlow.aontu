@@ -1,0 +1,26 @@
+# BasicOrganizationsApiProfileFlow
+
+main: kit: flow: BasicOrganizationsApiProfileFlow:
+{
+  entity: "organizations_api_profile",
+  kind: "basic",
+  name: "BasicOrganizationsApiProfileFlow",
+  step: [
+    {
+      m: {
+        organization_id: "organization01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "organizations_api_profile_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOrganizationsApiProfileFlow"
+}

@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "iam_collection_role": {
+      "IAM_COLLECTION_ROLE00": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_COLLECTION_ROLE01": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_COLLECTION_ROLE02": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "iam_collection_role": {
+      "iam_collection_role_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/roles": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

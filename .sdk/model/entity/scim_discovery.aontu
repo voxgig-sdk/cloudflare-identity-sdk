@@ -1,0 +1,280 @@
+# Entity: scim_discovery
+
+main: kit: entity: scim_discovery: {
+
+  alias: field: {}
+
+  name: "scim_discovery"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/scim/v2/ResourceTypes/{resource_type_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "User"
+                k: "param"
+                n: "resource_type_id"
+                or: "resource_type_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/scim/v2/ResourceTypes/{resource_type_id}"
+          q: {
+            exist: [
+              "account_id"
+              "resource_type_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "scim"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "ResourceTypes"
+            }
+            {
+              var: "resource_type_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/scim/v2/Schemas/{schema_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "urn:ietf:params:scim:schemas:core:2.0:User"
+                k: "param"
+                n: "schema_id"
+                or: "schema_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/scim/v2/Schemas/{schema_id}"
+          q: {
+            exist: [
+              "account_id"
+              "schema_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "scim"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "Schemas"
+            }
+            {
+              var: "schema_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/scim/v2/ResourceTypes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/scim/v2/ResourceTypes"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "scim"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "ResourceTypes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/scim/v2/Schemas"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/scim/v2/Schemas"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "scim"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "Schemas"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/scim/v2/ServiceProviderConfig"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/scim/v2/ServiceProviderConfig"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "scim"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "ServiceProviderConfig"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.account")]
+    [path("$.main.kit.entity.account")]
+    [path("$.main.kit.entity.account")]
+  ]
+
+}

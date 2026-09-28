@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "user_group": {
+      "USER_GROUP00": {
+        "id": "USER_GROUP00",
+        "account_id": "ACCOUNT01"
+      },
+      "USER_GROUP01": {
+        "id": "USER_GROUP01",
+        "account_id": "ACCOUNT01"
+      },
+      "USER_GROUP02": {
+        "id": "USER_GROUP02",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "user_group": {
+      "user_group_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/iam/user_groups/{user_group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

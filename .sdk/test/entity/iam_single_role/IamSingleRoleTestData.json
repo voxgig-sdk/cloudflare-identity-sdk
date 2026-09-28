@@ -1,0 +1,35 @@
+{
+  "existing": {
+    "iam_single_role": {
+      "IAM_SINGLE_ROLE00": {
+        "id": "IAM_SINGLE_ROLE00",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_SINGLE_ROLE01": {
+        "id": "IAM_SINGLE_ROLE01",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_SINGLE_ROLE02": {
+        "id": "IAM_SINGLE_ROLE02",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "iam_single_role": {
+      "iam_single_role_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/roles/{role_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

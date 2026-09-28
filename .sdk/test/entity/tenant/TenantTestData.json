@@ -1,0 +1,64 @@
+{
+  "existing": {
+    "tenant": {
+      "TENANT00": {
+        "errors": [],
+        "id": "TENANT00",
+        "messages": [],
+        "result": {},
+        "success": true
+      },
+      "TENANT01": {
+        "errors": [],
+        "id": "TENANT01",
+        "messages": [],
+        "result": {},
+        "success": true
+      },
+      "TENANT02": {
+        "errors": [],
+        "id": "TENANT02",
+        "messages": [],
+        "result": {},
+        "success": true
+      }
+    }
+  },
+  "new": {
+    "tenant": {
+      "tenant_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "GET /tenants/{tenant_id}/accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /tenants/{tenant_id}/account_types": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /tenants/{tenant_id}/entitlements": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /tenants/{tenant_id}/memberships": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /tenants/{tenant_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

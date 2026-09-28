@@ -1,0 +1,97 @@
+# Entity: begin_verification
+
+main: kit: entity: begin_verification: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "begin_verification"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/sso_connectors/{sso_connector_id}/begin_verification"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "sso_connector_id"
+                or: "sso_connector_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/sso_connectors/{sso_connector_id}/begin_verification"
+          q: {
+            exist: [
+              "account_id"
+              "sso_connector_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "sso_connectors"
+            }
+            {
+              var: "sso_connector_id"
+            }
+            {
+              lit: "begin_verification"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.account") path("$.main.kit.entity.sso_connector")]
+  ]
+
+}

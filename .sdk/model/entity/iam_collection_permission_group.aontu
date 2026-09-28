@@ -1,0 +1,121 @@
+# Entity: iam_collection_permission_group
+
+main: kit: entity: iam_collection_permission_group: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      sh: "A set of permission groups that are specified to the policy."
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "iam_collection_permission_group"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/iam/permission_groups"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "6d7f2f5f5b1d4a0e9081fdc98d432fd1"
+                k: "query"
+                n: "id"
+                or: "id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "labelOfThePermissionGroup"
+                k: "query"
+                n: "label"
+                or: "label"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "NameOfThePermissionGroup"
+                k: "query"
+                n: "name"
+                or: "name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: 20
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$NUMBER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/iam/permission_groups"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+              "label"
+              "name"
+              "page"
+              "per_page"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "iam"
+            }
+            {
+              lit: "permission_groups"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.account")]
+  ]
+
+}

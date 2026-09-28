@@ -1,0 +1,352 @@
+# Entity: organization_member
+
+main: kit: entity: organization_member: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    member: {
+      h: "Member"
+      n: "member"
+      r: true
+      t: "`$OBJECT`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      t: "`$OBJECT`"
+    }
+    result_info: {
+      h: "Result Info"
+      n: "result_info"
+      r: true
+      t: "`$OBJECT`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "organization_member"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /organizations/{organization_id}/members"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "id"
+                or: "organization_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/organizations/{organization_id}/members"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              organization_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "members"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /organizations/{organization_id}/members"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "id"
+                or: "organization_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page_token"
+                or: "page_token"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "user_email"
+                or: "user_email"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "user_email_contain"
+                or: "user_email_contain"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "user_email_ends_with"
+                or: "user_email_ends_with"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "user_email_starts_with"
+                or: "user_email_starts_with"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/organizations/{organization_id}/members"
+          q: {
+            exist: [
+              "id"
+              "page_size"
+              "page_token"
+              "status"
+              "user_email"
+              "user_email_contain"
+              "user_email_ends_with"
+              "user_email_starts_with"
+            ]
+          }
+          r: {
+            param: {
+              organization_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "members"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /organizations/{organization_id}/members/{member_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "id"
+                or: "member_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "organization_id"
+                or: "organization_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/organizations/{organization_id}/members/{member_id}"
+          q: {
+            exist: [
+              "id"
+              "organization_id"
+            ]
+          }
+          r: {
+            param: {
+              member_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "organization_id"
+            }
+            {
+              lit: "members"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /organizations/{organization_id}/members/{member_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "id"
+                or: "member_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "organization_id"
+                or: "organization_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/organizations/{organization_id}/members/{member_id}"
+          q: {
+            exist: [
+              "id"
+              "organization_id"
+            ]
+          }
+          r: {
+            param: {
+              member_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "organization_id"
+            }
+            {
+              lit: "members"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.organization")]
+  ]
+
+}

@@ -1,0 +1,77 @@
+# Entity: dns_custom_nameservers_empty_response_3
+
+main: kit: entity: dns_custom_nameservers_empty_response_3: {
+
+  alias: field: {}
+
+  name: "dns_custom_nameservers_empty_response_3"
+  op: {
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /tenants/{tenant_tag}/custom_ns/{custom_ns_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "ns1.example.com"
+                k: "param"
+                n: "custom_ns_id"
+                or: "custom_ns_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "tenant_tag"
+                or: "tenant_tag"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/tenants/{tenant_tag}/custom_ns/{custom_ns_id}"
+          q: {
+            exist: [
+              "custom_ns_id"
+              "tenant_tag"
+            ]
+          }
+          s: [
+            {
+              lit: "tenants"
+            }
+            {
+              var: "tenant_tag"
+            }
+            {
+              lit: "custom_ns"
+            }
+            {
+              var: "custom_ns_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.tenant")]
+  ]
+
+}

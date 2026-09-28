@@ -1,0 +1,55 @@
+# BasicIamSingleOauthClientFlow
+
+main: kit: flow: BasicIamSingleOauthClientFlow:
+{
+  entity: "iam_single_oauth_client",
+  kind: "basic",
+  name: "BasicIamSingleOauthClientFlow",
+  step: [
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "iam_single_oauth_client_ref01",
+        srcdatavar: "iam_single_oauth_client_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-iam_single_oauth_client_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "iam_single_oauth_client_ref01",
+        srcdatavar: "iam_single_oauth_client_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "iam_single_oauth_client01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-iam_single_oauth_client_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamSingleOauthClientFlow"
+}

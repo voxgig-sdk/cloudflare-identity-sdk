@@ -1,0 +1,61 @@
+{
+  "existing": {
+    "iam_sso_connector": {
+      "IAM_SSO_CONNECTOR00": {
+        "begin_verification": true,
+        "email_domain": "s3d",
+        "enabled": true,
+        "id": "IAM_SSO_CONNECTOR00",
+        "result": {},
+        "use_fedramp_language": false,
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_SSO_CONNECTOR01": {
+        "begin_verification": true,
+        "email_domain": "s79",
+        "enabled": true,
+        "id": "IAM_SSO_CONNECTOR01",
+        "result": {},
+        "use_fedramp_language": false,
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_SSO_CONNECTOR02": {
+        "begin_verification": true,
+        "email_domain": "sb5",
+        "enabled": true,
+        "id": "IAM_SSO_CONNECTOR02",
+        "result": {},
+        "use_fedramp_language": false,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "iam_sso_connector": {
+      "iam_sso_connector_ref01": {
+        "begin_verification": true,
+        "email_domain": "sf1",
+        "enabled": true,
+        "result": {},
+        "use_fedramp_language": false
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/sso_connectors": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/sso_connectors/{sso_connector_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/sso_connectors/{sso_connector_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

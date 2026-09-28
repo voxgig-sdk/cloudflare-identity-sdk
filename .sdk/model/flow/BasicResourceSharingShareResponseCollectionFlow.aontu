@@ -1,0 +1,26 @@
+# BasicResourceSharingShareResponseCollectionFlow
+
+main: kit: flow: BasicResourceSharingShareResponseCollectionFlow:
+{
+  entity: "resource_sharing_share_response_collection",
+  kind: "basic",
+  name: "BasicResourceSharingShareResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        organization_id: "organization01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "resource_sharing_share_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicResourceSharingShareResponseCollectionFlow"
+}

@@ -1,0 +1,54 @@
+{
+  "existing": {
+    "iam_single_membership_response_with_policy": {
+      "IAM_SINGLE_MEMBERSHIP_RESPONSE_WITH_POLICY00": {
+        "result": {},
+        "status": "s15",
+        "membership_id": "MEMBERSHIP01",
+        "id": "IAM_SINGLE_MEMBERSHIP_RESPONSE_WITH_POLICY00"
+      },
+      "IAM_SINGLE_MEMBERSHIP_RESPONSE_WITH_POLICY01": {
+        "result": {},
+        "status": "s29",
+        "membership_id": "MEMBERSHIP01",
+        "id": "IAM_SINGLE_MEMBERSHIP_RESPONSE_WITH_POLICY01"
+      },
+      "IAM_SINGLE_MEMBERSHIP_RESPONSE_WITH_POLICY02": {
+        "result": {},
+        "status": "s3d",
+        "membership_id": "MEMBERSHIP01",
+        "id": "IAM_SINGLE_MEMBERSHIP_RESPONSE_WITH_POLICY02"
+      }
+    }
+  },
+  "new": {
+    "iam_single_membership_response_with_policy": {
+      "iam_single_membership_response_with_policy_ref01": {
+        "result": {},
+        "status": "s51"
+      }
+    }
+  },
+  "requests": {
+    "GET /memberships": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /memberships/{membership_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /user/memberships/{membership_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /memberships/{membership_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

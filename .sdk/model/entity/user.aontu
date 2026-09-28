@@ -1,0 +1,45 @@
+# Entity: user
+
+main: kit: entity: user: {
+
+  alias: field: {}
+
+  name: "user"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /user/tenants"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/user/tenants"
+          q: {
+            "$action": "tenant"
+          }
+          s: [
+            {
+              lit: "user"
+            }
+            {
+              lit: "tenants"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

@@ -1,0 +1,291 @@
+# Entity: resource_sharing_share_recipient_response_single
+
+main: kit: entity: resource_sharing_share_recipient_response_single: {
+
+  alias: field: {}
+
+  fields: {
+    account_id: {
+      de: true
+      h: "Account Id"
+      n: "account_id"
+      r: false
+      sh: "Deprecated alias for `recipient_account_id`."
+      t: "`$STRING`"
+    }
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    organization_id: {
+      h: "Organization Id"
+      n: "organization_id"
+      r: false
+      sh: "Organization identifier."
+      t: "`$STRING`"
+    }
+    recipient_account_id: {
+      h: "Recipient Account Id"
+      n: "recipient_account_id"
+      r: false
+      sh: "The account that will receive the share."
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      op: {
+        load: {
+          req: true
+          type: "`$ANY`"
+        }
+      }
+      r: false
+      sh: "A recipient of a share."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 0
+      }
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "resource_sharing_share_recipient_response_single"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/shares/{share_id}/recipients"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "3fd85f74b32742f1bff64a85009dda07"
+                k: "param"
+                n: "share_id"
+                or: "share_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/shares/{share_id}/recipients"
+          q: {
+            exist: [
+              "account_id"
+              "share_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "shares"
+            }
+            {
+              var: "share_id"
+            }
+            {
+              lit: "recipients"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "3fd85f74b32742f1bff64a85009dda07"
+                k: "param"
+                n: "recipient_id"
+                or: "recipient_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "3fd85f74b32742f1bff64a85009dda07"
+                k: "param"
+                n: "share_id"
+                or: "share_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: true
+                k: "query"
+                n: "include_resource"
+                or: "include_resource"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}"
+          q: {
+            exist: [
+              "account_id"
+              "include_resource"
+              "recipient_id"
+              "share_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "shares"
+            }
+            {
+              var: "share_id"
+            }
+            {
+              lit: "recipients"
+            }
+            {
+              var: "recipient_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "3fd85f74b32742f1bff64a85009dda07"
+                k: "param"
+                n: "recipient_id"
+                or: "recipient_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "3fd85f74b32742f1bff64a85009dda07"
+                k: "param"
+                n: "share_id"
+                or: "share_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}"
+          q: {
+            exist: [
+              "account_id"
+              "recipient_id"
+              "share_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "shares"
+            }
+            {
+              var: "share_id"
+            }
+            {
+              lit: "recipients"
+            }
+            {
+              var: "recipient_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.account")]
+    [path("$.main.kit.entity.account")]
+  ]
+
+}

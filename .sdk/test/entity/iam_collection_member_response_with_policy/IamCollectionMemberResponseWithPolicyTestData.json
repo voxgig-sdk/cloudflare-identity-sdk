@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "iam_collection_member_response_with_policy": {
+      "IAM_COLLECTION_MEMBER_RESPONSE_WITH_POLICY00": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_COLLECTION_MEMBER_RESPONSE_WITH_POLICY01": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_COLLECTION_MEMBER_RESPONSE_WITH_POLICY02": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "iam_collection_member_response_with_policy": {
+      "iam_collection_member_response_with_policy_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/members": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

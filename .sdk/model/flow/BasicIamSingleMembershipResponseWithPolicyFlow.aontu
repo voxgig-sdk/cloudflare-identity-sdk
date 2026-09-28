@@ -1,0 +1,50 @@
+# BasicIamSingleMembershipResponseWithPolicyFlow
+
+main: kit: flow: BasicIamSingleMembershipResponseWithPolicyFlow:
+{
+  entity: "iam_single_membership_response_with_policy",
+  kind: "basic",
+  name: "BasicIamSingleMembershipResponseWithPolicyFlow",
+  step: [
+    {
+      i: {
+        ref: "iam_single_membership_response_with_policy_ref01",
+        srcdatavar: "iam_single_membership_response_with_policy_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-iam_single_membership_response_with_policy_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "iam_single_membership_response_with_policy_ref01",
+        srcdatavar: "iam_single_membership_response_with_policy_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "iam_single_membership_response_with_policy01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-iam_single_membership_response_with_policy_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamSingleMembershipResponseWithPolicyFlow"
+}

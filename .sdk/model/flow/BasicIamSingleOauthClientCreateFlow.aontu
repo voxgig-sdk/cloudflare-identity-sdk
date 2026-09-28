@@ -1,0 +1,22 @@
+# BasicIamSingleOauthClientCreateFlow
+
+main: kit: flow: BasicIamSingleOauthClientCreateFlow:
+{
+  entity: "iam_single_oauth_client_create",
+  kind: "basic",
+  name: "BasicIamSingleOauthClientCreateFlow",
+  step: [
+    {
+      i: {
+        ref: "iam_single_oauth_client_create_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicIamSingleOauthClientCreateFlow"
+}

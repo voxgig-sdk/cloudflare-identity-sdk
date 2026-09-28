@@ -1,0 +1,28 @@
+# BasicIamResponseSingleValueFlow
+
+main: kit: flow: BasicIamResponseSingleValueFlow:
+{
+  entity: "iam_response_single_value",
+  kind: "basic",
+  name: "BasicIamResponseSingleValueFlow",
+  step: [
+    {
+      i: {
+        ref: "iam_response_single_value_ref01",
+        srcdatavar: "iam_response_single_value_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-iam_response_single_value_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamResponseSingleValueFlow"
+}

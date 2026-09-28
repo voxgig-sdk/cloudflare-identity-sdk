@@ -1,0 +1,70 @@
+{
+  "existing": {
+    "account_resource_group": {
+      "ACCOUNT_RESOURCE_GROUP00": {
+        "errors": [],
+        "id": "ACCOUNT_RESOURCE_GROUP00",
+        "messages": [],
+        "name": "s49",
+        "result": {},
+        "scope": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "ACCOUNT_RESOURCE_GROUP01": {
+        "errors": [],
+        "id": "ACCOUNT_RESOURCE_GROUP01",
+        "messages": [],
+        "name": "s8f",
+        "result": {},
+        "scope": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "ACCOUNT_RESOURCE_GROUP02": {
+        "errors": [],
+        "id": "ACCOUNT_RESOURCE_GROUP02",
+        "messages": [],
+        "name": "sd5",
+        "result": {},
+        "scope": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "account_resource_group": {
+      "account_resource_group_ref01": {
+        "errors": [],
+        "messages": [],
+        "name": "s11b",
+        "result": {},
+        "scope": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/iam/resource_groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/iam/resource_groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/iam/resource_groups/{resource_group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/iam/resource_groups/{resource_group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

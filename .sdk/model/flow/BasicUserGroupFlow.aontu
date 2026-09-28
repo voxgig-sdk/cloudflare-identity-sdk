@@ -1,0 +1,9 @@
+# BasicUserGroupFlow
+
+main: kit: flow: BasicUserGroupFlow:
+{
+  entity: "user_group",
+  kind: "basic",
+  name: "BasicUserGroupFlow",
+  "key$": "BasicUserGroupFlow"
+}

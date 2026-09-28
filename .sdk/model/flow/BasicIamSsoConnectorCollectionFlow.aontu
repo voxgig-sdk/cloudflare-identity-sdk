@@ -1,0 +1,26 @@
+# BasicIamSsoConnectorCollectionFlow
+
+main: kit: flow: BasicIamSsoConnectorCollectionFlow:
+{
+  entity: "iam_sso_connector_collection",
+  kind: "basic",
+  name: "BasicIamSsoConnectorCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "iam_sso_connector_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamSsoConnectorCollectionFlow"
+}

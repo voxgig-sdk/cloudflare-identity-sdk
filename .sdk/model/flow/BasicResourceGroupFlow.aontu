@@ -1,0 +1,9 @@
+# BasicResourceGroupFlow
+
+main: kit: flow: BasicResourceGroupFlow:
+{
+  entity: "resource_group",
+  kind: "basic",
+  name: "BasicResourceGroupFlow",
+  "key$": "BasicResourceGroupFlow"
+}

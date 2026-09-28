@@ -1,0 +1,9 @@
+# BasicUsersAccountMembershipFlow
+
+main: kit: flow: BasicUsersAccountMembershipFlow:
+{
+  entity: "users_account_membership",
+  kind: "basic",
+  name: "BasicUsersAccountMembershipFlow",
+  "key$": "BasicUsersAccountMembershipFlow"
+}

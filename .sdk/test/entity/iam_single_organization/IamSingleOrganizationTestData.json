@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "iam_single_organization": {
+      "IAM_SINGLE_ORGANIZATION00": {
+        "id": "IAM_SINGLE_ORGANIZATION00",
+        "result": {}
+      },
+      "IAM_SINGLE_ORGANIZATION01": {
+        "id": "IAM_SINGLE_ORGANIZATION01",
+        "result": {}
+      },
+      "IAM_SINGLE_ORGANIZATION02": {
+        "id": "IAM_SINGLE_ORGANIZATION02",
+        "result": {}
+      }
+    }
+  },
+  "new": {
+    "iam_single_organization": {
+      "iam_single_organization_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /user/organizations/{organization_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

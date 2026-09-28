@@ -1,0 +1,38 @@
+{
+  "existing": {
+    "resource_sharing": {
+      "RESOURCE_SHARING00": {
+        "account_id": "ACCOUNT01",
+        "share_id": "SHARE01",
+        "id": "RESOURCE_SHARING00"
+      },
+      "RESOURCE_SHARING01": {
+        "account_id": "ACCOUNT01",
+        "share_id": "SHARE01",
+        "id": "RESOURCE_SHARING01"
+      },
+      "RESOURCE_SHARING02": {
+        "account_id": "ACCOUNT01",
+        "share_id": "SHARE01",
+        "id": "RESOURCE_SHARING02"
+      }
+    }
+  },
+  "new": {
+    "resource_sharing": {
+      "resource_sharing_ref01": {}
+    }
+  },
+  "requests": {
+    "PUT /accounts/{account_id}/shares/{share_id}/excluded-recipients": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/shares/{share_id}/recipients": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

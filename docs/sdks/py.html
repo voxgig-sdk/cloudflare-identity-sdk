@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Python | Cloudflare Identity &amp; Administration</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Identity &amp; Administration<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-identity-sdk">voxgig-sdk/cloudflare-identity-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Identity &amp; Administration</a></details>
+<details><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/aaa_audit_logs_v2_org_history_response_collection.html">AaaAuditLogsV2OrgHistoryResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_org_response_collection.html">AaaAuditLogsV2OrgResponseCollection</a>
+<a href="../api/account.html">Account</a>
+<a href="../api/account_resource_group.html">AccountResourceGroup</a>
+<a href="../api/account_user_group.html">AccountUserGroup</a>
+<a href="../api/account_user_group_member.html">AccountUserGroupMember</a>
+<a href="../api/begin_verification.html">BeginVerification</a>
+<a href="../api/bill_subs_api_client_secret_response_single.html">BillSubsApiClientSecretResponseSingle</a>
+<a href="../api/billable_usage_api_v2_usage.html">BillableUsageApiV2Usage</a>
+<a href="../api/dns_custom_nameservers_empty_response_3.html">DnsCustomNameserversEmptyResponse3</a>
+<a href="../api/dns_custom_nameservers_tcns_response_collection.html">DnsCustomNameserversTcnsResponseCollection</a>
+<a href="../api/dns_custom_nameservers_tcns_response_single.html">DnsCustomNameserversTcnsResponseSingle</a>
+<a href="../api/iam_api_response_single_id.html">IamApiResponseSingleId</a>
+<a href="../api/iam_collection_member_response_with_policy.html">IamCollectionMemberResponseWithPolicy</a>
+<a href="../api/iam_collection_oauth_client.html">IamCollectionOauthClient</a>
+<a href="../api/iam_collection_oauth_scope.html">IamCollectionOauthScope</a>
+<a href="../api/iam_collection_organization.html">IamCollectionOrganization</a>
+<a href="../api/iam_collection_permission_group.html">IamCollectionPermissionGroup</a>
+<a href="../api/iam_collection_role.html">IamCollectionRole</a>
+<a href="../api/iam_collection_token.html">IamCollectionToken</a>
+<a href="../api/iam_oauth_client_rotate_secret.html">IamOauthClientRotateSecret</a>
+<a href="../api/iam_permissions_group_response_collection.html">IamPermissionsGroupResponseCollection</a>
+<a href="../api/iam_response_single_value.html">IamResponseSingleValue</a>
+<a href="../api/iam_schemas_collection_invite.html">IamSchemasCollectionInvite</a>
+<a href="../api/iam_single_invite.html">IamSingleInvite</a>
+<a href="../api/iam_single_member_response_with_policy.html">IamSingleMemberResponseWithPolicy</a>
+<a href="../api/iam_single_membership_response_with_policy.html">IamSingleMembershipResponseWithPolicy</a>
+<a href="../api/iam_single_oauth_client.html">IamSingleOauthClient</a>
+<a href="../api/iam_single_oauth_client_create.html">IamSingleOauthClientCreate</a>
+<a href="../api/iam_single_organization.html">IamSingleOrganization</a>
+<a href="../api/iam_single_permission_group.html">IamSinglePermissionGroup</a>
+<a href="../api/iam_single_role.html">IamSingleRole</a>
+<a href="../api/iam_single_token.html">IamSingleToken</a>
+<a href="../api/iam_single_token_create.html">IamSingleTokenCreate</a>
+<a href="../api/iam_sso_connector.html">IamSsoConnector</a>
+<a href="../api/iam_sso_connector_collection.html">IamSsoConnectorCollection</a>
+<a href="../api/iam_token_verify_response_single_segment.html">IamTokenVerifyResponseSingleSegment</a>
+<a href="../api/member.html">Member</a>
+<a href="../api/oauth_client.html">OauthClient</a>
+<a href="../api/organization.html">Organization</a>
+<a href="../api/organization_member.html">OrganizationMember</a>
+<a href="../api/organizations_api_profile.html">OrganizationsApiProfile</a>
+<a href="../api/resource.html">Resource</a>
+<a href="../api/resource_group.html">ResourceGroup</a>
+<a href="../api/resource_sharing.html">ResourceSharing</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_collection.html">ResourceSharingShareExcludedRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_single.html">ResourceSharingShareExcludedRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_recipient_response_collection.html">ResourceSharingShareRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_recipient_response_single.html">ResourceSharingShareRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_response_collection.html">ResourceSharingShareResponseCollection</a>
+<a href="../api/resource_sharing_share_response_single.html">ResourceSharingShareResponseSingle</a>
+<a href="../api/scim_discovery.html">ScimDiscovery</a>
+<a href="../api/scim_group.html">ScimGroup</a>
+<a href="../api/scim_user.html">ScimUser</a>
+<a href="../api/sso_connector.html">SsoConnector</a>
+<a href="../api/tenant.html">Tenant</a>
+<a href="../api/token.html">Token</a>
+<a href="../api/user.html">User</a>
+<a href="../api/user_group.html">UserGroup</a>
+<a href="../api/users_account_membership.html">UsersAccountMembership</a>
+<a href="../api/users_organization.html">UsersOrganization</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details open><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a aria-current="page" href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>SDKs</div><h1 id="python">Python</h1>
+<p>Python</p>
+<h2 id="install">Install</h2>
+<p>Not published. Build from the py directory.</p>
+<h2 id="package">Package</h2>
+<p><code>voxgig-sdk-cloudflare-identity-sdk</code></p>
+<h2 id="api-reference">API reference</h2>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Operations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../api/aaa_audit_logs_v2_org_history_response_collection.html">AaaAuditLogsV2OrgHistoryResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/aaa_audit_logs_v2_org_response_collection.html">AaaAuditLogsV2OrgResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/account.html">Account</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/account_resource_group.html">AccountResourceGroup</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/account_user_group.html">AccountUserGroup</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/account_user_group_member.html">AccountUserGroupMember</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/begin_verification.html">BeginVerification</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/bill_subs_api_client_secret_response_single.html">BillSubsApiClientSecretResponseSingle</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/billable_usage_api_v2_usage.html">BillableUsageApiV2Usage</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/dns_custom_nameservers_empty_response_3.html">DnsCustomNameserversEmptyResponse3</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/dns_custom_nameservers_tcns_response_collection.html">DnsCustomNameserversTcnsResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/dns_custom_nameservers_tcns_response_single.html">DnsCustomNameserversTcnsResponseSingle</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_api_response_single_id.html">IamApiResponseSingleId</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_collection_member_response_with_policy.html">IamCollectionMemberResponseWithPolicy</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_collection_oauth_client.html">IamCollectionOauthClient</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_collection_oauth_scope.html">IamCollectionOauthScope</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_collection_organization.html">IamCollectionOrganization</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_collection_permission_group.html">IamCollectionPermissionGroup</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_collection_role.html">IamCollectionRole</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_collection_token.html">IamCollectionToken</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_oauth_client_rotate_secret.html">IamOauthClientRotateSecret</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_permissions_group_response_collection.html">IamPermissionsGroupResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_response_single_value.html">IamResponseSingleValue</a></td>
+<td><code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_schemas_collection_invite.html">IamSchemasCollectionInvite</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_single_invite.html">IamSingleInvite</a></td>
+<td><code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_single_member_response_with_policy.html">IamSingleMemberResponseWithPolicy</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_single_membership_response_with_policy.html">IamSingleMembershipResponseWithPolicy</a></td>
+<td><code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_single_oauth_client.html">IamSingleOauthClient</a></td>
+<td><code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_single_oauth_client_create.html">IamSingleOauthClientCreate</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_single_organization.html">IamSingleOrganization</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_single_permission_group.html">IamSinglePermissionGroup</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_single_role.html">IamSingleRole</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_single_token.html">IamSingleToken</a></td>
+<td><code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_single_token_create.html">IamSingleTokenCreate</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_sso_connector.html">IamSsoConnector</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_sso_connector_collection.html">IamSsoConnectorCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/iam_token_verify_response_single_segment.html">IamTokenVerifyResponseSingleSegment</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/member.html">Member</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/oauth_client.html">OauthClient</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/organization.html">Organization</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/organization_member.html">OrganizationMember</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/organizations_api_profile.html">OrganizationsApiProfile</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/resource.html">Resource</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/resource_group.html">ResourceGroup</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/resource_sharing.html">ResourceSharing</a></td>
+<td><code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/resource_sharing_share_excluded_recipient_response_collection.html">ResourceSharingShareExcludedRecipientResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/resource_sharing_share_excluded_recipient_response_single.html">ResourceSharingShareExcludedRecipientResponseSingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/resource_sharing_share_recipient_response_collection.html">ResourceSharingShareRecipientResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/resource_sharing_share_recipient_response_single.html">ResourceSharingShareRecipientResponseSingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/resource_sharing_share_response_collection.html">ResourceSharingShareResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/resource_sharing_share_response_single.html">ResourceSharingShareResponseSingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/scim_discovery.html">ScimDiscovery</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/scim_group.html">ScimGroup</a></td>
+<td><code>create</code>, <code>load</code>, <code>patch</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/scim_user.html">ScimUser</a></td>
+<td><code>create</code>, <code>load</code>, <code>patch</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/sso_connector.html">SsoConnector</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/tenant.html">Tenant</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/token.html">Token</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/user.html">User</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/user_group.html">UserGroup</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/users_account_membership.html">UsersAccountMembership</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/users_organization.html">UsersOrganization</a></td>
+<td><code>remove</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuration">Configuration</h2>
+<p>Set the server URL and credentials for your environment. Enable only the features your application needs.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><a href="../features/test.html">Test transport</a></li>
+</ul>
+<h2 id="set-up-the-client">Set up the client</h2>
+<p>This setup fragment reads credentials from the environment. Use the API operation reference to supply input for each call.</p>
+<pre><code class="language-py">import os
+from cloudflare_identity_sdk import CloudflareIdentitySDK
+
+client = CloudflareIdentitySDK({&quot;apikey&quot;: os.environ.get(&quot;CLOUDFLARE_IDENTITY_APIKEY&quot;)})
+</code></pre>
+<h2 id="client-defaults">Client defaults</h2>
+<pre><code class="language-json">{
+  &quot;base&quot;: &quot;https://api.cloudflare.com/client/v4&quot;,
+  &quot;auth&quot;: {
+    &quot;prefix&quot;: &quot;&quot;
+  },
+  &quot;headers&quot;: {
+    &quot;content-type&quot;: &quot;application/json&quot;
+  },
+  &quot;entity&quot;: {
+    &quot;aaa_audit_logs_v2_org_history_response_collection&quot;: {},
+    &quot;aaa_audit_logs_v2_org_response_collection&quot;: {},
+    &quot;account&quot;: {},
+    &quot;account_resource_group&quot;: {},
+    &quot;account_user_group&quot;: {},
+    &quot;account_user_group_member&quot;: {},
+    &quot;begin_verification&quot;: {},
+    &quot;bill_subs_api_client_secret_response_single&quot;: {},
+    &quot;billable_usage_api_v2_usage&quot;: {},
+    &quot;dns_custom_nameservers_empty_response_3&quot;: {},
+    &quot;dns_custom_nameservers_tcns_response_collection&quot;: {},
+    &quot;dns_custom_nameservers_tcns_response_single&quot;: {},
+    &quot;iam_api_response_single_id&quot;: {},
+    &quot;iam_collection_member_response_with_policy&quot;: {},
+    &quot;iam_collection_oauth_client&quot;: {},
+    &quot;iam_collection_oauth_scope&quot;: {},
+    &quot;iam_collection_organization&quot;: {},
+    &quot;iam_collection_permission_group&quot;: {},
+    &quot;iam_collection_role&quot;: {},
+    &quot;iam_collection_token&quot;: {},
+    &quot;iam_oauth_client_rotate_secret&quot;: {},
+    &quot;iam_permissions_group_response_collection&quot;: {},
+    &quot;iam_response_single_value&quot;: {},
+    &quot;iam_schemas_collection_invite&quot;: {},
+    &quot;iam_single_invite&quot;: {},
+    &quot;iam_single_member_response_with_policy&quot;: {},
+    &quot;iam_single_membership_response_with_policy&quot;: {},
+    &quot;iam_single_oauth_client&quot;: {},
+    &quot;iam_single_oauth_client_create&quot;: {},
+    &quot;iam_single_organization&quot;: {},
+    &quot;iam_single_permission_group&quot;: {},
+    &quot;iam_single_role&quot;: {},
+    &quot;iam_single_token&quot;: {},
+    &quot;iam_single_token_create&quot;: {},
+    &quot;iam_sso_connector&quot;: {},
+    &quot;iam_sso_connector_collection&quot;: {},
+    &quot;iam_token_verify_response_single_segment&quot;: {},
+    &quot;member&quot;: {},
+    &quot;oauth_client&quot;: {},
+    &quot;organization&quot;: {},
+    &quot;organization_member&quot;: {},
+    &quot;organizations_api_profile&quot;: {},
+    &quot;resource&quot;: {},
+    &quot;resource_group&quot;: {},
+    &quot;resource_sharing&quot;: {},
+    &quot;resource_sharing_share_excluded_recipient_response_collection&quot;: {},
+    &quot;resource_sharing_share_excluded_recipient_response_single&quot;: {},
+    &quot;resource_sharing_share_recipient_response_collection&quot;: {},
+    &quot;resource_sharing_share_recipient_response_single&quot;: {},
+    &quot;resource_sharing_share_response_collection&quot;: {},
+    &quot;resource_sharing_share_response_single&quot;: {},
+    &quot;scim_discovery&quot;: {},
+    &quot;scim_group&quot;: {},
+    &quot;scim_user&quot;: {},
+    &quot;sso_connector&quot;: {},
+    &quot;tenant&quot;: {},
+    &quot;token&quot;: {},
+    &quot;user&quot;: {},
+    &quot;user_group&quot;: {},
+    &quot;users_account_membership&quot;: {},
+    &quot;users_organization&quot;: {}
+  }
+}
+</code></pre>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

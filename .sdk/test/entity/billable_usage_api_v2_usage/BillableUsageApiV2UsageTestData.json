@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "billable_usage_api_v2_usage": {
+      "BILLABLE_USAGE_API_V2_USAGE00": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "organization_id": "ORGANIZATION01"
+      },
+      "BILLABLE_USAGE_API_V2_USAGE01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "organization_id": "ORGANIZATION01"
+      },
+      "BILLABLE_USAGE_API_V2_USAGE02": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "organization_id": "ORGANIZATION01"
+      }
+    }
+  },
+  "new": {
+    "billable_usage_api_v2_usage": {
+      "billable_usage_api_v2_usage_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /organizations/{organization_id}/billable/usage": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

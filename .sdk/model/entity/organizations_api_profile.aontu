@@ -1,0 +1,77 @@
+# Entity: organizations_api_profile
+
+main: kit: entity: organizations_api_profile: {
+
+  alias: field: {}
+
+  fields: {
+    code: {
+      h: "Code"
+      n: "code"
+      r: true
+      t: "`$INTEGER`"
+    }
+    message: {
+      h: "Message"
+      n: "message"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "organizations_api_profile"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /organizations/{organization_id}/profile"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a7b9c3d2e8f4a1b5c6d0e9f2a3b7c4d8"
+                k: "param"
+                n: "organization_id"
+                or: "organization_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/organizations/{organization_id}/profile"
+          q: {
+            exist: [
+              "organization_id"
+            ]
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "organization_id"
+            }
+            {
+              lit: "profile"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.organization")]
+  ]
+
+}

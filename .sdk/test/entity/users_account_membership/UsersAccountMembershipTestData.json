@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "users_account_membership": {
+      "USERS_ACCOUNT_MEMBERSHIP00": {
+        "id": "USERS_ACCOUNT_MEMBERSHIP00"
+      },
+      "USERS_ACCOUNT_MEMBERSHIP01": {
+        "id": "USERS_ACCOUNT_MEMBERSHIP01"
+      },
+      "USERS_ACCOUNT_MEMBERSHIP02": {
+        "id": "USERS_ACCOUNT_MEMBERSHIP02"
+      }
+    }
+  },
+  "new": {
+    "users_account_membership": {
+      "users_account_membership_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /memberships/{membership_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

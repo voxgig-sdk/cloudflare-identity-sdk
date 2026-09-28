@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "iam_collection_organization": {
+      "IAM_COLLECTION_ORGANIZATION00": {
+        "result": []
+      },
+      "IAM_COLLECTION_ORGANIZATION01": {
+        "result": []
+      },
+      "IAM_COLLECTION_ORGANIZATION02": {
+        "result": []
+      }
+    }
+  },
+  "new": {
+    "iam_collection_organization": {
+      "iam_collection_organization_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /user/organizations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

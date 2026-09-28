@@ -1,0 +1,26 @@
+# BasicIamCollectionPermissionGroupFlow
+
+main: kit: flow: BasicIamCollectionPermissionGroupFlow:
+{
+  entity: "iam_collection_permission_group",
+  kind: "basic",
+  name: "BasicIamCollectionPermissionGroupFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "iam_collection_permission_group_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamCollectionPermissionGroupFlow"
+}

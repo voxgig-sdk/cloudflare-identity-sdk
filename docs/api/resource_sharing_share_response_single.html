@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ResourceSharingShareResponseSingle | Cloudflare Identity &amp; Administration</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Identity &amp; Administration<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-identity-sdk">voxgig-sdk/cloudflare-identity-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Identity &amp; Administration</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/aaa_audit_logs_v2_org_history_response_collection.html">AaaAuditLogsV2OrgHistoryResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_org_response_collection.html">AaaAuditLogsV2OrgResponseCollection</a>
+<a href="../api/account.html">Account</a>
+<a href="../api/account_resource_group.html">AccountResourceGroup</a>
+<a href="../api/account_user_group.html">AccountUserGroup</a>
+<a href="../api/account_user_group_member.html">AccountUserGroupMember</a>
+<a href="../api/begin_verification.html">BeginVerification</a>
+<a href="../api/bill_subs_api_client_secret_response_single.html">BillSubsApiClientSecretResponseSingle</a>
+<a href="../api/billable_usage_api_v2_usage.html">BillableUsageApiV2Usage</a>
+<a href="../api/dns_custom_nameservers_empty_response_3.html">DnsCustomNameserversEmptyResponse3</a>
+<a href="../api/dns_custom_nameservers_tcns_response_collection.html">DnsCustomNameserversTcnsResponseCollection</a>
+<a href="../api/dns_custom_nameservers_tcns_response_single.html">DnsCustomNameserversTcnsResponseSingle</a>
+<a href="../api/iam_api_response_single_id.html">IamApiResponseSingleId</a>
+<a href="../api/iam_collection_member_response_with_policy.html">IamCollectionMemberResponseWithPolicy</a>
+<a href="../api/iam_collection_oauth_client.html">IamCollectionOauthClient</a>
+<a href="../api/iam_collection_oauth_scope.html">IamCollectionOauthScope</a>
+<a href="../api/iam_collection_organization.html">IamCollectionOrganization</a>
+<a href="../api/iam_collection_permission_group.html">IamCollectionPermissionGroup</a>
+<a href="../api/iam_collection_role.html">IamCollectionRole</a>
+<a href="../api/iam_collection_token.html">IamCollectionToken</a>
+<a href="../api/iam_oauth_client_rotate_secret.html">IamOauthClientRotateSecret</a>
+<a href="../api/iam_permissions_group_response_collection.html">IamPermissionsGroupResponseCollection</a>
+<a href="../api/iam_response_single_value.html">IamResponseSingleValue</a>
+<a href="../api/iam_schemas_collection_invite.html">IamSchemasCollectionInvite</a>
+<a href="../api/iam_single_invite.html">IamSingleInvite</a>
+<a href="../api/iam_single_member_response_with_policy.html">IamSingleMemberResponseWithPolicy</a>
+<a href="../api/iam_single_membership_response_with_policy.html">IamSingleMembershipResponseWithPolicy</a>
+<a href="../api/iam_single_oauth_client.html">IamSingleOauthClient</a>
+<a href="../api/iam_single_oauth_client_create.html">IamSingleOauthClientCreate</a>
+<a href="../api/iam_single_organization.html">IamSingleOrganization</a>
+<a href="../api/iam_single_permission_group.html">IamSinglePermissionGroup</a>
+<a href="../api/iam_single_role.html">IamSingleRole</a>
+<a href="../api/iam_single_token.html">IamSingleToken</a>
+<a href="../api/iam_single_token_create.html">IamSingleTokenCreate</a>
+<a href="../api/iam_sso_connector.html">IamSsoConnector</a>
+<a href="../api/iam_sso_connector_collection.html">IamSsoConnectorCollection</a>
+<a href="../api/iam_token_verify_response_single_segment.html">IamTokenVerifyResponseSingleSegment</a>
+<a href="../api/member.html">Member</a>
+<a href="../api/oauth_client.html">OauthClient</a>
+<a href="../api/organization.html">Organization</a>
+<a href="../api/organization_member.html">OrganizationMember</a>
+<a href="../api/organizations_api_profile.html">OrganizationsApiProfile</a>
+<a href="../api/resource.html">Resource</a>
+<a href="../api/resource_group.html">ResourceGroup</a>
+<a href="../api/resource_sharing.html">ResourceSharing</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_collection.html">ResourceSharingShareExcludedRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_single.html">ResourceSharingShareExcludedRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_recipient_response_collection.html">ResourceSharingShareRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_recipient_response_single.html">ResourceSharingShareRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_response_collection.html">ResourceSharingShareResponseCollection</a>
+<a aria-current="page" href="../api/resource_sharing_share_response_single.html">ResourceSharingShareResponseSingle</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idshares">POST /accounts/{account_id}/shares</a>
+<a class="nav-section" href="#get-accountsaccount_idsharesshare_id">GET /accounts/{account_id}/shares/{share_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idsharesshare_id">DELETE /accounts/{account_id}/shares/{share_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idsharesshare_id">PUT /accounts/{account_id}/shares/{share_id}</a></div>
+<a href="../api/scim_discovery.html">ScimDiscovery</a>
+<a href="../api/scim_group.html">ScimGroup</a>
+<a href="../api/scim_user.html">ScimUser</a>
+<a href="../api/sso_connector.html">SsoConnector</a>
+<a href="../api/tenant.html">Tenant</a>
+<a href="../api/token.html">Token</a>
+<a href="../api/user.html">User</a>
+<a href="../api/user_group.html">UserGroup</a>
+<a href="../api/users_account_membership.html">UsersAccountMembership</a>
+<a href="../api/users_organization.html">UsersOrganization</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="resourcesharingshareresponsesingle">ResourceSharingShareResponseSingle</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idshares"><code>/accounts/{account_id}/shares</code></a></td>
+<td><code>create</code></td>
+<td>Share created</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idsharesshare_id"><code>/accounts/{account_id}/shares/{share_id}</code></a></td>
+<td><code>load</code></td>
+<td>Get account share response</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idsharesshare_id"><code>/accounts/{account_id}/shares/{share_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Share deleted</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idsharesshare_id"><code>/accounts/{account_id}/shares/{share_id}</code></a></td>
+<td><code>update</code></td>
+<td>Share updated</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">resource_sharing_share_response_single, err := client.ResourceSharingShareResponseSingle(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;share_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(resource_sharing_share_response_single)
+created, err := client.ResourceSharingShareResponseSingle(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: []any{}, &quot;name&quot;: &quot;example&quot;, &quot;recipients&quot;: []any{}, &quot;resources&quot;: []any{}, &quot;success&quot;: true}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.ResourceSharingShareResponseSingle(nil).Update(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;share_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.ResourceSharingShareResponseSingle(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;share_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local resource_sharing_share_response_single, err = client:ResourceSharingShareResponseSingle():load({ account_id = &quot;example&quot;, share_id = &quot;example&quot; })
+local created, err = client:ResourceSharingShareResponseSingle():create({ account_id = &quot;example&quot;, errors = {}, name = &quot;example&quot;, recipients = {}, resources = {}, success = true })
+local updated, err = client:ResourceSharingShareResponseSingle():update({ account_id = &quot;example&quot;, share_id = &quot;example&quot; })
+local removed, err = client:ResourceSharingShareResponseSingle():remove({ account_id = &quot;example&quot;, share_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$resource_sharing_share_response_single = $client-&gt;ResourceSharingShareResponseSingle()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;share_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;ResourceSharingShareResponseSingle()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;, &quot;recipients&quot; =&gt; [], &quot;resources&quot; =&gt; [], &quot;success&quot; =&gt; true]);
+$updated = $client-&gt;ResourceSharingShareResponseSingle()-&gt;update([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;share_id&quot; =&gt; &quot;example&quot;]);
+$client-&gt;ResourceSharingShareResponseSingle()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;share_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">resource_sharing_share_response_single = client.ResourceSharingShareResponseSingle().load({&quot;account_id&quot;: &quot;example&quot;, &quot;share_id&quot;: &quot;example&quot;})
+created = client.ResourceSharingShareResponseSingle().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: [], &quot;name&quot;: &quot;example&quot;, &quot;recipients&quot;: [], &quot;resources&quot;: [], &quot;success&quot;: True })
+updated = client.ResourceSharingShareResponseSingle().update({&quot;account_id&quot;: &quot;example&quot;, &quot;share_id&quot;: &quot;example&quot;})
+client.ResourceSharingShareResponseSingle().remove({&quot;account_id&quot;: &quot;example&quot;, &quot;share_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">resource_sharing_share_response_single = client.ResourceSharingShareResponseSingle.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;share_id&quot; =&gt; &quot;example&quot; })
+created = client.ResourceSharingShareResponseSingle.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;, &quot;recipients&quot; =&gt; [], &quot;resources&quot; =&gt; [], &quot;success&quot; =&gt; true })
+updated = client.ResourceSharingShareResponseSingle.update({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;share_id&quot; =&gt; &quot;example&quot; })
+client.ResourceSharingShareResponseSingle.remove({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;share_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const resource_sharing_share_response_single = await client.ResourceSharingShareResponseSingle().load({ account_id: &quot;example&quot;, share_id: &quot;example&quot; })
+const created = await client.ResourceSharingShareResponseSingle().create({ account_id: &quot;example&quot;, errors: [], name: &quot;example&quot;, recipients: [], resources: [], success: true })
+const updated = await client.ResourceSharingShareResponseSingle().update({ account_id: &quot;example&quot;, share_id: &quot;example&quot; })
+await client.ResourceSharingShareResponseSingle().remove({ account_id: &quot;example&quot;, share_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The name of the share.</td>
+</tr>
+<tr>
+<td><code>recipients</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Recipients</td>
+</tr>
+<tr>
+<td><code>resources</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Resources</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>any</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idshares" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/shares</h3>
+<p>Operation ID: <code>share-create</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The name of the share.</td>
+</tr>
+<tr>
+<td><code>recipients</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>recipients[].account_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Deprecated alias for <code>recipient_account_id</code>. Use <code>recipient_account_id</code> instead. The body field collided with the URL path parameter of the same name, which prevented SDK generators from distinguishing the source account (in the URL) from the recipient account (in the body). Both names will continue to be accepted until 2027-05-26 (see <code>x-sunset</code>).</td>
+</tr>
+<tr>
+<td><code>recipients[].organization_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Organization identifier.</td>
+</tr>
+<tr>
+<td><code>recipients[].recipient_account_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The account that will receive the share.</td>
+</tr>
+<tr>
+<td><code>resources</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>resources[].meta</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Resource Metadata.</td>
+</tr>
+<tr>
+<td><code>resources[].resource_account_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Account identifier.</td>
+</tr>
+<tr>
+<td><code>resources[].resource_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Share Resource identifier.</td>
+</tr>
+<tr>
+<td><code>resources[].resource_type</code></td>
+<td><code>enum: custom-ruleset, gateway-policy, gateway-destination-ip, gateway-block-page-settings, gateway-extended-email-matching, idp-federation-grant, ...</code></td>
+<td>Yes</td>
+<td>Resource Type.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="201-share-created" class="status" data-status="2xx">201: Share created</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-create-share-failure">4XX: Create share failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h5 id="5xx-create-share-failure">5XX: Create share failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idsharesshare_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/shares/{share_id}</h3>
+<p>Operation ID: <code>shares-get-by-id</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>share_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>include_resources</code> | <code>query</code> | <code>boolean</code> | No | Include resources in the response. |
+| <code>include_recipient_counts</code> | <code>query</code> | <code>boolean</code> | No | Include recipient counts in the response. |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-get-account-share-response" class="status" data-status="2xx">200: Get account share response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-get-account-share-response-failure">4XX: Get account share response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h5 id="5xx-get-account-share-response-failure">5XX: Get account share response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_idsharesshare_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/shares/{share_id}</h3>
+<p>Operation ID: <code>share-delete</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>share_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-share-deleted" class="status" data-status="2xx">200: Share deleted</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-delete-share-failure">4XX: Delete share failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h5 id="5xx-delete-share-failure">5XX: Delete share failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idsharesshare_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/shares/{share_id}</h3>
+<p>Operation ID: <code>share-update</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>share_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The name of the share.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-share-updated" class="status" data-status="2xx">200: Share updated</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-update-share-failure">4XX: Update share failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h5 id="5xx-update-share-failure">5XX: Update share failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

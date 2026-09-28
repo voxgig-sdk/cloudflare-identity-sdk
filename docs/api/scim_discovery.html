@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ScimDiscovery | Cloudflare Identity &amp; Administration</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Identity &amp; Administration<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-identity-sdk">voxgig-sdk/cloudflare-identity-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Identity &amp; Administration</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/aaa_audit_logs_v2_org_history_response_collection.html">AaaAuditLogsV2OrgHistoryResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_org_response_collection.html">AaaAuditLogsV2OrgResponseCollection</a>
+<a href="../api/account.html">Account</a>
+<a href="../api/account_resource_group.html">AccountResourceGroup</a>
+<a href="../api/account_user_group.html">AccountUserGroup</a>
+<a href="../api/account_user_group_member.html">AccountUserGroupMember</a>
+<a href="../api/begin_verification.html">BeginVerification</a>
+<a href="../api/bill_subs_api_client_secret_response_single.html">BillSubsApiClientSecretResponseSingle</a>
+<a href="../api/billable_usage_api_v2_usage.html">BillableUsageApiV2Usage</a>
+<a href="../api/dns_custom_nameservers_empty_response_3.html">DnsCustomNameserversEmptyResponse3</a>
+<a href="../api/dns_custom_nameservers_tcns_response_collection.html">DnsCustomNameserversTcnsResponseCollection</a>
+<a href="../api/dns_custom_nameservers_tcns_response_single.html">DnsCustomNameserversTcnsResponseSingle</a>
+<a href="../api/iam_api_response_single_id.html">IamApiResponseSingleId</a>
+<a href="../api/iam_collection_member_response_with_policy.html">IamCollectionMemberResponseWithPolicy</a>
+<a href="../api/iam_collection_oauth_client.html">IamCollectionOauthClient</a>
+<a href="../api/iam_collection_oauth_scope.html">IamCollectionOauthScope</a>
+<a href="../api/iam_collection_organization.html">IamCollectionOrganization</a>
+<a href="../api/iam_collection_permission_group.html">IamCollectionPermissionGroup</a>
+<a href="../api/iam_collection_role.html">IamCollectionRole</a>
+<a href="../api/iam_collection_token.html">IamCollectionToken</a>
+<a href="../api/iam_oauth_client_rotate_secret.html">IamOauthClientRotateSecret</a>
+<a href="../api/iam_permissions_group_response_collection.html">IamPermissionsGroupResponseCollection</a>
+<a href="../api/iam_response_single_value.html">IamResponseSingleValue</a>
+<a href="../api/iam_schemas_collection_invite.html">IamSchemasCollectionInvite</a>
+<a href="../api/iam_single_invite.html">IamSingleInvite</a>
+<a href="../api/iam_single_member_response_with_policy.html">IamSingleMemberResponseWithPolicy</a>
+<a href="../api/iam_single_membership_response_with_policy.html">IamSingleMembershipResponseWithPolicy</a>
+<a href="../api/iam_single_oauth_client.html">IamSingleOauthClient</a>
+<a href="../api/iam_single_oauth_client_create.html">IamSingleOauthClientCreate</a>
+<a href="../api/iam_single_organization.html">IamSingleOrganization</a>
+<a href="../api/iam_single_permission_group.html">IamSinglePermissionGroup</a>
+<a href="../api/iam_single_role.html">IamSingleRole</a>
+<a href="../api/iam_single_token.html">IamSingleToken</a>
+<a href="../api/iam_single_token_create.html">IamSingleTokenCreate</a>
+<a href="../api/iam_sso_connector.html">IamSsoConnector</a>
+<a href="../api/iam_sso_connector_collection.html">IamSsoConnectorCollection</a>
+<a href="../api/iam_token_verify_response_single_segment.html">IamTokenVerifyResponseSingleSegment</a>
+<a href="../api/member.html">Member</a>
+<a href="../api/oauth_client.html">OauthClient</a>
+<a href="../api/organization.html">Organization</a>
+<a href="../api/organization_member.html">OrganizationMember</a>
+<a href="../api/organizations_api_profile.html">OrganizationsApiProfile</a>
+<a href="../api/resource.html">Resource</a>
+<a href="../api/resource_group.html">ResourceGroup</a>
+<a href="../api/resource_sharing.html">ResourceSharing</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_collection.html">ResourceSharingShareExcludedRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_single.html">ResourceSharingShareExcludedRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_recipient_response_collection.html">ResourceSharingShareRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_recipient_response_single.html">ResourceSharingShareRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_response_collection.html">ResourceSharingShareResponseCollection</a>
+<a href="../api/resource_sharing_share_response_single.html">ResourceSharingShareResponseSingle</a>
+<a aria-current="page" href="../api/scim_discovery.html">ScimDiscovery</a><div class="nav-sections"><a class="nav-section" href="#get-accountsaccount_idscimv2resourcetypesresource_type_id">GET /accounts/{account_id}/scim/v2/ResourceTypes/{resource_type_id}</a>
+<a class="nav-section" href="#get-accountsaccount_idscimv2schemasschema_id">GET /accounts/{account_id}/scim/v2/Schemas/{schema_id}</a>
+<a class="nav-section" href="#get-accountsaccount_idscimv2resourcetypes">GET /accounts/{account_id}/scim/v2/ResourceTypes</a>
+<a class="nav-section" href="#get-accountsaccount_idscimv2schemas">GET /accounts/{account_id}/scim/v2/Schemas</a>
+<a class="nav-section" href="#get-accountsaccount_idscimv2serviceproviderconfig">GET /accounts/{account_id}/scim/v2/ServiceProviderConfig</a></div>
+<a href="../api/scim_group.html">ScimGroup</a>
+<a href="../api/scim_user.html">ScimUser</a>
+<a href="../api/sso_connector.html">SsoConnector</a>
+<a href="../api/tenant.html">Tenant</a>
+<a href="../api/token.html">Token</a>
+<a href="../api/user.html">User</a>
+<a href="../api/user_group.html">UserGroup</a>
+<a href="../api/users_account_membership.html">UsersAccountMembership</a>
+<a href="../api/users_organization.html">UsersOrganization</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="scimdiscovery">ScimDiscovery</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idscimv2resourcetypesresource_type_id"><code>/accounts/{account_id}/scim/v2/ResourceTypes/{resource_type_id}</code></a></td>
+<td><code>load</code></td>
+<td>Get SCIM Resource Type response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idscimv2schemasschema_id"><code>/accounts/{account_id}/scim/v2/Schemas/{schema_id}</code></a></td>
+<td><code>load</code></td>
+<td>Get SCIM Schema response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idscimv2resourcetypes"><code>/accounts/{account_id}/scim/v2/ResourceTypes</code></a></td>
+<td><code>load</code></td>
+<td>List SCIM Resource Types response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idscimv2schemas"><code>/accounts/{account_id}/scim/v2/Schemas</code></a></td>
+<td><code>load</code></td>
+<td>List SCIM Schemas response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idscimv2serviceproviderconfig"><code>/accounts/{account_id}/scim/v2/ServiceProviderConfig</code></a></td>
+<td><code>load</code></td>
+<td>Get SCIM Service Provider Config response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">scim_discovery, err := client.ScimDiscovery(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(scim_discovery)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local scim_discovery, err = client:ScimDiscovery():load({ account_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$scim_discovery = $client-&gt;ScimDiscovery()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">scim_discovery = client.ScimDiscovery().load({&quot;account_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">scim_discovery = client.ScimDiscovery.load({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const scim_discovery = await client.ScimDiscovery().load({ account_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idscimv2resourcetypesresource_type_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/scim/v2/ResourceTypes/{resource_type_id}</h3>
+<p>Operation ID: <code>scim-resource-types-get</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>resource_type_id</code> | <code>path</code> | <code>enum: User, Group</code> | Yes |  |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-get-scim-resource-type-response" class="status" data-status="2xx">200: Get SCIM Resource Type response</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The resource type's human-readable description.</td>
+</tr>
+<tr>
+<td><code>endpoint</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The resource type's HTTP-addressable endpoint relative to the base URL.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The resource type's server unique id.</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Metadata for a SCIM ResourceType resource.</td>
+</tr>
+<tr>
+<td><code>meta.location</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The URI of the resource being returned.</td>
+</tr>
+<tr>
+<td><code>meta.resourceType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The name of the resource type of the resource.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The resource type name.</td>
+</tr>
+<tr>
+<td><code>schema</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The resource type's primary/base schema URI.</td>
+</tr>
+<tr>
+<td><code>schemaExtensions</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>A list of URIs of the resource type's schema extensions.</td>
+</tr>
+<tr>
+<td><code>schemaExtensions[].required</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the extension is required.</td>
+</tr>
+<tr>
+<td><code>schemaExtensions[].schema</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The URI of the extension schema.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-get-scim-resource-type-response-failure">4XX: Get SCIM Resource Type response failure</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A human-readable message describing the error.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scimType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A SCIM detail error keyword (RFC 7644 Section 3.12). Only present for specific error conditions (for example <code>uniqueness</code> for duplicate member).</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The HTTP status code as a string.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idscimv2schemasschema_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/scim/v2/Schemas/{schema_id}</h3>
+<p>Operation ID: <code>scim-schemas-get</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>schema_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-get-scim-schema-response" class="status" data-status="2xx">200: Get SCIM Schema response</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>attributes</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>A complex attribute that includes the attributes of a schema.</td>
+</tr>
+<tr>
+<td><code>attributes[].canonicalValues</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>A collection of canonical values for the attribute.</td>
+</tr>
+<tr>
+<td><code>attributes[].caseExact</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Indicates if the string attribute is case-sensitive.</td>
+</tr>
+<tr>
+<td><code>attributes[].description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A human-readable description of the attribute.</td>
+</tr>
+<tr>
+<td><code>attributes[].multiValued</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Indicates if the attribute is multi-valued.</td>
+</tr>
+<tr>
+<td><code>attributes[].mutability</code></td>
+<td><code>enum: readOnly, readWrite, immutable, writeOnly</code></td>
+<td>Yes</td>
+<td>Indicates the circumstances under which the value of the attribute can be defined or redefined.</td>
+</tr>
+<tr>
+<td><code>attributes[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The attribute's name.</td>
+</tr>
+<tr>
+<td><code>attributes[].referenceTypes</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>A multi-valued attribute that indicates the SCIM resource types that may be referenced.</td>
+</tr>
+<tr>
+<td><code>attributes[].required</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Indicates if the attribute is required.</td>
+</tr>
+<tr>
+<td><code>attributes[].returned</code></td>
+<td><code>enum: always, never, default, request</code></td>
+<td>Yes</td>
+<td>Indicates when an attribute and associated values are returned in response to a GET request or in response to a PUT, POST, or PATCH request.</td>
+</tr>
+<tr>
+<td><code>attributes[].subAttributes</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Defines a set of sub-attributes when the attribute type is <code>complex</code>.</td>
+</tr>
+<tr>
+<td><code>attributes[].type</code></td>
+<td><code>enum: string, boolean, decimal, integer, dateTime, reference, ...</code></td>
+<td>Yes</td>
+<td>The attribute's data type.</td>
+</tr>
+<tr>
+<td><code>attributes[].uniqueness</code></td>
+<td><code>enum: none, server, global</code></td>
+<td>Yes</td>
+<td>Indicates how the service provider enforces uniqueness of attribute values.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The schema's human-readable description.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The unique URI of the schema.</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Metadata for a SCIM Schema resource.</td>
+</tr>
+<tr>
+<td><code>meta.location</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The URI of the resource being returned.</td>
+</tr>
+<tr>
+<td><code>meta.resourceType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The name of the resource type of the resource.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The schema's human-readable name.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-get-scim-schema-response-failure">4XX: Get SCIM Schema response failure</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A human-readable message describing the error.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scimType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A SCIM detail error keyword (RFC 7644 Section 3.12). Only present for specific error conditions (for example <code>uniqueness</code> for duplicate member).</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The HTTP status code as a string.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idscimv2resourcetypes" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/scim/v2/ResourceTypes</h3>
+<p>Operation ID: <code>scim-resource-types-list</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-list-scim-resource-types-response" class="status" data-status="2xx">200: List SCIM Resource Types response</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Resources</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Resources[].description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The resource type's human-readable description.</td>
+</tr>
+<tr>
+<td><code>Resources[].endpoint</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The resource type's HTTP-addressable endpoint relative to the base URL.</td>
+</tr>
+<tr>
+<td><code>Resources[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The resource type's server unique id.</td>
+</tr>
+<tr>
+<td><code>Resources[].meta</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Metadata for a SCIM ResourceType resource.</td>
+</tr>
+<tr>
+<td><code>Resources[].meta.location</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The URI of the resource being returned.</td>
+</tr>
+<tr>
+<td><code>Resources[].meta.resourceType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The name of the resource type of the resource.</td>
+</tr>
+<tr>
+<td><code>Resources[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The resource type name.</td>
+</tr>
+<tr>
+<td><code>Resources[].schema</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The resource type's primary/base schema URI.</td>
+</tr>
+<tr>
+<td><code>Resources[].schemaExtensions</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>A list of URIs of the resource type's schema extensions.</td>
+</tr>
+<tr>
+<td><code>Resources[].schemaExtensions[].required</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the extension is required.</td>
+</tr>
+<tr>
+<td><code>Resources[].schemaExtensions[].schema</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The URI of the extension schema.</td>
+</tr>
+<tr>
+<td><code>Resources[].schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>itemsPerPage</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>startIndex</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>totalResults</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-list-scim-resource-types-response-failure">4XX: List SCIM Resource Types response failure</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A human-readable message describing the error.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scimType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A SCIM detail error keyword (RFC 7644 Section 3.12). Only present for specific error conditions (for example <code>uniqueness</code> for duplicate member).</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The HTTP status code as a string.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idscimv2schemas" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/scim/v2/Schemas</h3>
+<p>Operation ID: <code>scim-schemas-list</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-list-scim-schemas-response" class="status" data-status="2xx">200: List SCIM Schemas response</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Resources</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Resources[].attributes</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>A complex attribute that includes the attributes of a schema.</td>
+</tr>
+<tr>
+<td><code>Resources[].attributes[].canonicalValues</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>A collection of canonical values for the attribute.</td>
+</tr>
+<tr>
+<td><code>Resources[].attributes[].caseExact</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Indicates if the string attribute is case-sensitive.</td>
+</tr>
+<tr>
+<td><code>Resources[].attributes[].description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A human-readable description of the attribute.</td>
+</tr>
+<tr>
+<td><code>Resources[].attributes[].multiValued</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Indicates if the attribute is multi-valued.</td>
+</tr>
+<tr>
+<td><code>Resources[].attributes[].mutability</code></td>
+<td><code>enum: readOnly, readWrite, immutable, writeOnly</code></td>
+<td>Yes</td>
+<td>Indicates the circumstances under which the value of the attribute can be defined or redefined.</td>
+</tr>
+<tr>
+<td><code>Resources[].attributes[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The attribute's name.</td>
+</tr>
+<tr>
+<td><code>Resources[].attributes[].referenceTypes</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>A multi-valued attribute that indicates the SCIM resource types that may be referenced.</td>
+</tr>
+<tr>
+<td><code>Resources[].attributes[].required</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Indicates if the attribute is required.</td>
+</tr>
+<tr>
+<td><code>Resources[].attributes[].returned</code></td>
+<td><code>enum: always, never, default, request</code></td>
+<td>Yes</td>
+<td>Indicates when an attribute and associated values are returned in response to a GET request or in response to a PUT, POST, or PATCH request.</td>
+</tr>
+<tr>
+<td><code>Resources[].attributes[].subAttributes</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Defines a set of sub-attributes when the attribute type is <code>complex</code>.</td>
+</tr>
+<tr>
+<td><code>Resources[].attributes[].type</code></td>
+<td><code>enum: string, boolean, decimal, integer, dateTime, reference, ...</code></td>
+<td>Yes</td>
+<td>The attribute's data type.</td>
+</tr>
+<tr>
+<td><code>Resources[].attributes[].uniqueness</code></td>
+<td><code>enum: none, server, global</code></td>
+<td>Yes</td>
+<td>Indicates how the service provider enforces uniqueness of attribute values.</td>
+</tr>
+<tr>
+<td><code>Resources[].description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The schema's human-readable description.</td>
+</tr>
+<tr>
+<td><code>Resources[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The unique URI of the schema.</td>
+</tr>
+<tr>
+<td><code>Resources[].meta</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Metadata for a SCIM Schema resource.</td>
+</tr>
+<tr>
+<td><code>Resources[].meta.location</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The URI of the resource being returned.</td>
+</tr>
+<tr>
+<td><code>Resources[].meta.resourceType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The name of the resource type of the resource.</td>
+</tr>
+<tr>
+<td><code>Resources[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The schema's human-readable name.</td>
+</tr>
+<tr>
+<td><code>Resources[].schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>itemsPerPage</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>startIndex</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>totalResults</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-list-scim-schemas-response-failure">4XX: List SCIM Schemas response failure</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A human-readable message describing the error.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scimType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A SCIM detail error keyword (RFC 7644 Section 3.12). Only present for specific error conditions (for example <code>uniqueness</code> for duplicate member).</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The HTTP status code as a string.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idscimv2serviceproviderconfig" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/scim/v2/ServiceProviderConfig</h3>
+<p>Operation ID: <code>scim-service-provider-config-get</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-get-scim-service-provider-config-response" class="status" data-status="2xx">200: Get SCIM Service Provider Config response</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>authenticationSchemes</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>authenticationSchemes[].description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A description of the authentication scheme.</td>
+</tr>
+<tr>
+<td><code>authenticationSchemes[].documentationUri</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An HTTP-addressable URL pointing to the authentication scheme documentation.</td>
+</tr>
+<tr>
+<td><code>authenticationSchemes[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The common authentication scheme name.</td>
+</tr>
+<tr>
+<td><code>authenticationSchemes[].primary</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicates if this is the primary authentication scheme.</td>
+</tr>
+<tr>
+<td><code>authenticationSchemes[].specUri</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An HTTP-addressable URL pointing to the authentication scheme specification.</td>
+</tr>
+<tr>
+<td><code>authenticationSchemes[].type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The authentication scheme type.</td>
+</tr>
+<tr>
+<td><code>bulk</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Configuration for SCIM bulk operations.</td>
+</tr>
+<tr>
+<td><code>bulk.maxOperations</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The maximum number of operations in a bulk request.</td>
+</tr>
+<tr>
+<td><code>bulk.maxPayloadSize</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The maximum payload size in bytes for a bulk request.</td>
+</tr>
+<tr>
+<td><code>bulk.supported</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether bulk operations are supported.</td>
+</tr>
+<tr>
+<td><code>changePassword</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Represents a simple supported/unsupported SCIM feature.</td>
+</tr>
+<tr>
+<td><code>changePassword.supported</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the feature is supported.</td>
+</tr>
+<tr>
+<td><code>documentationUri</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An HTTP-addressable URL pointing to the service provider's human-consumable help documentation.</td>
+</tr>
+<tr>
+<td><code>etag</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Represents a simple supported/unsupported SCIM feature.</td>
+</tr>
+<tr>
+<td><code>etag.supported</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the feature is supported.</td>
+</tr>
+<tr>
+<td><code>filter</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Configuration for SCIM filtering operations.</td>
+</tr>
+<tr>
+<td><code>filter.maxResults</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The maximum number of filter results per page.</td>
+</tr>
+<tr>
+<td><code>filter.supported</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether filtering is supported.</td>
+</tr>
+<tr>
+<td><code>patch</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Represents a simple supported/unsupported SCIM feature.</td>
+</tr>
+<tr>
+<td><code>patch.supported</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the feature is supported.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Represents a simple supported/unsupported SCIM feature.</td>
+</tr>
+<tr>
+<td><code>sort.supported</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the feature is supported.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-get-scim-service-provider-config-response-failure">4XX: Get SCIM Service Provider Config response failure</h5>
+<p><code>application/scim+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A human-readable message describing the error.</td>
+</tr>
+<tr>
+<td><code>schemas</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scimType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A SCIM detail error keyword (RFC 7644 Section 3.12). Only present for specific error conditions (for example <code>uniqueness</code> for duplicate member).</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The HTTP status code as a string.</td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

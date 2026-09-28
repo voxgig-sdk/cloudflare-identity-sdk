@@ -1,0 +1,279 @@
+# Entity: resource_sharing_share_response_collection
+
+main: kit: entity: resource_sharing_share_response_collection: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "resource_sharing_share_response_collection"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/shares"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "asc"
+                k: "query"
+                n: "direction"
+                or: "direction"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: true
+                k: "query"
+                n: "include_recipient_count"
+                or: "include_recipient_count"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: true
+                k: "query"
+                n: "include_resource"
+                or: "include_resource"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "kind"
+                or: "kind"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "created"
+                k: "query"
+                n: "order"
+                or: "order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 2
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 20
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "resource_type"
+                or: "resource_type"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "tag"
+                or: "tag"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "target_type"
+                or: "target_type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/shares"
+          q: {
+            exist: [
+              "account_id"
+              "direction"
+              "include_recipient_count"
+              "include_resource"
+              "kind"
+              "order"
+              "page"
+              "per_page"
+              "resource_type"
+              "status"
+              "tag"
+              "target_type"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "shares"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /organizations/{organization_id}/shares"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "organization_id"
+                or: "organization_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "asc"
+                k: "query"
+                n: "direction"
+                or: "direction"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "kind"
+                or: "kind"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "created"
+                k: "query"
+                n: "order"
+                or: "order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 2
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 20
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "resource_type"
+                or: "resource_type"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "target_type"
+                or: "target_type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/organizations/{organization_id}/shares"
+          q: {
+            exist: [
+              "direction"
+              "kind"
+              "order"
+              "organization_id"
+              "page"
+              "per_page"
+              "resource_type"
+              "status"
+              "target_type"
+            ]
+          }
+          s: [
+            {
+              lit: "organizations"
+            }
+            {
+              var: "organization_id"
+            }
+            {
+              lit: "shares"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.account")]
+    [path("$.main.kit.entity.organization")]
+  ]
+
+}

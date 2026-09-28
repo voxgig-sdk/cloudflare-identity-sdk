@@ -1,0 +1,68 @@
+# BasicIamSsoConnectorFlow
+
+main: kit: flow: BasicIamSsoConnectorFlow:
+{
+  entity: "iam_sso_connector",
+  kind: "basic",
+  name: "BasicIamSsoConnectorFlow",
+  step: [
+    {
+      i: {
+        ref: "iam_sso_connector_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "iam_sso_connector_ref01",
+        srcdatavar: "iam_sso_connector_ref01_data",
+        suffix: "_up0",
+        textfield: "email_domain"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-iam_sso_connector_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "iam_sso_connector_ref01",
+        srcdatavar: "iam_sso_connector_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "iam_sso_connector01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-iam_sso_connector_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamSsoConnectorFlow"
+}

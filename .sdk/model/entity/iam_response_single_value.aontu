@@ -1,0 +1,131 @@
+# Entity: iam_response_single_value
+
+main: kit: entity: iam_response_single_value: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      ro: true
+      sh: "The token value."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "iam_response_single_value"
+  op: {
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/tokens/{token_id}/value"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "ed17574386854bf78a67040be0a770b0"
+                k: "param"
+                n: "token_id"
+                or: "token_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/tokens/{token_id}/value"
+          q: {
+            exist: [
+              "account_id"
+              "token_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "tokens"
+            }
+            {
+              var: "token_id"
+            }
+            {
+              lit: "value"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /user/tokens/{token_id}/value"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "ed17574386854bf78a67040be0a770b0"
+                k: "param"
+                n: "token_id"
+                or: "token_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/user/tokens/{token_id}/value"
+          q: {
+            exist: [
+              "token_id"
+            ]
+          }
+          s: [
+            {
+              lit: "user"
+            }
+            {
+              lit: "tokens"
+            }
+            {
+              var: "token_id"
+            }
+            {
+              lit: "value"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.account") path("$.main.kit.entity.token")]
+  ]
+
+}

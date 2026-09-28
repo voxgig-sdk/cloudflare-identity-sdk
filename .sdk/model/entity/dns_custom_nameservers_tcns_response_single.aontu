@@ -1,0 +1,80 @@
+# Entity: dns_custom_nameservers_tcns_response_single
+
+main: kit: entity: dns_custom_nameservers_tcns_response_single: {
+
+  alias: field: {}
+
+  fields: {
+    ns_name: {
+      fo: "hostname"
+      h: "Ns Name"
+      n: "ns_name"
+      r: true
+      sh: "The FQDN of the name server."
+      t: "`$STRING`"
+    }
+    ns_set: {
+      h: "Ns Set"
+      n: "ns_set"
+      r: false
+      sh: "The number of the set that this name server belongs to."
+      t: "`$NUMBER`"
+    }
+  }
+
+  name: "dns_custom_nameservers_tcns_response_single"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /tenants/{tenant_tag}/custom_ns"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "tenant_tag"
+                or: "tenant_tag"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/tenants/{tenant_tag}/custom_ns"
+          q: {
+            exist: [
+              "tenant_tag"
+            ]
+          }
+          s: [
+            {
+              lit: "tenants"
+            }
+            {
+              var: "tenant_tag"
+            }
+            {
+              lit: "custom_ns"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.tenant")]
+  ]
+
+}

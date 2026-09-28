@@ -1,0 +1,26 @@
+# BasicAaaAuditLogsV2OrgResponseCollectionFlow
+
+main: kit: flow: BasicAaaAuditLogsV2OrgResponseCollectionFlow:
+{
+  entity: "aaa_audit_logs_v2_org_response_collection",
+  kind: "basic",
+  name: "BasicAaaAuditLogsV2OrgResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        organization_id: "organization01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "aaa_audit_logs_v2_org_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAaaAuditLogsV2OrgResponseCollectionFlow"
+}

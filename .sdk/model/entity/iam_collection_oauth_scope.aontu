@@ -1,0 +1,48 @@
+# Entity: iam_collection_oauth_scope
+
+main: kit: entity: iam_collection_oauth_scope: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "iam_collection_oauth_scope"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /oauth/scopes"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/oauth/scopes"
+          s: [
+            {
+              lit: "oauth"
+            }
+            {
+              lit: "scopes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

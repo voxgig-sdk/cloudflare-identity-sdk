@@ -1,0 +1,56 @@
+{
+  "existing": {
+    "iam_single_token_create": {
+      "IAM_SINGLE_TOKEN_CREATE00": {
+        "condition": {},
+        "expires_on": "s33",
+        "name": "s34",
+        "not_before": "s35",
+        "policies": [],
+        "account_id": "ACCOUNT01",
+        "id": "IAM_SINGLE_TOKEN_CREATE00"
+      },
+      "IAM_SINGLE_TOKEN_CREATE01": {
+        "condition": {},
+        "expires_on": "s65",
+        "name": "s66",
+        "not_before": "s67",
+        "policies": [],
+        "account_id": "ACCOUNT01",
+        "id": "IAM_SINGLE_TOKEN_CREATE01"
+      },
+      "IAM_SINGLE_TOKEN_CREATE02": {
+        "condition": {},
+        "expires_on": "s97",
+        "name": "s98",
+        "not_before": "s99",
+        "policies": [],
+        "account_id": "ACCOUNT01",
+        "id": "IAM_SINGLE_TOKEN_CREATE02"
+      }
+    }
+  },
+  "new": {
+    "iam_single_token_create": {
+      "iam_single_token_create_ref01": {
+        "condition": {},
+        "expires_on": "sc9",
+        "name": "sca",
+        "not_before": "scb",
+        "policies": []
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/tokens": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /user/tokens": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,2312 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Organization | Cloudflare Identity &amp; Administration</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Identity &amp; Administration<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-identity-sdk">voxgig-sdk/cloudflare-identity-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Identity &amp; Administration</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/aaa_audit_logs_v2_org_history_response_collection.html">AaaAuditLogsV2OrgHistoryResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_org_response_collection.html">AaaAuditLogsV2OrgResponseCollection</a>
+<a href="../api/account.html">Account</a>
+<a href="../api/account_resource_group.html">AccountResourceGroup</a>
+<a href="../api/account_user_group.html">AccountUserGroup</a>
+<a href="../api/account_user_group_member.html">AccountUserGroupMember</a>
+<a href="../api/begin_verification.html">BeginVerification</a>
+<a href="../api/bill_subs_api_client_secret_response_single.html">BillSubsApiClientSecretResponseSingle</a>
+<a href="../api/billable_usage_api_v2_usage.html">BillableUsageApiV2Usage</a>
+<a href="../api/dns_custom_nameservers_empty_response_3.html">DnsCustomNameserversEmptyResponse3</a>
+<a href="../api/dns_custom_nameservers_tcns_response_collection.html">DnsCustomNameserversTcnsResponseCollection</a>
+<a href="../api/dns_custom_nameservers_tcns_response_single.html">DnsCustomNameserversTcnsResponseSingle</a>
+<a href="../api/iam_api_response_single_id.html">IamApiResponseSingleId</a>
+<a href="../api/iam_collection_member_response_with_policy.html">IamCollectionMemberResponseWithPolicy</a>
+<a href="../api/iam_collection_oauth_client.html">IamCollectionOauthClient</a>
+<a href="../api/iam_collection_oauth_scope.html">IamCollectionOauthScope</a>
+<a href="../api/iam_collection_organization.html">IamCollectionOrganization</a>
+<a href="../api/iam_collection_permission_group.html">IamCollectionPermissionGroup</a>
+<a href="../api/iam_collection_role.html">IamCollectionRole</a>
+<a href="../api/iam_collection_token.html">IamCollectionToken</a>
+<a href="../api/iam_oauth_client_rotate_secret.html">IamOauthClientRotateSecret</a>
+<a href="../api/iam_permissions_group_response_collection.html">IamPermissionsGroupResponseCollection</a>
+<a href="../api/iam_response_single_value.html">IamResponseSingleValue</a>
+<a href="../api/iam_schemas_collection_invite.html">IamSchemasCollectionInvite</a>
+<a href="../api/iam_single_invite.html">IamSingleInvite</a>
+<a href="../api/iam_single_member_response_with_policy.html">IamSingleMemberResponseWithPolicy</a>
+<a href="../api/iam_single_membership_response_with_policy.html">IamSingleMembershipResponseWithPolicy</a>
+<a href="../api/iam_single_oauth_client.html">IamSingleOauthClient</a>
+<a href="../api/iam_single_oauth_client_create.html">IamSingleOauthClientCreate</a>
+<a href="../api/iam_single_organization.html">IamSingleOrganization</a>
+<a href="../api/iam_single_permission_group.html">IamSinglePermissionGroup</a>
+<a href="../api/iam_single_role.html">IamSingleRole</a>
+<a href="../api/iam_single_token.html">IamSingleToken</a>
+<a href="../api/iam_single_token_create.html">IamSingleTokenCreate</a>
+<a href="../api/iam_sso_connector.html">IamSsoConnector</a>
+<a href="../api/iam_sso_connector_collection.html">IamSsoConnectorCollection</a>
+<a href="../api/iam_token_verify_response_single_segment.html">IamTokenVerifyResponseSingleSegment</a>
+<a href="../api/member.html">Member</a>
+<a href="../api/oauth_client.html">OauthClient</a>
+<a aria-current="page" href="../api/organization.html">Organization</a><div class="nav-sections"><a class="nav-section" href="#post-organizationsorganization_idmembersbatchcreate">POST /organizations/{organization_id}/members:batchCreate</a>
+<a class="nav-section" href="#post-organizations">POST /organizations</a>
+<a class="nav-section" href="#get-organizationsorganization_idaccounts">GET /organizations/{organization_id}/accounts</a>
+<a class="nav-section" href="#get-organizations">GET /organizations</a>
+<a class="nav-section" href="#get-organizationsorganization_id">GET /organizations/{organization_id}</a>
+<a class="nav-section" href="#delete-organizationsorganization_id">DELETE /organizations/{organization_id}</a>
+<a class="nav-section" href="#put-organizationsorganization_idinvitesmember_code">PUT /organizations/{organization_id}/invites/{member_code}</a>
+<a class="nav-section" href="#put-organizationsorganization_id">PUT /organizations/{organization_id}</a>
+<a class="nav-section" href="#put-organizationsorganization_idprofile">PUT /organizations/{organization_id}/profile</a></div>
+<a href="../api/organization_member.html">OrganizationMember</a>
+<a href="../api/organizations_api_profile.html">OrganizationsApiProfile</a>
+<a href="../api/resource.html">Resource</a>
+<a href="../api/resource_group.html">ResourceGroup</a>
+<a href="../api/resource_sharing.html">ResourceSharing</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_collection.html">ResourceSharingShareExcludedRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_excluded_recipient_response_single.html">ResourceSharingShareExcludedRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_recipient_response_collection.html">ResourceSharingShareRecipientResponseCollection</a>
+<a href="../api/resource_sharing_share_recipient_response_single.html">ResourceSharingShareRecipientResponseSingle</a>
+<a href="../api/resource_sharing_share_response_collection.html">ResourceSharingShareResponseCollection</a>
+<a href="../api/resource_sharing_share_response_single.html">ResourceSharingShareResponseSingle</a>
+<a href="../api/scim_discovery.html">ScimDiscovery</a>
+<a href="../api/scim_group.html">ScimGroup</a>
+<a href="../api/scim_user.html">ScimUser</a>
+<a href="../api/sso_connector.html">SsoConnector</a>
+<a href="../api/tenant.html">Tenant</a>
+<a href="../api/token.html">Token</a>
+<a href="../api/user.html">User</a>
+<a href="../api/user_group.html">UserGroup</a>
+<a href="../api/users_account_membership.html">UsersAccountMembership</a>
+<a href="../api/users_organization.html">UsersOrganization</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="organization">Organization</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-organizationsorganization_idmembersbatchcreate"><code>/organizations/{organization_id}/members:batchCreate</code></a></td>
+<td><code>create</code></td>
+<td>The request has succeeded</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-organizations"><code>/organizations</code></a></td>
+<td><code>create</code></td>
+<td>The request has succeeded</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-organizationsorganization_idaccounts"><code>/organizations/{organization_id}/accounts</code></a></td>
+<td><code>list</code></td>
+<td>The request has succeeded</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-organizations"><code>/organizations</code></a></td>
+<td><code>list</code></td>
+<td>The request has succeeded</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-organizationsorganization_id"><code>/organizations/{organization_id}</code></a></td>
+<td><code>load</code></td>
+<td>The request has succeeded</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-organizationsorganization_id"><code>/organizations/{organization_id}</code></a></td>
+<td><code>remove</code></td>
+<td>The request has succeeded</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-organizationsorganization_idinvitesmember_code"><code>/organizations/{organization_id}/invites/{member_code}</code></a></td>
+<td><code>update</code></td>
+<td>The request has succeeded</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-organizationsorganization_id"><code>/organizations/{organization_id}</code></a></td>
+<td><code>update</code></td>
+<td>The request has succeeded</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-organizationsorganization_idprofile"><code>/organizations/{organization_id}/profile</code></a></td>
+<td><code>update</code></td>
+<td>There is no content to send for this request, but the headers may be useful</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">organizations, err := client.Organization(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(organizations)
+organization, err := client.Organization(nil).Load(map[string]any{&quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(organization)
+created, err := client.Organization(nil).Create(map[string]any{&quot;create_time&quot;: &quot;example&quot;, &quot;errors&quot;: []any{}, &quot;id&quot;: &quot;example&quot;, &quot;messages&quot;: []any{}, &quot;meta&quot;: map[string]any{}, &quot;name&quot;: &quot;example&quot;, &quot;parent&quot;: map[string]any{}, &quot;profile&quot;: map[string]any{}, &quot;result&quot;: map[string]any{}, &quot;result_info&quot;: map[string]any{}, &quot;status&quot;: &quot;example&quot;, &quot;success&quot;: true}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.Organization(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;member_code&quot;: &quot;example&quot;, &quot;create_time&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.Organization(nil).Remove(map[string]any{&quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local organizations, err = client:Organization():list()
+local organization, err = client:Organization():load({ id = &quot;example_id&quot; })
+local created, err = client:Organization():create({ create_time = &quot;example&quot;, errors = {}, id = &quot;example&quot;, messages = {}, meta = {}, name = &quot;example&quot;, parent = {}, profile = {}, result = {}, result_info = {}, status = &quot;example&quot;, success = true })
+local updated, err = client:Organization():update({ id = &quot;example_id&quot;, member_code = &quot;example&quot;, create_time = &quot;example&quot; })
+local removed, err = client:Organization():remove({ id = &quot;example_id&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$organizations = $client-&gt;Organization()-&gt;list();
+$organization = $client-&gt;Organization()-&gt;load([&quot;id&quot; =&gt; &quot;example_id&quot;]);
+$created = $client-&gt;Organization()-&gt;create([&quot;create_time&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;id&quot; =&gt; &quot;example&quot;, &quot;messages&quot; =&gt; [], &quot;meta&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;, &quot;parent&quot; =&gt; [], &quot;profile&quot; =&gt; [], &quot;result&quot; =&gt; [], &quot;result_info&quot; =&gt; [], &quot;status&quot; =&gt; &quot;example&quot;, &quot;success&quot; =&gt; true]);
+$updated = $client-&gt;Organization()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;member_code&quot; =&gt; &quot;example&quot;, &quot;create_time&quot; =&gt; &quot;example&quot;]);
+$client-&gt;Organization()-&gt;remove([&quot;id&quot; =&gt; &quot;example_id&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">organizations = client.Organization().list()
+organization = client.Organization().load({&quot;id&quot;: &quot;example_id&quot;})
+created = client.Organization().create({ &quot;create_time&quot;: &quot;example&quot;, &quot;errors&quot;: [], &quot;id&quot;: &quot;example&quot;, &quot;messages&quot;: [], &quot;meta&quot;: {}, &quot;name&quot;: &quot;example&quot;, &quot;parent&quot;: {}, &quot;profile&quot;: {}, &quot;result&quot;: {}, &quot;result_info&quot;: {}, &quot;status&quot;: &quot;example&quot;, &quot;success&quot;: True })
+updated = client.Organization().update({&quot;id&quot;: &quot;example_id&quot;, &quot;member_code&quot;: &quot;example&quot;, &quot;create_time&quot;: &quot;example&quot;})
+client.Organization().remove({&quot;id&quot;: &quot;example_id&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">organizations = client.Organization.list()
+organization = client.Organization.load({ &quot;id&quot; =&gt; &quot;example_id&quot; })
+created = client.Organization.create({ &quot;create_time&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;id&quot; =&gt; &quot;example&quot;, &quot;messages&quot; =&gt; [], &quot;meta&quot; =&gt; {}, &quot;name&quot; =&gt; &quot;example&quot;, &quot;parent&quot; =&gt; {}, &quot;profile&quot; =&gt; {}, &quot;result&quot; =&gt; {}, &quot;result_info&quot; =&gt; {}, &quot;status&quot; =&gt; &quot;example&quot;, &quot;success&quot; =&gt; true })
+updated = client.Organization.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;member_code&quot; =&gt; &quot;example&quot;, &quot;create_time&quot; =&gt; &quot;example&quot; })
+client.Organization.remove({ &quot;id&quot; =&gt; &quot;example_id&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const organizations = await client.Organization().list()
+const organization = await client.Organization().load({ id: &quot;example_id&quot; })
+const created = await client.Organization().create({ create_time: &quot;example&quot;, errors: [], id: &quot;example&quot;, messages: [], meta: {}, name: &quot;example&quot;, parent: {}, profile: {}, result: {}, result_info: {}, status: &quot;example&quot;, success: true })
+const updated = await client.Organization().update({ id: &quot;example_id&quot;, member_code: &quot;example&quot;, create_time: &quot;example&quot; })
+await client.Organization().remove({ id: &quot;example_id&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create_time</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Create Time</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Meta</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name</td>
+</tr>
+<tr>
+<td><code>parent</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Parent</td>
+</tr>
+<tr>
+<td><code>profile</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Profile</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>References an Organization in the Cloudflare data model.</td>
+</tr>
+<tr>
+<td><code>result_info</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Result Info</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Status</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-organizationsorganization_idmembersbatchcreate" class="operation" data-method="post"><code>POST</code> /organizations/{organization_id}/members:batchCreate</h3>
+<p>Operation ID: <code>Members_batchCreate</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>organization_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>members</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>members[].status</code></td>
+<td><code>enum: active, canceled</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>members[].user</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>members[].user.email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-the-request-has-succeeded" class="status" data-status="2xx">200: The request has succeeded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].create_time</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Organization Member ID</td>
+</tr>
+<tr>
+<td><code>result[].meta</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].status</code></td>
+<td><code>enum: active, pending, rejected, canceled</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].update_time</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].user</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].user.email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].user.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].user.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].user.two_factor_authentication_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-an-unexpected-error-response">4XX: An unexpected error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-organizations" class="operation" data-method="post"><code>POST</code> /organizations</h3>
+<p>Operation ID: <code>Organizations_createUserOrganization</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create_time</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta.hierarchy_tags</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Ordered chain of organization tags from the root organization down to (and including) this organization itself. Root organizations return a single-element array containing their own tag; sub-organizations return <code>[rootTag, ...intermediateTags, parentTag, selfTag]</code>. Useful for constructing authorization scopes that need to cover every ancestor in the hierarchy.</td>
+</tr>
+<tr>
+<td><code>meta.managed_by</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta.tenant_flags</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>parent</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>parent.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Organization ID</td>
+</tr>
+<tr>
+<td><code>parent.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile.business_address</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile.business_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile.business_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile.business_phone</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile.external_metadata</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-the-request-has-succeeded-1" class="status" data-status="2xx">200: The request has succeeded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>References an Organization in the Cloudflare data model.</td>
+</tr>
+<tr>
+<td><code>result.create_time</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.meta</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.meta.hierarchy_tags</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Ordered chain of organization tags from the root organization down to (and including) this organization itself. Root organizations return a single-element array containing their own tag; sub-organizations return <code>[rootTag, ...intermediateTags, parentTag, selfTag]</code>. Useful for constructing authorization scopes that need to cover every ancestor in the hierarchy.</td>
+</tr>
+<tr>
+<td><code>result.meta.managed_by</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.meta.tenant_flags</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.parent</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.parent.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Organization ID</td>
+</tr>
+<tr>
+<td><code>result.parent.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.business_address</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.business_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.business_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.business_phone</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.external_metadata</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-an-unexpected-error-response-1">4XX: An unexpected error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-organizationsorganization_idaccounts" class="operation" data-method="get"><code>GET</code> /organizations/{organization_id}/accounts</h3>
+<p>Operation ID: <code>Organizations_getAccounts</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>organization_id</code> | <code>path</code> | <code>string</code> | Yes | The ID of the organization to retrieve a list of accounts for. |
+| <code>account_pubname</code> | <code>query</code> | <code>string</code> | No | (case-insensitive) Filter the list of accounts to where the <code>account_pubname</code> is equal to a particular string. |
+| <code>account_pubname.startsWith</code> | <code>query</code> | <code>string</code> | No | (case-insensitive) Filter the list of accounts to where the <code>account_pubname</code> starts with a particular string. |
+| <code>account_pubname.endsWith</code> | <code>query</code> | <code>string</code> | No | (case-insensitive) Filter the list of accounts to where the <code>account_pubname</code> ends with a particular string. |
+| <code>account_pubname.contains</code> | <code>query</code> | <code>string</code> | No | (case-insensitive) Filter the list of accounts to where the <code>account_pubname</code> contains a particular string. |
+| <code>name</code> | <code>query</code> | <code>string</code> | No | (case-insensitive) Filter the list of accounts to where the name is equal to a particular string. |
+| <code>name.startsWith</code> | <code>query</code> | <code>string</code> | No | (case-insensitive) Filter the list of accounts to where the name starts with a particular string. |
+| <code>name.endsWith</code> | <code>query</code> | <code>string</code> | No | (case-insensitive) Filter the list of accounts to where the name ends with a particular string. |
+| <code>name.contains</code> | <code>query</code> | <code>string</code> | No | (case-insensitive) Filter the list of accounts to where the name contains a particular string. |
+| <code>order_by</code> | <code>query</code> | <code>enum: account_name</code> | No | Field to order results by. Currently supported values: <code>account_name</code>. When not specified, results are ordered by internal account ID. |
+| <code>direction</code> | <code>query</code> | <code>enum: asc, desc</code> | No | Sort direction for the <code>order_by</code> field. Valid values: <code>asc</code>, <code>desc</code>. Defaults to <code>asc</code> when <code>order_by</code> is specified. |
+| <code>include_tags</code> | <code>query</code> | <code>boolean</code> | No | Include Account tags from the resource tag mirror. Omit this parameter to preserve the existing Account response shape. |
+| <code>include_total</code> | <code>query</code> | <code>boolean</code> | No | Whether to calculate and return the exact <code>result_info</code>.<code>total_size</code> for cursor pagination. Defaults to true. When false, <code>total_size</code> is omitted. <code>page_size</code> and <code>include_total</code> may change between pages; <code>next_page_token</code> remains the authoritative continuation signal. Legacy page/<code>per_page</code> requests always calculate <code>total_count</code>. |
+| <code>page_token</code> | <code>query</code> | <code>string</code> | No | An opaque token returned from the last list response that when provided will retrieve the next page. Parameters used to filter the retrieved list must remain in subsequent requests with a page token. |
+| <code>page_size</code> | <code>query</code> | <code>integer</code> | No | The amount of items to return. Defaults to 10. |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-the-request-has-succeeded-2" class="status" data-status="2xx">200: The request has succeeded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].created_on</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].settings</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].settings.abuse_contact_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].settings.access_approval_expiry</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].settings.api_access_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].settings.default_nameservers</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Use <a href="https://developers.cloudflare.com/api/operations/dns-settings-for-an-account-list-dns-settings">DNS Settings</a> instead. Deprecated.</td>
+</tr>
+<tr>
+<td><code>result[].settings.enforce_twofactor</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].settings.use_account_custom_ns_by_default</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Use <a href="https://developers.cloudflare.com/api/operations/dns-settings-for-an-account-list-dns-settings">DNS Settings</a> instead. Deprecated.</td>
+</tr>
+<tr>
+<td><code>result[].tags</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Account tags, present only when ``include_tags<code>=true</code> is requested.</td>
+</tr>
+<tr>
+<td><code>result[].type</code></td>
+<td><code>enum: standard, enterprise</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result_info</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result_info.next_page_token</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Use this opaque token in the next request to retrieve the next page. Parameters used to filter the retrieved list must remain in subsequent requests with a page token.</td>
+</tr>
+<tr>
+<td><code>result_info.total_size</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Counts the total amount of items in a list with the applied filters. The API omits <code>next_page_token</code> to indicate no more items in a particular list.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-an-unexpected-error-response-2">4XX: An unexpected error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-organizations" class="operation" data-method="get"><code>GET</code> /organizations</h3>
+<p>Operation ID: <code>Organization_listOrganizations</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>id</code> | <code>query</code> | <code>array of string</code> | No | Only return organizations with the specified IDs (ex. id=foo&amp;id=bar). Send multiple elements by repeating the query value. |
+| <code>name</code> | <code>query</code> | <code>string</code> | No | (case-sensitive) Filter the list of organizations to where the name is equal to a particular string. |
+| <code>name.startsWith</code> | <code>query</code> | <code>string</code> | No | (case-insensitive) Filter the list of organizations to where the name starts with a particular string. |
+| <code>name.endsWith</code> | <code>query</code> | <code>string</code> | No | (case-insensitive) Filter the list of organizations to where the name ends with a particular string. |
+| <code>name.contains</code> | <code>query</code> | <code>string</code> | No | (case-insensitive) Filter the list of organizations to where the name contains a particular string. |
+| <code>containing.account</code> | <code>query</code> | <code>string</code> | No | Filter the list of organizations to the ones that contain this particular account. |
+| <code>containing.user</code> | <code>query</code> | <code>string</code> | No | Filter the list of organizations to the ones that contain this particular user. IMPORTANT: Just because an organization &quot;contains&quot; a user is not a representation of any authorization or privilege to manage any resources therein. An organization &quot;containing&quot; a user simply means the user is managed by that organization. |
+| <code>containing.organization</code> | <code>query</code> | <code>string</code> | No | Filter the list of organizations to the ones that contain this particular organization. |
+| <code>parent.id</code> | <code>query</code> | <code>string or enum: null</code> | No | Filter the list of organizations to the ones that are a sub-organization of the specified organization. &quot;null&quot; is a valid value to provide for this parameter. It means &quot;where an organization has no parent (that is it is a 'root' organization).&quot; |
+| <code>page_token</code> | <code>query</code> | <code>string</code> | No | An opaque token returned from the last list response that when provided will retrieve the next page. Parameters used to filter the retrieved list must remain in subsequent requests with a page token. |
+| <code>page_size</code> | <code>query</code> | <code>integer</code> | No | The amount of items to return. Defaults to 10. |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-the-request-has-succeeded-3" class="status" data-status="2xx">200: The request has succeeded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].create_time</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].meta</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].meta.hierarchy_tags</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Ordered chain of organization tags from the root organization down to (and including) this organization itself. Root organizations return a single-element array containing their own tag; sub-organizations return <code>[rootTag, ...intermediateTags, parentTag, selfTag]</code>. Useful for constructing authorization scopes that need to cover every ancestor in the hierarchy.</td>
+</tr>
+<tr>
+<td><code>result[].meta.managed_by</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].meta.tenant_flags</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].parent</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].parent.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Organization ID</td>
+</tr>
+<tr>
+<td><code>result[].parent.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].profile</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].profile.business_address</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].profile.business_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].profile.business_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].profile.business_phone</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].profile.external_metadata</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result_info</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result_info.next_page_token</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Use this opaque token in the next request to retrieve the next page. Parameters used to filter the retrieved list must remain in subsequent requests with a page token.</td>
+</tr>
+<tr>
+<td><code>result_info.total_size</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Counts the total amount of items in a list with the applied filters. The API omits <code>next_page_token</code> to indicate no more items in a particular list.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-an-unexpected-error-response-3">4XX: An unexpected error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-organizationsorganization_id" class="operation" data-method="get"><code>GET</code> /organizations/{organization_id}</h3>
+<p>Operation ID: <code>Organizations_retrieve</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>organization_id</code> | <code>path</code> | <code>string</code> | Yes | The ID of the organization to retrieve. |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-the-request-has-succeeded-4" class="status" data-status="2xx">200: The request has succeeded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>References an Organization in the Cloudflare data model.</td>
+</tr>
+<tr>
+<td><code>result.create_time</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.meta</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.meta.hierarchy_tags</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Ordered chain of organization tags from the root organization down to (and including) this organization itself. Root organizations return a single-element array containing their own tag; sub-organizations return <code>[rootTag, ...intermediateTags, parentTag, selfTag]</code>. Useful for constructing authorization scopes that need to cover every ancestor in the hierarchy.</td>
+</tr>
+<tr>
+<td><code>result.meta.managed_by</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.meta.tenant_flags</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.parent</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.parent.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Organization ID</td>
+</tr>
+<tr>
+<td><code>result.parent.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.business_address</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.business_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.business_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.business_phone</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.external_metadata</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-an-unexpected-error-response-4">4XX: An unexpected error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-organizationsorganization_id" class="operation" data-method="delete"><code>DELETE</code> /organizations/{organization_id}</h3>
+<p>Operation ID: <code>Organizations_delete</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>organization_id</code> | <code>path</code> | <code>string</code> | Yes | The ID of the organization to delete. |</p>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-the-request-has-succeeded-5" class="status" data-status="2xx">200: The request has succeeded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-an-unexpected-error-response-5">4XX: An unexpected error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="put-organizationsorganization_idinvitesmember_code" class="operation" data-method="put"><code>PUT</code> /organizations/{organization_id}/invites/{member_code}</h3>
+<p>Operation ID: <code>Organizations_handleOrganizationInvite</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>organization_id</code> | <code>path</code> | <code>string</code> | Yes | The ID of the organization associated with the invitation. |
+| <code>member_code</code> | <code>path</code> | <code>string</code> | Yes | The invitation code to accept or reject. |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td><code>enum: accept, reject</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-6">Responses</h4>
+<h5 id="200-the-request-has-succeeded-6" class="status" data-status="2xx">200: The request has succeeded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.create_time</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Organization Member ID</td>
+</tr>
+<tr>
+<td><code>result.meta</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.status</code></td>
+<td><code>enum: active, pending, rejected, canceled</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.update_time</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.user</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.user.email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.user.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.user.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.user.two_factor_authentication_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-an-unexpected-error-response-6">4XX: An unexpected error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="put-organizationsorganization_id" class="operation" data-method="put"><code>PUT</code> /organizations/{organization_id}</h3>
+<p>Operation ID: <code>Organizations_modify</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-6">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>organization_id</code> | <code>path</code> | <code>string</code> | Yes | The ID of the organization to modify. |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create_time</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta.hierarchy_tags</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Ordered chain of organization tags from the root organization down to (and including) this organization itself. Root organizations return a single-element array containing their own tag; sub-organizations return <code>[rootTag, ...intermediateTags, parentTag, selfTag]</code>. Useful for constructing authorization scopes that need to cover every ancestor in the hierarchy.</td>
+</tr>
+<tr>
+<td><code>meta.managed_by</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta.tenant_flags</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>parent</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>parent.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Organization ID</td>
+</tr>
+<tr>
+<td><code>parent.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile.business_address</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile.business_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile.business_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile.business_phone</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile.external_metadata</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-7">Responses</h4>
+<h5 id="200-the-request-has-succeeded-7" class="status" data-status="2xx">200: The request has succeeded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>References an Organization in the Cloudflare data model.</td>
+</tr>
+<tr>
+<td><code>result.create_time</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.meta</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.meta.hierarchy_tags</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Ordered chain of organization tags from the root organization down to (and including) this organization itself. Root organizations return a single-element array containing their own tag; sub-organizations return <code>[rootTag, ...intermediateTags, parentTag, selfTag]</code>. Useful for constructing authorization scopes that need to cover every ancestor in the hierarchy.</td>
+</tr>
+<tr>
+<td><code>result.meta.managed_by</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.meta.tenant_flags</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.parent</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.parent.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Organization ID</td>
+</tr>
+<tr>
+<td><code>result.parent.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.business_address</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.business_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.business_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.business_phone</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.profile.external_metadata</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-an-unexpected-error-response-7">4XX: An unexpected error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="put-organizationsorganization_idprofile" class="operation" data-method="put"><code>PUT</code> /organizations/{organization_id}/profile</h3>
+<p>Operation ID: <code>Organizations_modifyProfile</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-7">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>organization_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-4">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>business_address</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>business_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>business_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>business_phone</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>external_metadata</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-8">Responses</h4>
+<h5 id="204-there-is-no-content-to-send-for-this-request-but-the-headers-may-be-useful" class="status" data-status="2xx">204: There is no content to send for this request, but the headers may be useful</h5>
+<h5 id="4xx-an-unexpected-error-response-8">4XX: An unexpected error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>
